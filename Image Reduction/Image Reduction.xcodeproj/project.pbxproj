@@ -18,6 +18,40 @@
 		5FDABF0B17534405005EDD03 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABEE817534404005EDD03 /* Cocoa.framework */; };
 		5FDABF1317534405005EDD03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FDABF1117534405005EDD03 /* InfoPlist.strings */; };
 		5FDABF1617534405005EDD03 /* Image_ReductionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDABF1517534405005EDD03 /* Image_ReductionTests.m */; };
+		5FDABF26175347E4005EDD03 /* ADApplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDABF20175347E4005EDD03 /* ADApplicationController.m */; };
+		5FDABF27175347E4005EDD03 /* ADImportController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDABF22175347E4005EDD03 /* ADImportController.m */; };
+		5FDABF28175347E4005EDD03 /* ADPluginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDABF25175347E4005EDD03 /* ADPluginController.m */; };
+		5FDABF321753484F005EDD03 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABEE817534404005EDD03 /* Cocoa.framework */; };
+		5FDABF381753484F005EDD03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FDABF361753484F005EDD03 /* InfoPlist.strings */; };
+		5FDABF4317534850005EDD03 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABF0917534405005EDD03 /* SenTestingKit.framework */; };
+		5FDABF4417534850005EDD03 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABEE817534404005EDD03 /* Cocoa.framework */; };
+		5FDABF4717534850005EDD03 /* ImageReductionPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABF311753484F005EDD03 /* ImageReductionPlugin.framework */; };
+		5FDABF4D17534850005EDD03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FDABF4B17534850005EDD03 /* InfoPlist.strings */; };
+		5FDABF5017534850005EDD03 /* ImageReductionPluginTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDABF4F17534850005EDD03 /* ImageReductionPluginTests.m */; };
+		5FDABF591753486D005EDD03 /* ImageReductionPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABF311753484F005EDD03 /* ImageReductionPlugin.framework */; };
+		5FDABF65175348AB005EDD03 /* ADDataObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FDABF5A175348AB005EDD03 /* ADDataObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FDABF66175348AB005EDD03 /* ADExporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FDABF5B175348AB005EDD03 /* ADExporter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FDABF67175348AB005EDD03 /* ADImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FDABF5C175348AB005EDD03 /* ADImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FDABF68175348AB005EDD03 /* ADImporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FDABF5D175348AB005EDD03 /* ADImporter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FDABF69175348AB005EDD03 /* ADPreferencePane.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FDABF5E175348AB005EDD03 /* ADPreferencePane.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FDABF6A175348AB005EDD03 /* ADPreferencePane.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDABF5F175348AB005EDD03 /* ADPreferencePane.m */; };
+		5FDABF6B175348AB005EDD03 /* ADProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FDABF60175348AB005EDD03 /* ADProcessor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FDABF6C175348AB005EDD03 /* ADImageReductionPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FDABF61175348AB005EDD03 /* ADImageReductionPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FDABF6D175348AB005EDD03 /* ADScalingFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FDABF62175348AB005EDD03 /* ADScalingFunction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FDABF6E175348AB005EDD03 /* ADScalingFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDABF63175348AB005EDD03 /* ADScalingFunction.m */; };
+		5FDABF6F175348AB005EDD03 /* ImageReductionPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FDABF64175348AB005EDD03 /* ImageReductionPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FDABF7917534A83005EDD03 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABEE817534404005EDD03 /* Cocoa.framework */; };
+		5FDABF7F17534A83005EDD03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FDABF7D17534A83005EDD03 /* InfoPlist.strings */; };
+		5FDABF8617534A92005EDD03 /* ImageReductionPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABF311753484F005EDD03 /* ImageReductionPlugin.framework */; };
+		5FDABF9717534ACF005EDD03 /* BinaryDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDABF8817534ACF005EDD03 /* BinaryDataScanner.m */; };
+		5FDABF9817534ACF005EDD03 /* FITSData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDABF8A17534ACF005EDD03 /* FITSData.m */; };
+		5FDABF9917534ACF005EDD03 /* FITSFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDABF8C17534ACF005EDD03 /* FITSFile.m */; };
+		5FDABF9A17534ACF005EDD03 /* FITSHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDABF8E17534ACF005EDD03 /* FITSHeader.m */; };
+		5FDABF9B17534ACF005EDD03 /* FITSHeaderAndDataUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDABF9017534ACF005EDD03 /* FITSHeaderAndDataUnit.m */; };
+		5FDABF9C17534ACF005EDD03 /* FITSHeaderRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDABF9217534ACF005EDD03 /* FITSHeaderRecord.m */; };
+		5FDABF9D17534ACF005EDD03 /* FITSImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDABF9417534ACF005EDD03 /* FITSImage.m */; };
+		5FDABF9E17534ACF005EDD03 /* FITSImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDABF9617534ACF005EDD03 /* FITSImporter.m */; };
+		5FDABFA117534BB0005EDD03 /* FITSImporter.plugin in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FDABF7817534A83005EDD03 /* FITSImporter.plugin */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +62,48 @@
 			remoteGlobalIDString = 5FDABEE417534404005EDD03;
 			remoteInfo = "Image Reduction";
 		};
+		5FDABF4517534850005EDD03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FDABEDD17534404005EDD03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FDABF301753484F005EDD03;
+			remoteInfo = ImageReductionPlugin;
+		};
+		5FDABF5717534865005EDD03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FDABEDD17534404005EDD03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FDABF301753484F005EDD03;
+			remoteInfo = ImageReductionPlugin;
+		};
+		5FDABF8417534A8D005EDD03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FDABEDD17534404005EDD03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FDABF301753484F005EDD03;
+			remoteInfo = ImageReductionPlugin;
+		};
+		5FDABFA217534BC1005EDD03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FDABEDD17534404005EDD03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FDABF7717534A83005EDD03;
+			remoteInfo = FITSImporter;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5FDABFA017534B62005EDD03 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5FDABFA117534BB0005EDD03 /* FITSImporter.plugin in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5FDABEE517534404005EDD03 /* Image Reduction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Image Reduction.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +126,53 @@
 		5FDABF1217534405005EDD03 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5FDABF1417534405005EDD03 /* Image_ReductionTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Image_ReductionTests.h; sourceTree = "<group>"; };
 		5FDABF1517534405005EDD03 /* Image_ReductionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Image_ReductionTests.m; sourceTree = "<group>"; };
+		5FDABF1F175347E4005EDD03 /* ADApplicationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADApplicationController.h; sourceTree = "<group>"; };
+		5FDABF20175347E4005EDD03 /* ADApplicationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADApplicationController.m; sourceTree = "<group>"; };
+		5FDABF21175347E4005EDD03 /* ADImportController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADImportController.h; sourceTree = "<group>"; };
+		5FDABF22175347E4005EDD03 /* ADImportController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADImportController.m; sourceTree = "<group>"; };
+		5FDABF23175347E4005EDD03 /* ADKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADKeys.h; sourceTree = "<group>"; };
+		5FDABF24175347E4005EDD03 /* ADPluginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADPluginController.h; sourceTree = "<group>"; };
+		5FDABF25175347E4005EDD03 /* ADPluginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADPluginController.m; sourceTree = "<group>"; };
+		5FDABF311753484F005EDD03 /* ImageReductionPlugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImageReductionPlugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FDABF351753484F005EDD03 /* ImageReductionPlugin-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImageReductionPlugin-Info.plist"; sourceTree = "<group>"; };
+		5FDABF371753484F005EDD03 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5FDABF391753484F005EDD03 /* ImageReductionPlugin-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImageReductionPlugin-Prefix.pch"; sourceTree = "<group>"; };
+		5FDABF4217534850005EDD03 /* ImageReductionPluginTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageReductionPluginTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FDABF4A17534850005EDD03 /* ImageReductionPluginTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImageReductionPluginTests-Info.plist"; sourceTree = "<group>"; };
+		5FDABF4C17534850005EDD03 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5FDABF4E17534850005EDD03 /* ImageReductionPluginTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageReductionPluginTests.h; sourceTree = "<group>"; };
+		5FDABF4F17534850005EDD03 /* ImageReductionPluginTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageReductionPluginTests.m; sourceTree = "<group>"; };
+		5FDABF5A175348AB005EDD03 /* ADDataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADDataObject.h; sourceTree = "<group>"; };
+		5FDABF5B175348AB005EDD03 /* ADExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADExporter.h; sourceTree = "<group>"; };
+		5FDABF5C175348AB005EDD03 /* ADImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADImage.h; sourceTree = "<group>"; };
+		5FDABF5D175348AB005EDD03 /* ADImporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADImporter.h; sourceTree = "<group>"; };
+		5FDABF5E175348AB005EDD03 /* ADPreferencePane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADPreferencePane.h; sourceTree = "<group>"; };
+		5FDABF5F175348AB005EDD03 /* ADPreferencePane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADPreferencePane.m; sourceTree = "<group>"; };
+		5FDABF60175348AB005EDD03 /* ADProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADProcessor.h; sourceTree = "<group>"; };
+		5FDABF61175348AB005EDD03 /* ADImageReductionPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADImageReductionPlugin.h; sourceTree = "<group>"; };
+		5FDABF62175348AB005EDD03 /* ADScalingFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADScalingFunction.h; sourceTree = "<group>"; };
+		5FDABF63175348AB005EDD03 /* ADScalingFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADScalingFunction.m; sourceTree = "<group>"; };
+		5FDABF64175348AB005EDD03 /* ImageReductionPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageReductionPlugin.h; sourceTree = "<group>"; };
+		5FDABF7817534A83005EDD03 /* FITSImporter.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FITSImporter.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FDABF7C17534A83005EDD03 /* FITSImporter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FITSImporter-Info.plist"; sourceTree = "<group>"; };
+		5FDABF7E17534A83005EDD03 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5FDABF8017534A83005EDD03 /* FITSImporter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FITSImporter-Prefix.pch"; sourceTree = "<group>"; };
+		5FDABF8717534ACF005EDD03 /* BinaryDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BinaryDataScanner.h; sourceTree = "<group>"; };
+		5FDABF8817534ACF005EDD03 /* BinaryDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BinaryDataScanner.m; sourceTree = "<group>"; };
+		5FDABF8917534ACF005EDD03 /* FITSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FITSData.h; sourceTree = "<group>"; };
+		5FDABF8A17534ACF005EDD03 /* FITSData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FITSData.m; sourceTree = "<group>"; };
+		5FDABF8B17534ACF005EDD03 /* FITSFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FITSFile.h; sourceTree = "<group>"; };
+		5FDABF8C17534ACF005EDD03 /* FITSFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FITSFile.m; sourceTree = "<group>"; };
+		5FDABF8D17534ACF005EDD03 /* FITSHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FITSHeader.h; sourceTree = "<group>"; };
+		5FDABF8E17534ACF005EDD03 /* FITSHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FITSHeader.m; sourceTree = "<group>"; };
+		5FDABF8F17534ACF005EDD03 /* FITSHeaderAndDataUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FITSHeaderAndDataUnit.h; sourceTree = "<group>"; };
+		5FDABF9017534ACF005EDD03 /* FITSHeaderAndDataUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FITSHeaderAndDataUnit.m; sourceTree = "<group>"; };
+		5FDABF9117534ACF005EDD03 /* FITSHeaderRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FITSHeaderRecord.h; sourceTree = "<group>"; };
+		5FDABF9217534ACF005EDD03 /* FITSHeaderRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FITSHeaderRecord.m; sourceTree = "<group>"; };
+		5FDABF9317534ACF005EDD03 /* FITSImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FITSImage.h; sourceTree = "<group>"; };
+		5FDABF9417534ACF005EDD03 /* FITSImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FITSImage.m; sourceTree = "<group>"; };
+		5FDABF9517534ACF005EDD03 /* FITSImporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FITSImporter.h; sourceTree = "<group>"; };
+		5FDABF9617534ACF005EDD03 /* FITSImporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FITSImporter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +180,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FDABF591753486D005EDD03 /* ImageReductionPlugin.framework in Frameworks */,
 				5FDABEE917534404005EDD03 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,6 +194,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5FDABF2D1753484F005EDD03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FDABF321753484F005EDD03 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FDABF3E17534850005EDD03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FDABF4317534850005EDD03 /* SenTestingKit.framework in Frameworks */,
+				5FDABF4417534850005EDD03 /* Cocoa.framework in Frameworks */,
+				5FDABF4717534850005EDD03 /* ImageReductionPlugin.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FDABF7517534A83005EDD03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FDABF8617534A92005EDD03 /* ImageReductionPlugin.framework in Frameworks */,
+				5FDABF7917534A83005EDD03 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -78,7 +228,10 @@
 			isa = PBXGroup;
 			children = (
 				5FDABEEE17534404005EDD03 /* Image Reduction */,
+				5FDABF331753484F005EDD03 /* ImageReductionPlugin */,
+				5FDABF7A17534A83005EDD03 /* FITSImporter */,
 				5FDABF0E17534405005EDD03 /* Image ReductionTests */,
+				5FDABF4817534850005EDD03 /* ImageReductionPluginTests */,
 				5FDABEE717534404005EDD03 /* Frameworks */,
 				5FDABEE617534404005EDD03 /* Products */,
 			);
@@ -89,6 +242,9 @@
 			children = (
 				5FDABEE517534404005EDD03 /* Image Reduction.app */,
 				5FDABF0817534405005EDD03 /* Image ReductionTests.octest */,
+				5FDABF311753484F005EDD03 /* ImageReductionPlugin.framework */,
+				5FDABF4217534850005EDD03 /* ImageReductionPluginTests.octest */,
+				5FDABF7817534A83005EDD03 /* FITSImporter.plugin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -116,6 +272,10 @@
 		5FDABEEE17534404005EDD03 /* Image Reduction */ = {
 			isa = PBXGroup;
 			children = (
+				5FDABF23175347E4005EDD03 /* ADKeys.h */,
+				5FDABF29175347F0005EDD03 /* Plugin Management */,
+				5FDABF2A17534804005EDD03 /* Import */,
+				5FDABF2B17534814005EDD03 /* Controllers */,
 				5FDABEFA17534404005EDD03 /* ADDocument.h */,
 				5FDABEFB17534404005EDD03 /* ADDocument.m */,
 				5FDABEFD17534405005EDD03 /* ADDocument.xib */,
@@ -156,7 +316,175 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		5FDABF29175347F0005EDD03 /* Plugin Management */ = {
+			isa = PBXGroup;
+			children = (
+				5FDABF24175347E4005EDD03 /* ADPluginController.h */,
+				5FDABF25175347E4005EDD03 /* ADPluginController.m */,
+			);
+			name = "Plugin Management";
+			sourceTree = "<group>";
+		};
+		5FDABF2A17534804005EDD03 /* Import */ = {
+			isa = PBXGroup;
+			children = (
+				5FDABF21175347E4005EDD03 /* ADImportController.h */,
+				5FDABF22175347E4005EDD03 /* ADImportController.m */,
+			);
+			name = Import;
+			sourceTree = "<group>";
+		};
+		5FDABF2B17534814005EDD03 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5FDABF1F175347E4005EDD03 /* ADApplicationController.h */,
+				5FDABF20175347E4005EDD03 /* ADApplicationController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		5FDABF331753484F005EDD03 /* ImageReductionPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				5FDABF64175348AB005EDD03 /* ImageReductionPlugin.h */,
+				5FDABF61175348AB005EDD03 /* ADImageReductionPlugin.h */,
+				5FDABF7017534906005EDD03 /* Import */,
+				5FDABF7117534910005EDD03 /* Export */,
+				5FDABF7317534942005EDD03 /* Processors */,
+				5FDABF721753492D005EDD03 /* Model */,
+				5FDABF5E175348AB005EDD03 /* ADPreferencePane.h */,
+				5FDABF5F175348AB005EDD03 /* ADPreferencePane.m */,
+				5FDABF341753484F005EDD03 /* Supporting Files */,
+			);
+			path = ImageReductionPlugin;
+			sourceTree = "<group>";
+		};
+		5FDABF341753484F005EDD03 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5FDABF351753484F005EDD03 /* ImageReductionPlugin-Info.plist */,
+				5FDABF361753484F005EDD03 /* InfoPlist.strings */,
+				5FDABF391753484F005EDD03 /* ImageReductionPlugin-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5FDABF4817534850005EDD03 /* ImageReductionPluginTests */ = {
+			isa = PBXGroup;
+			children = (
+				5FDABF4E17534850005EDD03 /* ImageReductionPluginTests.h */,
+				5FDABF4F17534850005EDD03 /* ImageReductionPluginTests.m */,
+				5FDABF4917534850005EDD03 /* Supporting Files */,
+			);
+			path = ImageReductionPluginTests;
+			sourceTree = "<group>";
+		};
+		5FDABF4917534850005EDD03 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5FDABF4A17534850005EDD03 /* ImageReductionPluginTests-Info.plist */,
+				5FDABF4B17534850005EDD03 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5FDABF7017534906005EDD03 /* Import */ = {
+			isa = PBXGroup;
+			children = (
+				5FDABF5D175348AB005EDD03 /* ADImporter.h */,
+			);
+			name = Import;
+			sourceTree = "<group>";
+		};
+		5FDABF7117534910005EDD03 /* Export */ = {
+			isa = PBXGroup;
+			children = (
+				5FDABF5B175348AB005EDD03 /* ADExporter.h */,
+			);
+			name = Export;
+			sourceTree = "<group>";
+		};
+		5FDABF721753492D005EDD03 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5FDABF5A175348AB005EDD03 /* ADDataObject.h */,
+				5FDABF5C175348AB005EDD03 /* ADImage.h */,
+				5FDABF62175348AB005EDD03 /* ADScalingFunction.h */,
+				5FDABF63175348AB005EDD03 /* ADScalingFunction.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		5FDABF7317534942005EDD03 /* Processors */ = {
+			isa = PBXGroup;
+			children = (
+				5FDABF60175348AB005EDD03 /* ADProcessor.h */,
+			);
+			name = Processors;
+			sourceTree = "<group>";
+		};
+		5FDABF7A17534A83005EDD03 /* FITSImporter */ = {
+			isa = PBXGroup;
+			children = (
+				5FDABF9F17534AED005EDD03 /* FITS IO */,
+				5FDABF9317534ACF005EDD03 /* FITSImage.h */,
+				5FDABF9417534ACF005EDD03 /* FITSImage.m */,
+				5FDABF9517534ACF005EDD03 /* FITSImporter.h */,
+				5FDABF9617534ACF005EDD03 /* FITSImporter.m */,
+				5FDABF7B17534A83005EDD03 /* Supporting Files */,
+			);
+			path = FITSImporter;
+			sourceTree = "<group>";
+		};
+		5FDABF7B17534A83005EDD03 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5FDABF7C17534A83005EDD03 /* FITSImporter-Info.plist */,
+				5FDABF7D17534A83005EDD03 /* InfoPlist.strings */,
+				5FDABF8017534A83005EDD03 /* FITSImporter-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5FDABF9F17534AED005EDD03 /* FITS IO */ = {
+			isa = PBXGroup;
+			children = (
+				5FDABF8717534ACF005EDD03 /* BinaryDataScanner.h */,
+				5FDABF8817534ACF005EDD03 /* BinaryDataScanner.m */,
+				5FDABF8917534ACF005EDD03 /* FITSData.h */,
+				5FDABF8A17534ACF005EDD03 /* FITSData.m */,
+				5FDABF8B17534ACF005EDD03 /* FITSFile.h */,
+				5FDABF8C17534ACF005EDD03 /* FITSFile.m */,
+				5FDABF8D17534ACF005EDD03 /* FITSHeader.h */,
+				5FDABF8E17534ACF005EDD03 /* FITSHeader.m */,
+				5FDABF8F17534ACF005EDD03 /* FITSHeaderAndDataUnit.h */,
+				5FDABF9017534ACF005EDD03 /* FITSHeaderAndDataUnit.m */,
+				5FDABF9117534ACF005EDD03 /* FITSHeaderRecord.h */,
+				5FDABF9217534ACF005EDD03 /* FITSHeaderRecord.m */,
+			);
+			name = "FITS IO";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		5FDABF2E1753484F005EDD03 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FDABF65175348AB005EDD03 /* ADDataObject.h in Headers */,
+				5FDABF66175348AB005EDD03 /* ADExporter.h in Headers */,
+				5FDABF67175348AB005EDD03 /* ADImage.h in Headers */,
+				5FDABF68175348AB005EDD03 /* ADImporter.h in Headers */,
+				5FDABF69175348AB005EDD03 /* ADPreferencePane.h in Headers */,
+				5FDABF6B175348AB005EDD03 /* ADProcessor.h in Headers */,
+				5FDABF6C175348AB005EDD03 /* ADImageReductionPlugin.h in Headers */,
+				5FDABF6D175348AB005EDD03 /* ADScalingFunction.h in Headers */,
+				5FDABF6F175348AB005EDD03 /* ImageReductionPlugin.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		5FDABEE417534404005EDD03 /* Image Reduction */ = {
@@ -166,10 +494,13 @@
 				5FDABEE117534404005EDD03 /* Sources */,
 				5FDABEE217534404005EDD03 /* Frameworks */,
 				5FDABEE317534404005EDD03 /* Resources */,
+				5FDABFA017534B62005EDD03 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5FDABFA317534BC1005EDD03 /* PBXTargetDependency */,
+				5FDABF5817534865005EDD03 /* PBXTargetDependency */,
 			);
 			name = "Image Reduction";
 			productName = "Image Reduction";
@@ -193,6 +524,61 @@
 			name = "Image ReductionTests";
 			productName = "Image ReductionTests";
 			productReference = 5FDABF0817534405005EDD03 /* Image ReductionTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		5FDABF301753484F005EDD03 /* ImageReductionPlugin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FDABF5117534850005EDD03 /* Build configuration list for PBXNativeTarget "ImageReductionPlugin" */;
+			buildPhases = (
+				5FDABF2C1753484F005EDD03 /* Sources */,
+				5FDABF2D1753484F005EDD03 /* Frameworks */,
+				5FDABF2E1753484F005EDD03 /* Headers */,
+				5FDABF2F1753484F005EDD03 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ImageReductionPlugin;
+			productName = ImageReductionPlugin;
+			productReference = 5FDABF311753484F005EDD03 /* ImageReductionPlugin.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5FDABF4117534850005EDD03 /* ImageReductionPluginTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FDABF5417534850005EDD03 /* Build configuration list for PBXNativeTarget "ImageReductionPluginTests" */;
+			buildPhases = (
+				5FDABF3D17534850005EDD03 /* Sources */,
+				5FDABF3E17534850005EDD03 /* Frameworks */,
+				5FDABF3F17534850005EDD03 /* Resources */,
+				5FDABF4017534850005EDD03 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5FDABF4617534850005EDD03 /* PBXTargetDependency */,
+			);
+			name = ImageReductionPluginTests;
+			productName = ImageReductionPluginTests;
+			productReference = 5FDABF4217534850005EDD03 /* ImageReductionPluginTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		5FDABF7717534A83005EDD03 /* FITSImporter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FDABF8117534A83005EDD03 /* Build configuration list for PBXNativeTarget "FITSImporter" */;
+			buildPhases = (
+				5FDABF7417534A83005EDD03 /* Sources */,
+				5FDABF7517534A83005EDD03 /* Frameworks */,
+				5FDABF7617534A83005EDD03 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5FDABF8517534A8D005EDD03 /* PBXTargetDependency */,
+			);
+			name = FITSImporter;
+			productName = FITSImporter;
+			productReference = 5FDABF7817534A83005EDD03 /* FITSImporter.plugin */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -219,6 +605,9 @@
 			targets = (
 				5FDABEE417534404005EDD03 /* Image Reduction */,
 				5FDABF0717534405005EDD03 /* Image ReductionTests */,
+				5FDABF301753484F005EDD03 /* ImageReductionPlugin */,
+				5FDABF4117534850005EDD03 /* ImageReductionPluginTests */,
+				5FDABF7717534A83005EDD03 /* FITSImporter */,
 			);
 		};
 /* End PBXProject section */
@@ -243,10 +632,47 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5FDABF2F1753484F005EDD03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FDABF381753484F005EDD03 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FDABF3F17534850005EDD03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FDABF4D17534850005EDD03 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FDABF7617534A83005EDD03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FDABF7F17534A83005EDD03 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		5FDABF0617534405005EDD03 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		5FDABF4017534850005EDD03 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -268,6 +694,9 @@
 			files = (
 				5FDABEF517534404005EDD03 /* main.m in Sources */,
 				5FDABEFC17534404005EDD03 /* ADDocument.m in Sources */,
+				5FDABF26175347E4005EDD03 /* ADApplicationController.m in Sources */,
+				5FDABF27175347E4005EDD03 /* ADImportController.m in Sources */,
+				5FDABF28175347E4005EDD03 /* ADPluginController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +708,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5FDABF2C1753484F005EDD03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FDABF6A175348AB005EDD03 /* ADPreferencePane.m in Sources */,
+				5FDABF6E175348AB005EDD03 /* ADScalingFunction.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FDABF3D17534850005EDD03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FDABF5017534850005EDD03 /* ImageReductionPluginTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FDABF7417534A83005EDD03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FDABF9717534ACF005EDD03 /* BinaryDataScanner.m in Sources */,
+				5FDABF9817534ACF005EDD03 /* FITSData.m in Sources */,
+				5FDABF9917534ACF005EDD03 /* FITSFile.m in Sources */,
+				5FDABF9A17534ACF005EDD03 /* FITSHeader.m in Sources */,
+				5FDABF9B17534ACF005EDD03 /* FITSHeaderAndDataUnit.m in Sources */,
+				5FDABF9C17534ACF005EDD03 /* FITSHeaderRecord.m in Sources */,
+				5FDABF9D17534ACF005EDD03 /* FITSImage.m in Sources */,
+				5FDABF9E17534ACF005EDD03 /* FITSImporter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -286,6 +747,26 @@
 			isa = PBXTargetDependency;
 			target = 5FDABEE417534404005EDD03 /* Image Reduction */;
 			targetProxy = 5FDABF0C17534405005EDD03 /* PBXContainerItemProxy */;
+		};
+		5FDABF4617534850005EDD03 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5FDABF301753484F005EDD03 /* ImageReductionPlugin */;
+			targetProxy = 5FDABF4517534850005EDD03 /* PBXContainerItemProxy */;
+		};
+		5FDABF5817534865005EDD03 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5FDABF301753484F005EDD03 /* ImageReductionPlugin */;
+			targetProxy = 5FDABF5717534865005EDD03 /* PBXContainerItemProxy */;
+		};
+		5FDABF8517534A8D005EDD03 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5FDABF301753484F005EDD03 /* ImageReductionPlugin */;
+			targetProxy = 5FDABF8417534A8D005EDD03 /* PBXContainerItemProxy */;
+		};
+		5FDABFA317534BC1005EDD03 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5FDABF7717534A83005EDD03 /* FITSImporter */;
+			targetProxy = 5FDABFA217534BC1005EDD03 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -326,6 +807,30 @@
 			isa = PBXVariantGroup;
 			children = (
 				5FDABF1217534405005EDD03 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5FDABF361753484F005EDD03 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FDABF371753484F005EDD03 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5FDABF4B17534850005EDD03 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FDABF4C17534850005EDD03 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5FDABF7D17534A83005EDD03 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FDABF7E17534A83005EDD03 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -446,6 +951,88 @@
 			};
 			name = Release;
 		};
+		5FDABF5217534850005EDD03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ImageReductionPlugin/ImageReductionPlugin-Prefix.pch";
+				INFOPLIST_FILE = "ImageReductionPlugin/ImageReductionPlugin-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		5FDABF5317534850005EDD03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ImageReductionPlugin/ImageReductionPlugin-Prefix.pch";
+				INFOPLIST_FILE = "ImageReductionPlugin/ImageReductionPlugin-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		5FDABF5517534850005EDD03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ImageReductionPlugin/ImageReductionPlugin-Prefix.pch";
+				INFOPLIST_FILE = "ImageReductionPluginTests/ImageReductionPluginTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		5FDABF5617534850005EDD03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ImageReductionPlugin/ImageReductionPlugin-Prefix.pch";
+				INFOPLIST_FILE = "ImageReductionPluginTests/ImageReductionPluginTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		5FDABF8217534A83005EDD03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FITSImporter/FITSImporter-Prefix.pch";
+				INFOPLIST_FILE = "FITSImporter/FITSImporter-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = plugin;
+			};
+			name = Debug;
+		};
+		5FDABF8317534A83005EDD03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FITSImporter/FITSImporter-Prefix.pch";
+				INFOPLIST_FILE = "FITSImporter/FITSImporter-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = plugin;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -475,6 +1062,30 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		5FDABF5117534850005EDD03 /* Build configuration list for PBXNativeTarget "ImageReductionPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FDABF5217534850005EDD03 /* Debug */,
+				5FDABF5317534850005EDD03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5FDABF5417534850005EDD03 /* Build configuration list for PBXNativeTarget "ImageReductionPluginTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FDABF5517534850005EDD03 /* Debug */,
+				5FDABF5617534850005EDD03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5FDABF8117534A83005EDD03 /* Build configuration list for PBXNativeTarget "FITSImporter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FDABF8217534A83005EDD03 /* Debug */,
+				5FDABF8317534A83005EDD03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

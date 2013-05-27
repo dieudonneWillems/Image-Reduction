@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'ImageReductionPlugin' target in the 'ImageReductionPlugin' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
