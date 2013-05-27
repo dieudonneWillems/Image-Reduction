@@ -351,8 +351,6 @@
 			isa = PBXGroup;
 			children = (
 				5FDABF64175348AB005EDD03 /* ImageReductionPlugin.h */,
-				5F4BA7AB1753EF2900726567 /* ADProperty.h */,
-				5F4BA7AC1753EF2900726567 /* ADProperty.m */,
 				5FDABF61175348AB005EDD03 /* ADImageReductionPlugin.h */,
 				5FDABF7017534906005EDD03 /* Import */,
 				5FDABF7117534910005EDD03 /* Export */,
@@ -413,6 +411,8 @@
 		5FDABF721753492D005EDD03 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5F4BA7AB1753EF2900726567 /* ADProperty.h */,
+				5F4BA7AC1753EF2900726567 /* ADProperty.m */,
 				5FDABF5A175348AB005EDD03 /* ADDataObject.h */,
 				5FDABF5C175348AB005EDD03 /* ADImage.h */,
 				5FDABF62175348AB005EDD03 /* ADScalingFunction.h */,

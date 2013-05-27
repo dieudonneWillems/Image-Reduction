@@ -13,7 +13,6 @@
 
 @interface FITSImage : NSImage <ADImage> {
     double **pixels;
-    FITSHeader *fitsheader;
     double averageValue;
     double medianValue;
     double minimumValue;
@@ -21,8 +20,9 @@
     double standardDeviationValue;
     ADScalingFunction *defaultScaling;
     NSString *type;
+    NSMutableDictionary *properties;
 }
 
-+ (FITSImage*) createImageFromData:(FITSData*)data atPlaneIndex:(NSUInteger)plane;
++ (FITSImage*) createImageFromData:(FITSData*)data atPlaneIndex:(NSUInteger)plane withHeader:(FITSHeader*)header;
 
 @end

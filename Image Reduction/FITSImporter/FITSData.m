@@ -68,13 +68,13 @@
             int i=0;
             NSMutableArray *images = [NSMutableArray array];
             for(i=0;i<l;i++){
-                FITSImage *image = [FITSImage createImageFromData:self atPlaneIndex:i];
+                FITSImage *image = [FITSImage createImageFromData:self atPlaneIndex:i withHeader:header];
                 [images addObject:image];
             }
             FITSHeaderAndDataUnit *hud = [[FITSHeaderAndDataUnit alloc] initWithHeader:header andImagePlanes:images];
             return hud;
         }else{
-            FITSImage *image = [FITSImage createImageFromData:self atPlaneIndex:0];
+            FITSImage *image = [FITSImage createImageFromData:self atPlaneIndex:0 withHeader:header];
             FITSHeaderAndDataUnit *hud = [[FITSHeaderAndDataUnit alloc] initWithHeader:header andImage:image];
             return hud;
         }

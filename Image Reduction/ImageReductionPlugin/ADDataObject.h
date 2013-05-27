@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ADProperty.h"
 
 @protocol ADDataObject <NSObject>
 
 @required
 @property (readwrite) NSString *type;
-
+- (NSArray*) properties;
+- (ADProperty*) propertyForKey:(NSString*)propertyKey;
 @end

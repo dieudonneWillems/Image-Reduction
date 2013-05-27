@@ -9,22 +9,25 @@
 #import "FITSImage.h"
 #import "FITSData.h"
 #import "FITSHeader.h"
+#import "FITSHeaderRecord.h"
 
 @interface FITSImage (private)
 + (NSException*) createFITSExceptionForFISTStatus:(int)status;
-- (id) initWithData:(FITSData*)data atPlaneIndex:(NSUInteger)plane;
+- (id) initWithData:(FITSData*)data atPlaneIndex:(NSUInteger)plane withHeader:(FITSHeader*)header;
 - (void) putInSortedArray:(double)value min:(NSUInteger)min max:(NSUInteger)max n:(NSUInteger)n;
+- (void) parsePropertiesFromHeader:(FITSHeader*)header;
 @end
 
 @implementation FITSImage
 
-+ (FITSImage*) createImageFromData:(FITSData*)data atPlaneIndex:(NSUInteger)plane
++ (FITSImage*) createImageFromData:(FITSData*)data atPlaneIndex:(NSUInteger)plane withHeader:(FITSHeader*)header
 {
-    return [[FITSImage alloc] initWithData:data atPlaneIndex:plane];
+    return [[FITSImage alloc] initWithData:data atPlaneIndex:plane withHeader:header];
 }
 
-- (id) initWithData:(FITSData*)data atPlaneIndex:(NSUInteger)plane
+- (id) initWithData:(FITSData*)data atPlaneIndex:(NSUInteger)plane withHeader:(FITSHeader*)header
 {
+    properties = [NSMutableDictionary dictionary];
     CGFloat width=0,height=0;
     type=@"image";
     NSInteger i=0,j;
@@ -73,6 +76,7 @@
     defaultScaling = [[ADScalingFunction alloc] init];
     [defaultScaling setBlackPoint:averageValue-standardDeviationValue];
     [defaultScaling setWhitePoint:averageValue+standardDeviationValue*2];
+    [self parsePropertiesFromHeader:header];
     return self;
 }
 
@@ -84,6 +88,47 @@
         free(pixels[i]);
     }
     free(pixels);
+}
+
+- (void) parsePropertiesFromHeader:(FITSHeader*)header
+{
+    NSLog(@"header = %@",header);
+    NSString *obstype = [header stringValueForRecordWithIdentifier:@"OBSTYPE"];
+    NSString *fltype = [header stringValueForRecordWithIdentifier:@"FILETYPE"];
+    ADProperty *otype = [ADProperty typePropertyWithValueKey:ADPropertyTypeImage];
+    [properties setObject:otype forKey:[otype propertyKey]];
+    if([[obstype uppercaseString] isEqualToString:@"BIAS"]){
+        ADProperty *obst = [ADProperty imageTypePropertyWithValueKey:ADPropertyImageTypeBias];
+        [properties setObject:obst forKey:[obst propertyKey]];
+    }else if([[obstype uppercaseString] isEqualToString:@"FLAT"]){
+        ADProperty *obst = [ADProperty imageTypePropertyWithValueKey:ADPropertyImageTypeFlat];
+        [properties setObject:obst forKey:[obst propertyKey]];
+    }else if([[obstype uppercaseString] isEqualToString:@"DARK"]){
+        ADProperty *obst = [ADProperty imageTypePropertyWithValueKey:ADPropertyImageTypeDark];
+        [properties setObject:obst forKey:[obst propertyKey]];
+    }else if([[obstype uppercaseString] isEqualToString:@"OBJECT"]){
+        ADProperty *obst = [ADProperty imageTypePropertyWithValueKey:ADPropertyImageTypeRaw];
+        [properties setObject:obst forKey:[obst propertyKey]];
+    }else if([[obstype uppercaseString] isEqualToString:@"SCIENCE"]){
+        ADProperty *obst = [ADProperty imageTypePropertyWithValueKey:ADPropertyImageTypeRaw];
+        [properties setObject:obst forKey:[obst propertyKey]];
+    }else if([[fltype uppercaseString] isEqualToString:@"SCI"]){
+        ADProperty *obst = [ADProperty imageTypePropertyWithValueKey:ADPropertyImageTypeRaw];
+        [properties setObject:obst forKey:[obst propertyKey]];
+    }else {
+        ADProperty *obst = [ADProperty imageTypePropertyWithValueKey:ADPropertyImageTypeUnknown];
+        [properties setObject:obst forKey:[obst propertyKey]];
+    }
+}
+
+- (NSArray*) properties
+{
+    return [properties allValues];
+}
+
+- (ADProperty*) propertyForKey:(NSString*)propertyKey
+{
+    return [properties objectForKey:propertyKey];
 }
 
 @synthesize type;
@@ -134,5 +179,10 @@
         @throw exception;
     }
     return pixels[x][y];
+}
+
+- (NSString*) description
+{
+    return [NSString stringWithFormat:@"FITS Image: %@",[properties allValues]];
 }
 @end
