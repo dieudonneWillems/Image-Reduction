@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F4BA7AD1753EF2900726567 /* ADProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F4BA7AB1753EF2900726567 /* ADProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F4BA7AE1753EF2900726567 /* ADProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4BA7AC1753EF2900726567 /* ADProperties.m */; };
 		5FDABEE917534404005EDD03 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABEE817534404005EDD03 /* Cocoa.framework */; };
 		5FDABEF317534404005EDD03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FDABEF117534404005EDD03 /* InfoPlist.strings */; };
 		5FDABEF517534404005EDD03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDABEF417534404005EDD03 /* main.m */; };
@@ -106,6 +108,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5F4BA7AB1753EF2900726567 /* ADProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADProperties.h; sourceTree = "<group>"; };
+		5F4BA7AC1753EF2900726567 /* ADProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADProperties.m; sourceTree = "<group>"; };
 		5FDABEE517534404005EDD03 /* Image Reduction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Image Reduction.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FDABEE817534404005EDD03 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		5FDABEEB17534404005EDD03 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -347,6 +351,8 @@
 			isa = PBXGroup;
 			children = (
 				5FDABF64175348AB005EDD03 /* ImageReductionPlugin.h */,
+				5F4BA7AB1753EF2900726567 /* ADProperties.h */,
+				5F4BA7AC1753EF2900726567 /* ADProperties.m */,
 				5FDABF61175348AB005EDD03 /* ADImageReductionPlugin.h */,
 				5FDABF7017534906005EDD03 /* Import */,
 				5FDABF7117534910005EDD03 /* Export */,
@@ -480,6 +486,7 @@
 				5FDABF6B175348AB005EDD03 /* ADProcessor.h in Headers */,
 				5FDABF6C175348AB005EDD03 /* ADImageReductionPlugin.h in Headers */,
 				5FDABF6D175348AB005EDD03 /* ADScalingFunction.h in Headers */,
+				5F4BA7AD1753EF2900726567 /* ADProperties.h in Headers */,
 				5FDABF6F175348AB005EDD03 /* ImageReductionPlugin.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -714,6 +721,7 @@
 			files = (
 				5FDABF6A175348AB005EDD03 /* ADPreferencePane.m in Sources */,
 				5FDABF6E175348AB005EDD03 /* ADScalingFunction.m in Sources */,
+				5F4BA7AE1753EF2900726567 /* ADProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1070,6 +1078,7 @@
 				5FDABF5317534850005EDD03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5FDABF5417534850005EDD03 /* Build configuration list for PBXNativeTarget "ImageReductionPluginTests" */ = {
 			isa = XCConfigurationList;
@@ -1078,6 +1087,7 @@
 				5FDABF5617534850005EDD03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5FDABF8117534A83005EDD03 /* Build configuration list for PBXNativeTarget "FITSImporter" */ = {
 			isa = XCConfigurationList;
@@ -1086,6 +1096,7 @@
 				5FDABF8317534A83005EDD03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

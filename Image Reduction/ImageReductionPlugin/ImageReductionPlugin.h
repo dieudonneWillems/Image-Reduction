@@ -18,6 +18,7 @@
 #import "ADScalingFunction.h"
 #import "ADDataObject.h"
 #import "ADImage.h"
+#import "ADProperties.h"
 
 #define ADImportFileAddedNotification @"ADImportFileAddedNotification"
 #define ADImportFileStartedNotification @"ADImportFileStartedNotification"

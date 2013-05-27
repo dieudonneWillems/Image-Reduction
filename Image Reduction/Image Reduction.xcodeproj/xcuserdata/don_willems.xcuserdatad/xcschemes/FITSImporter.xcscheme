@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5FDABF7717534A83005EDD03"
-               BuildableName = "FITSImporter.bundle"
+               BuildableName = "FITSImporter.plugin"
                BlueprintName = "FITSImporter"
                ReferencedContainer = "container:Image Reduction.xcodeproj">
             </BuildableReference>
