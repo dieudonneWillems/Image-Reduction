@@ -102,7 +102,7 @@
 
 - (void) addDataObject:(id<ADDataObject>)object
 {
-    
+    [dataObjects addObject:object];
 }
 
 @end
