@@ -14,6 +14,7 @@
     IBOutlet NSWindow* mainDocumentWindow;
     NSMutableArray *dataObjectWrappers;
     NSMutableArray *changedDataObjectWrappers;
+    NSUInteger seed;
 }
 
 - (void) addDataObjectWrapper:(ADDataObjectWrapper*)wrapper;

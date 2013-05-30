@@ -38,7 +38,7 @@
     return [NSArray arrayWithObject:@"fits"];
 }
 
-- (NSArray*) importFileAtPath:(NSString*)path
+- (NSArray*) importFileAtPath:(NSString*)path withSeed:(NSUInteger)seed
 {
     FITSFile *fitsfile = [FITSFile FITSFileAtPath:path];
     NSMutableArray *array = [NSMutableArray array];
@@ -50,7 +50,7 @@
             FITSImage *image = [hud imageAtPlaneIndex:i];
             ADDataObjectWrapper *wrapper = [ADDataObjectWrapper createWrapperForDataObject:image ofType:ADPropertyTypeImage];
             [self parsePropertiesFromHeader:[hud header] into:wrapper];
-            [wrapper setFilename:[[path lastPathComponent] stringByDeletingPathExtension]];
+            [wrapper bundleFilenameFromOriginalFilename:[path lastPathComponent] withSeed:seed];
             [array addObject:wrapper];
         }
     }
@@ -60,12 +60,9 @@
 
 - (void) parsePropertiesFromHeader:(FITSHeader*)header into:(ADDataObjectWrapper*)wrapper
 {
-    NSLog(@"header = %@",header);
     NSMutableArray *properties = [NSMutableArray array];
     NSString *obstype = [header stringValueForRecordWithIdentifier:@"OBSTYPE"];
     NSString *fltype = [header stringValueForRecordWithIdentifier:@"FILETYPE"];
-    ADProperty *otype = [ADProperty typePropertyWithValueKey:ADPropertyTypeImage];
-    [properties addObject:otype];
     if([[obstype uppercaseString] isEqualToString:@"BIAS"]){
         ADProperty *obst = [ADProperty imageTypePropertyWithValueKey:ADPropertyImageTypeBias];
         [properties addObject:obst];

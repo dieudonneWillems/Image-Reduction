@@ -11,5 +11,6 @@
 
 #define ADApplicationVersionKey @"ADApplicationVersion"
 #define ADObjectListKey @"ADObjectListKey"
+#define ADDataObjectCount @"ADDataObjectCount"
 
 #endif

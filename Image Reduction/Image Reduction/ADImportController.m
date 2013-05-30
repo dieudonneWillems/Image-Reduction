@@ -12,9 +12,9 @@
 static ADImportController *controller;
 
 @interface ADImportController (private)
-- (void) startImportingFile:(NSString*)path;
+- (void) startImportingFileWithUserInfo:(NSDictionary*)ui;
 - (void) finishedImporting:(NSString*)path;
-- (void) performImport:(NSString*)path;
+- (void) performImport:(NSDictionary*)userinfo;
 - (void) postNotificationOnMainThreadWithName:(NSString*)name userObject:(id)uobject andKey:(NSString*)key;
 - (void) postNotificationOnMainThread:(NSNotification*)not;
 - (void) postNotificationWithName:(NSString*)name userObject:(id)uobject andKey:(NSString*)key;
@@ -71,13 +71,14 @@ static ADImportController *controller;
     return nil;
 }
 
-- (void) addFileToStack:(NSString*)path
+- (void) addFileToStack:(NSString*)path withSeed:(NSUInteger)seed
 {
-    [stack addObject:path];
+    NSDictionary *ui = [NSDictionary dictionaryWithObjectsAndKeys:path,@"PATH",[NSNumber numberWithUnsignedInteger:seed],@"SEED", nil];
+    [stack addObject:ui];
     NSLog(@"Adding file: %@",path);
     [self postNotificationWithName:ADImportFileAddedNotification userObject:path andKey:ADImportFilePath];
     if(!running){
-        [self startImportingFile:[stack objectAtIndex:0]];
+        [self startImportingFileWithUserInfo:[stack objectAtIndex:0]];
     }
 }
 
@@ -86,27 +87,29 @@ static ADImportController *controller;
     return running;
 }
 
-- (void) startImportingFile:(NSString*)path
+- (void) startImportingFileWithUserInfo:(NSDictionary*)ui
 {
-    NSLog(@"Start importing %@",path);
     if(!running){
         [self postNotification:[NSNotification notificationWithName:ADImportStartedNotification object:self]];
     }
     running = YES;
-    [stack removeObject:path];
+    [stack removeObject:ui];
+    NSString *path = [ui objectForKey:@"PATH"];
     [self postNotificationWithName:ADImportFileStartedNotification userObject:path andKey:ADImportFilePath];
-    NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(performImport:) object:path];
+    NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(performImport:) object:ui];
     [thread start];
 }
 
-- (void) performImport:(NSString*)path
+- (void) performImport:(NSDictionary*)userinfo
 {
+    NSString *path = [userinfo objectForKey:@"PATH"];
+    NSUInteger seed = [[userinfo objectForKey:@"SEED"] unsignedIntegerValue];
     NSLog(@"Perform importing %@",path);
     id<ADImporter> importer = [self importerForFile:path];
-    id object = [importer importFileAtPath:path];
+    id object = [importer importFileAtPath:path withSeed:seed];
     NSLog(@"object: %@",object);
-    NSDictionary *userinfo = [NSDictionary dictionaryWithObjectsAndKeys:path,ADImportFilePath,object,ADImportFileObject, nil];
-    [self postNotificationOnMainThread:[NSNotification notificationWithName:ADImportFileFinishedNotification object:self userInfo:userinfo]];
+    NSDictionary *userinfo2 = [NSDictionary dictionaryWithObjectsAndKeys:path,ADImportFilePath,object,ADImportFileObject, nil];
+    [self postNotificationOnMainThread:[NSNotification notificationWithName:ADImportFileFinishedNotification object:self userInfo:userinfo2]];
     [self performSelectorOnMainThread:@selector(finishedImporting:) withObject:path waitUntilDone:YES];
 }
 
@@ -114,8 +117,8 @@ static ADImportController *controller;
 {
     NSLog(@"Finished importing %@",path);
     if([stack count]>0){
-        NSString *nextpath = [stack objectAtIndex:0];
-        [self startImportingFile:nextpath];
+        NSDictionary *nextpath = [stack objectAtIndex:0];
+        [self startImportingFileWithUserInfo:nextpath];
     }else{
         running = NO;
         [self postNotification:[NSNotification notificationWithName:ADImportFinishedNotification object:self]];

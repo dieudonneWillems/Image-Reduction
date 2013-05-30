@@ -8,6 +8,9 @@
 
 #import "ADProperty.h"
 
+NSString * const ADPropertyFilename = @"ADPropertyFilename";
+NSString * const ADPropertyOriginalFilename = @"ADPropertyOriginalFilename";
+
 NSString * const ADPropertyType = @"ADPropertyType";
 NSString * const ADPropertyTypeImage = @"ADPropertyTypeImage";
 NSString * const ADPropertyTypeTable = @"ADPropertyTypeTable";
@@ -108,6 +111,7 @@ double const ADUnknownErrorValue = NAN;
         doubleNegativeErrorValue = ADUnknownErrorValue;
         floatPositiveErrorValue = ADUnknownErrorValue;
         floatNegativeErrorValue = ADUnknownErrorValue;
+        dataType = ADPropertyDataTypeConstrainedValue;
     }
     return self;
 }
@@ -127,6 +131,7 @@ double const ADUnknownErrorValue = NAN;
         doubleNegativeErrorValue = ADUnknownErrorValue;
         floatPositiveErrorValue = ADUnknownErrorValue;
         floatNegativeErrorValue = ADUnknownErrorValue;
+        dataType = ADPropertyDataTypeString;
     }
     return self;
 }
@@ -146,6 +151,7 @@ double const ADUnknownErrorValue = NAN;
         doubleNegativeErrorValue = negError;
         floatPositiveErrorValue = ADUnknownErrorValue;
         floatNegativeErrorValue = ADUnknownErrorValue;
+        dataType = ADPropertyDataTypeDouble;
     }
     return self;
 }
@@ -165,6 +171,7 @@ double const ADUnknownErrorValue = NAN;
         doubleNegativeErrorValue = ADUnknownErrorValue;
         floatPositiveErrorValue = posError;
         floatNegativeErrorValue = negError;
+        dataType = ADPropertyDataTypeFloat;
     }
     return self;
 }
@@ -184,6 +191,56 @@ double const ADUnknownErrorValue = NAN;
         doubleNegativeErrorValue = ADUnknownErrorValue;
         floatPositiveErrorValue = ADUnknownErrorValue;
         floatNegativeErrorValue = ADUnknownErrorValue;
+        dataType = ADPropertyDataTypeInteger;
+    }
+    return self;
+}
+
+
+- (id) initWithSerializedDictionary:(NSDictionary*)prop
+{
+    self = [super init];
+    if(self){
+        propertyKey = [prop objectForKey:@"ADPropertyKey"];
+        dataType = (ADPropertyDataType)[[prop objectForKey:@"ADPropertyDataType"] shortValue];
+        propertyValueKey = nil;
+        stringValue = nil;
+        unitKey = nil;
+        doubleValue = ADUnknownValue;
+        floatValue = ADUnknownValue;
+        integerValue = ADUnknownValue;
+        doublePositiveErrorValue = ADUnknownErrorValue;
+        doubleNegativeErrorValue = ADUnknownErrorValue;
+        floatPositiveErrorValue = ADUnknownErrorValue;
+        floatNegativeErrorValue = ADUnknownErrorValue;
+        NSNumber *en, *ep;
+        switch (dataType) {
+            case ADPropertyDataTypeConstrainedValue:
+                propertyValueKey = [prop objectForKey:@"ADPropertyValue"];
+                break;
+            case ADPropertyDataTypeDouble:
+                doubleValue = [(NSNumber*)[prop objectForKey:@"ADPropertyValue"] doubleValue];
+                en = [prop objectForKey:@"ADPropertyNegativeError"];
+                if(en) doubleNegativeErrorValue = [en doubleValue];
+                ep = [prop objectForKey:@"ADPropertyPositiveError"];
+                if(en) doublePositiveErrorValue = [ep doubleValue];
+                unitKey = [prop objectForKey:@"ADPropertyUnit"];
+                break;
+            case ADPropertyDataTypeFloat:
+                floatValue = [(NSNumber*)[prop objectForKey:@"ADPropertyValue"] floatValue];
+                en = [prop objectForKey:@"ADPropertyNegativeError"];
+                if(en) floatNegativeErrorValue = [en floatValue];
+                ep = [prop objectForKey:@"ADPropertyPositiveError"];
+                if(en) floatPositiveErrorValue = [ep floatValue];
+                unitKey = [prop objectForKey:@"ADPropertyUnit"];
+                break;
+            case ADPropertyDataTypeInteger:
+                integerValue = [[prop objectForKey:@"ADPropertyValue"] integerValue];
+                break;
+            case ADPropertyDataTypeString:
+                stringValue = [prop objectForKey:@"ADPropertyValue"];
+                break;
+        }
     }
     return self;
 }
@@ -199,6 +256,7 @@ double const ADUnknownErrorValue = NAN;
 @synthesize floatPositiveErrorValue;
 @synthesize doubleNegativeErrorValue;
 @synthesize floatNegativeErrorValue;
+@synthesize dataType;
 
 - (NSString*) valueDescription
 {
@@ -238,6 +296,37 @@ double const ADUnknownErrorValue = NAN;
 {
     NSString *vdesc = [self valueDescription];
     return [NSString stringWithFormat:@"%@ = %@",propertyKey,vdesc];
+}
+
+- (NSDictionary*) serializableDictionary
+{
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setObject:propertyKey forKey:@"ADPropertyKey"];
+    [dict setObject:[NSNumber numberWithShort:dataType] forKey:@"ADPropertyDataType"];
+    switch (dataType) {
+        case ADPropertyDataTypeConstrainedValue:
+            [dict setObject:propertyValueKey forKey:@"ADPropertyValue"];
+            break;
+        case ADPropertyDataTypeString:
+            [dict setObject:stringValue forKey:@"ADPropertyValue"];
+            break;
+        case ADPropertyDataTypeDouble:
+            [dict setObject:[NSNumber numberWithDouble:doubleValue] forKey:@"ADPropertyValue"];
+            if(doubleNegativeErrorValue!=ADUnknownErrorValue) [dict setObject:[NSNumber numberWithDouble:doubleNegativeErrorValue] forKey:@"ADPropertyNegativeError"];
+            if(doublePositiveErrorValue!=ADUnknownErrorValue) [dict setObject:[NSNumber numberWithDouble:doublePositiveErrorValue] forKey:@"ADPropertyPositiveError"];
+            if(unitKey) [dict setObject:unitKey forKey:@"ADPropertyUnit"];
+            break;
+        case ADPropertyDataTypeFloat:
+            [dict setObject:[NSNumber numberWithFloat:floatValue] forKey:@"ADPropertyValue"];
+            if(floatNegativeErrorValue!=ADUnknownErrorValue) [dict setObject:[NSNumber numberWithFloat:floatNegativeErrorValue] forKey:@"ADPropertyNegativeError"];
+            if(floatPositiveErrorValue!=ADUnknownErrorValue) [dict setObject:[NSNumber numberWithFloat:floatPositiveErrorValue] forKey:@"ADPropertyPositiveError"];
+            if(unitKey) [dict setObject:unitKey forKey:@"ADPropertyUnit"];
+            break;
+        case ADPropertyDataTypeInteger:
+            [dict setObject:[NSNumber numberWithInteger:integerValue] forKey:@"ADPropertyValue"];
+            break;
+    }
+    return dict;
 }
 
 @end

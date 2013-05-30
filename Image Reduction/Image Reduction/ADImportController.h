@@ -22,7 +22,7 @@
 - (NSArray*) supportedFileTypes;
 - (id<ADImporter>) importerForFile:(NSString*)path;
 
-- (void) addFileToStack:(NSString*)path;
+- (void) addFileToStack:(NSString*)path withSeed:(NSUInteger)seed;
 
 - (BOOL) running;
 @end

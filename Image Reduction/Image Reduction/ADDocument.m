@@ -22,6 +22,9 @@
 {
     self = [super init];
     if (self) {
+        seed = 1;
+        dataObjectWrappers = [NSMutableArray array];
+        changedDataObjectWrappers = [NSMutableArray array];
         // Add your subclass-specific initialization here.
     }
     return self;
@@ -42,8 +45,6 @@
     [nc addObserver:self selector:@selector(importNotificationRecieved:) name:nil object:[ADImportController sharedImportController]];
     [nc addObserver:self selector:@selector(updateNotificationRecieved:) name:ADDataObjectUpdatedNotification object:nil];
     NSLog(@"Start loading plugins.");
-    dataObjectWrappers = [NSMutableArray array];
-    changedDataObjectWrappers = [NSMutableArray array];
 }
 
 + (BOOL)autosavesInPlace
@@ -57,7 +58,16 @@
     wrapper = [[dirWrapper fileWrappers] objectForKey:@"document-properties.plist"];
     NSData* propertyList = [wrapper regularFileContents];
     NSMutableDictionary *properties = [NSPropertyListSerialization propertyListWithData:propertyList options:NSPropertyListMutableContainersAndLeaves format:nil error:outError];
+    NSNumber *seednr = [properties objectForKey:ADDataObjectCount];
+    NSArray *objectslist = [properties objectForKey:ADObjectListKey];
+    for(NSDictionary *wdict in objectslist){
+        ADDataObjectWrapper *wrapper = [[ADDataObjectWrapper alloc] initFromDictionary:wdict];
+        [dataObjectWrappers addObject:wrapper];
+    }
+    NSLog(@"Read data object wrappers: %@",dataObjectWrappers);
+    seed = [seednr unsignedIntegerValue]+1;
     NSLog(@"File bundle with properties: %@",properties);
+    NSLog(@"1 - seed= %ld",seed);
     return YES;
 }
 
@@ -73,13 +83,14 @@
     NSFileWrapper *dirWrapper = [[NSFileWrapper alloc] initDirectoryWithFileWrappers:nil];
     NSString *version = [[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"] description];
     NSMutableDictionary *properties = [NSMutableDictionary dictionary];
+    [properties setObject:[NSNumber numberWithUnsignedInteger:seed-1] forKey:ADDataObjectCount];
     [properties setObject:version forKey:ADApplicationVersionKey];
     NSMutableArray *objectlist = [NSMutableArray array];
     [properties setObject:objectlist forKey:ADObjectListKey];
     NSUInteger i;
     for(i=0;i<[dataObjectWrappers count];i++){
         ADDataObjectWrapper *wrapper = [dataObjectWrappers objectAtIndex:i];
-        [objectlist addObject:[wrapper filename]];
+        [objectlist addObject:[wrapper serializeToDictionary]];
     }
     NSData* propertyList = [NSPropertyListSerialization dataWithPropertyList:properties format:NSPropertyListXMLFormat_v1_0 options:0 error:outError];
     [dirWrapper addRegularFileWithContents:propertyList preferredFilename:@"document-properties.plist"];
@@ -101,7 +112,9 @@
             if (returnCode == NSOKButton){
                 NSArray *files = [openpanel URLs];
                 for(NSURL *url in files){
-                    [ic addFileToStack:[url path]];
+                    NSLog(@"2 - seed= %ld",seed);
+                    [ic addFileToStack:[url path] withSeed:seed];
+                    seed++;
                 }
             }
         }];

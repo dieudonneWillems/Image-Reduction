@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString * const ADPropertyFilename;
+extern NSString * const ADPropertyOriginalFilename;
+
 extern NSString * const ADPropertyType;
 // values
 extern NSString * const ADPropertyTypeImage;
@@ -30,6 +33,14 @@ extern NSString * const ADPropertyImageTypeStacked;
 extern double const ADUnknownValue;
 extern double const ADUnknownErrorValue;
 
+typedef enum __property_data_type {
+    ADPropertyDataTypeConstrainedValue,
+    ADPropertyDataTypeString,
+    ADPropertyDataTypeDouble,
+    ADPropertyDataTypeInteger,
+    ADPropertyDataTypeFloat
+} ADPropertyDataType;
+
 @interface ADProperty : NSObject {
     NSString *propertyKey;
     NSString *propertyValueKey;
@@ -43,6 +54,7 @@ extern double const ADUnknownErrorValue;
     double doubleNegativeErrorValue;
     CGFloat floatPositiveErrorValue;
     CGFloat floatNegativeErrorValue;
+    ADPropertyDataType dataType;
 }
 
 + (ADProperty*) typePropertyWithValueKey:(NSString*)valueKey;
@@ -58,6 +70,8 @@ extern double const ADUnknownErrorValue;
 + (ADProperty*) propertyOfType:(NSString *)typekey withFloatValue:(CGFloat)value inUnits:(NSString*)unitkey withPositiveError:(CGFloat)posError andNegativeError:(CGFloat)negError;
 + (ADProperty*) propertyOfType:(NSString *)typekey withIntegerValue:(NSInteger)value;
 
+- (id) initWithSerializedDictionary:(NSDictionary*)prop;
+
 @property (readonly) NSString *propertyKey;
 @property (readonly) NSString *propertyValueKey;
 @property (readonly) NSString *stringValue;
@@ -69,7 +83,10 @@ extern double const ADUnknownErrorValue;
 @property (readonly) CGFloat floatPositiveErrorValue;
 @property (readonly) double doubleNegativeErrorValue;
 @property (readonly) CGFloat floatNegativeErrorValue;
+@property (readonly) ADPropertyDataType dataType;
 
 - (NSString*) valueDescription;
+
+- (NSDictionary*) serializableDictionary;
 
 @end

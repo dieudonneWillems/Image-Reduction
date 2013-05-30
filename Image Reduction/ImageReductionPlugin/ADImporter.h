@@ -13,6 +13,6 @@
 
 - (NSArray*) supportedFileTypes;
 
-- (NSArray*) importFileAtPath:(NSString*)path;
+- (NSArray*) importFileAtPath:(NSString*)path withSeed:(NSUInteger)seed;
 
 @end
