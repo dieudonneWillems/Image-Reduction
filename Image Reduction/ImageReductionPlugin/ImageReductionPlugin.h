@@ -10,6 +10,7 @@
 #define ReductionPlugin_ReductionPlugin_h
 
 #import "ADImageReductionPlugin.h"
+#import "ADDataObjectWrapper.h"
 #import "ADDataObject.h"
 #import "ADImage.h"
 #import "ADImporter.h"
@@ -19,7 +20,11 @@
 #import "ADDataObject.h"
 #import "ADImage.h"
 #import "ADProperty.h"
+#import "NSNotificationCenter+main_thread.h"
 
+
+
+#pragma mark Import notifications
 #define ADImportFileAddedNotification @"ADImportFileAddedNotification"
 #define ADImportFileStartedNotification @"ADImportFileStartedNotification"
 #define ADImportFileFinishedNotification @"ADImportFileFinishedNotification"
@@ -29,5 +34,11 @@
 
 #define ADImportFilePath @"ADImportFilePath"
 #define ADImportFileObject @"ADImportFileObject" 
+
+
+#pragma mark Update notifications
+#define ADDataObjectUpdatedNotification @"ADDataObjectUpdatedNotification"
+
+#define ADUpdatedDataObject @"ADUpdatedDataObject"
 
 #endif

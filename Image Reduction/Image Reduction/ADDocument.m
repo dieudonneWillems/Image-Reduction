@@ -12,6 +12,8 @@
 
 @interface ADDocument (private)
 - (void) importNotificationRecieved:(NSNotification*)not;
+- (void) updateNotificationRecieved:(NSNotification*)not;
+- (void) addToChangedSet:(ADDataObjectWrapper*)wrapper;
 @end
 
 @implementation ADDocument
@@ -38,9 +40,10 @@
     // Add any code here that needs to be executed once the windowController has loaded the document's window.
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc addObserver:self selector:@selector(importNotificationRecieved:) name:nil object:[ADImportController sharedImportController]];
+    [nc addObserver:self selector:@selector(updateNotificationRecieved:) name:ADDataObjectUpdatedNotification object:nil];
     NSLog(@"Start loading plugins.");
-    properties = [NSMutableDictionary dictionary];
-    dataObjects = [NSMutableArray array];
+    dataObjectWrappers = [NSMutableArray array];
+    changedDataObjectWrappers = [NSMutableArray array];
 }
 
 + (BOOL)autosavesInPlace
@@ -53,22 +56,37 @@
     NSFileWrapper *wrapper;
     wrapper = [[dirWrapper fileWrappers] objectForKey:@"document-properties.plist"];
     NSData* propertyList = [wrapper regularFileContents];
-    properties = [NSPropertyListSerialization propertyListWithData:propertyList options:NSPropertyListMutableContainersAndLeaves format:nil error:outError];
+    NSMutableDictionary *properties = [NSPropertyListSerialization propertyListWithData:propertyList options:NSPropertyListMutableContainersAndLeaves format:nil error:outError];
     NSLog(@"File bundle with properties: %@",properties);
     return YES;
 }
 
+- (BOOL)writeToURL:(NSURL *)absoluteURL ofType:(NSString *)typeName forSaveOperation:(NSSaveOperationType)saveOperation originalContentsURL:(NSURL *)absoluteOriginalContentsURL error:(NSError **)outError
+{
+    NSLog(@"writeToURL operation");
+    return [super writeToURL:absoluteURL ofType:typeName forSaveOperation:saveOperation originalContentsURL:absoluteOriginalContentsURL error:outError];
+}
+
 - (NSFileWrapper *)fileWrapperOfType:(NSString *)typeName error:(NSError **)outError
 {
+    NSLog(@"fileWrapperOfType operation");
     NSFileWrapper *dirWrapper = [[NSFileWrapper alloc] initDirectoryWithFileWrappers:nil];
     NSString *version = [[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"] description];
+    NSMutableDictionary *properties = [NSMutableDictionary dictionary];
     [properties setObject:version forKey:ADApplicationVersionKey];
+    NSMutableArray *objectlist = [NSMutableArray array];
+    [properties setObject:objectlist forKey:ADObjectListKey];
+    NSUInteger i;
+    for(i=0;i<[dataObjectWrappers count];i++){
+        ADDataObjectWrapper *wrapper = [dataObjectWrappers objectAtIndex:i];
+        [objectlist addObject:[wrapper filename]];
+    }
     NSData* propertyList = [NSPropertyListSerialization dataWithPropertyList:properties format:NSPropertyListXMLFormat_v1_0 options:0 error:outError];
     [dirWrapper addRegularFileWithContents:propertyList preferredFilename:@"document-properties.plist"];
     return dirWrapper;
 }
 
-
+#pragma mark Import and Export
 - (IBAction) import:(id)sender
 {
     NSLog(@"Start Import");
@@ -95,14 +113,38 @@
     
 }
 
+#pragma mark Notifications received methods
 - (void) importNotificationRecieved:(NSNotification*)not
 {
     NSLog(@"Notification recieved: %@",not);
+    if([[not name] isEqualToString:ADImportFileFinishedNotification]){
+        NSArray *wrappers = [[not userInfo] objectForKey:ADImportFileObject];
+        for(ADDataObjectWrapper* dataobjectwrapper in wrappers){
+            [self addDataObjectWrapper:dataobjectwrapper];
+        }
+    }
 }
 
-- (void) addDataObject:(id<ADDataObject>)object
+- (void) updateNotificationRecieved:(NSNotification*)not
 {
-    [dataObjects addObject:object];
+    NSLog(@"Notification recieved: %@",not);
+    ADDataObjectWrapper * dataobject = [[not userInfo] objectForKey:ADUpdatedDataObject];
+    [self addToChangedSet:dataobject];
+    NSLog(@"changed data wrappers: %@",changedDataObjectWrappers);
+}
+
+#pragma mark Data Objects
+- (void) addDataObjectWrapper:(ADDataObjectWrapper*)wrapper
+{
+    [dataObjectWrappers addObject:wrapper];
+    [self addToChangedSet:wrapper];
+}
+
+- (void) addToChangedSet:(ADDataObjectWrapper*)wrapper
+{
+    if(![changedDataObjectWrappers containsObject:wrapper]){
+        [changedDataObjectWrappers addObject:wrapper];
+    }
 }
 
 @end

@@ -104,6 +104,7 @@ static ADImportController *controller;
     NSLog(@"Perform importing %@",path);
     id<ADImporter> importer = [self importerForFile:path];
     id object = [importer importFileAtPath:path];
+    NSLog(@"object: %@",object);
     NSDictionary *userinfo = [NSDictionary dictionaryWithObjectsAndKeys:path,ADImportFilePath,object,ADImportFileObject, nil];
     [self postNotificationOnMainThread:[NSNotification notificationWithName:ADImportFileFinishedNotification object:self userInfo:userinfo]];
     [self performSelectorOnMainThread:@selector(finishedImporting:) withObject:path waitUntilDone:YES];

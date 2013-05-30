@@ -10,5 +10,6 @@
 #define Reduction_ADKeys_h
 
 #define ADApplicationVersionKey @"ADApplicationVersion"
+#define ADObjectListKey @"ADObjectListKey"
 
 #endif

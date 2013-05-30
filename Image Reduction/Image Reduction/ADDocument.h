@@ -11,12 +11,12 @@
 #import "ADKeys.h"
 
 @interface ADDocument : NSDocument {
-    NSMutableDictionary *properties;
     IBOutlet NSWindow* mainDocumentWindow;
-    NSMutableArray *dataObjects;
+    NSMutableArray *dataObjectWrappers;
+    NSMutableArray *changedDataObjectWrappers;
 }
 
-- (void) addDataObject:(id<ADDataObject>)object;
+- (void) addDataObjectWrapper:(ADDataObjectWrapper*)wrapper;
 
 - (IBAction) import:(id)sender;
 - (IBAction) export:(id)sender;
