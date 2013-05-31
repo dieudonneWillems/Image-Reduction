@@ -30,6 +30,9 @@
 
 - (void) bundleFilenameFromOriginalFilename:(NSString*)original withSeed:(NSUInteger)seed;
 
+- (BOOL) dataObjectIsLoaded;
+- (BOOL) loadDataObjectFromBundleAtPath:(NSString*)bundlepath;
+
 - (NSArray*) properties;
 - (ADProperty*) propertyForKey:(NSString*)propertyKey;
 - (void) addProperty:(ADProperty*)property;

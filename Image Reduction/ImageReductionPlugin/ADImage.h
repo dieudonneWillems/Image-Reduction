@@ -10,10 +10,20 @@
 #import "ADDataObject.h"
 #import "ADScalingFunction.h"
 
-@protocol ADImage <ADDataObject>
+@interface ADImage : NSImage <ADDataObject> {
+    double **pixels;
+    double averageValue;
+    double medianValue;
+    double minimumValue;
+    double maximumValue;
+    double standardDeviationValue;
+    ADScalingFunction *defaultScaling;
+    BOOL needsCalculateStatistics;
+}
 
-@required
+- (id) initWithData:(NSData*)data;
 
+@property (readwrite) BOOL needsCalculateStatistics;
 @property (readonly) double averageValue;
 @property (readonly) double medianValue;
 @property (readonly) double minimumValue;
@@ -23,5 +33,8 @@
 - (void) recreateImageWithDefaultScaling;
 - (void) recreateImageWithScalingFunction:(ADScalingFunction*)function;
 - (double) getPixelValueAtX:(NSInteger)x andY:(NSInteger)y;
+- (void) setPixelValue:(double)value atX:(NSInteger)x andY:(NSInteger)y;
+
+- (void) calculateStatistics;
 
 @end

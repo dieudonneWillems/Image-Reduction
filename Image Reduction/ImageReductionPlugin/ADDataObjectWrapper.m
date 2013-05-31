@@ -128,6 +128,21 @@
     [self postUpdateDataObjectNotification];
 }
 
+- (BOOL) dataObjectIsLoaded
+{
+    return (dataObject!=nil);
+}
+
+- (BOOL) loadDataObjectFromBundleAtPath:(NSString*)bundlepath
+{
+    NSString *path = [[bundlepath stringByAppendingPathComponent:@"data"] stringByAppendingPathComponent:filename];
+    NSData *data = [NSData dataWithContentsOfFile:path];
+    if([type isEqualToString:ADPropertyTypeImage]){
+        dataObject = [[ADImage alloc] initWithData:data];
+    } // todo Add loading of tables, plots, ...
+    return (dataObject!=nil);
+}
+
 - (NSArray*) properties
 {
     return [properties allValues];

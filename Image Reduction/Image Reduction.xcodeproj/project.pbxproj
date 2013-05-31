@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F08AB0A17595026009C953E /* ADImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F08AB0917595026009C953E /* ADImage.m */; };
 		5F4BA7AD1753EF2900726567 /* ADProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F4BA7AB1753EF2900726567 /* ADProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5F4BA7AE1753EF2900726567 /* ADProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4BA7AC1753EF2900726567 /* ADProperty.m */; };
 		5FDABEE917534404005EDD03 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABEE817534404005EDD03 /* Cocoa.framework */; };
@@ -112,6 +113,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5F08AB0917595026009C953E /* ADImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADImage.m; sourceTree = "<group>"; };
 		5F4BA7AB1753EF2900726567 /* ADProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADProperty.h; sourceTree = "<group>"; };
 		5F4BA7AC1753EF2900726567 /* ADProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADProperty.m; sourceTree = "<group>"; };
 		5FDABEE517534404005EDD03 /* Image Reduction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Image Reduction.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -427,6 +429,7 @@
 				5FF0BB57175614C800F3665D /* ADDataObjectWrapper.h */,
 				5FF0BB58175614C800F3665D /* ADDataObjectWrapper.m */,
 				5FDABF5C175348AB005EDD03 /* ADImage.h */,
+				5F08AB0917595026009C953E /* ADImage.m */,
 				5FDABF62175348AB005EDD03 /* ADScalingFunction.h */,
 				5FDABF63175348AB005EDD03 /* ADScalingFunction.m */,
 			);
@@ -738,6 +741,7 @@
 				5F4BA7AE1753EF2900726567 /* ADProperty.m in Sources */,
 				5FF0BB5617560E3500F3665D /* NSNotificationCenter+main_thread.m in Sources */,
 				5FF0BB5A175614C800F3665D /* ADDataObjectWrapper.m in Sources */,
+				5F08AB0A17595026009C953E /* ADImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

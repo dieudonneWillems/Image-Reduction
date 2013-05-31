@@ -96,9 +96,10 @@
     for(i=0;i<[dataObjectWrappers count];i++){
         ADDataObjectWrapper *wrapper = [dataObjectWrappers objectAtIndex:i];
         NSString *file = [datapath stringByAppendingPathComponent:[wrapper filename]];
+        if(![wrapper dataObjectIsLoaded]) [wrapper loadDataObjectFromBundleAtPath:[[self fileURL] path]];
         id<ADDataObject> object = [wrapper dataObject];
         NSLog(@"object: %@",object);
-        NSData *data = [[wrapper dataObject] dataRepresentation];
+        NSData *data = [object dataRepresentation];
         NSLog(@"data: %@",data);
         BOOL suc = [data writeToFile:file atomically:NO];
         NSLog(@"Writing %@ succes: %d",file,suc);
