@@ -135,4 +135,16 @@
     }
     return pixels[x][y];
 }
+
+- (NSData*) dataRepresentation
+{
+    NSMutableData* data = [NSMutableData data];
+    NSUInteger x,y;
+    for(y=0;y<[self size].height;y++){
+        for(x=0;x<[self size].width;x++){
+            [data appendBytes:&(pixels[x][y]) length:sizeof(double)];
+        }
+    }
+    return data;
+}
 @end

@@ -10,4 +10,6 @@
 #import "ADProperty.h"
 
 @protocol ADDataObject <NSObject>
+
+- (NSData*) dataRepresentation;
 @end

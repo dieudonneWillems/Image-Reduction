@@ -8,12 +8,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Image Reduction/ADDocument.m"
-         timestampString = "391643475.362664"
+         timestampString = "391727434.057072"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "62"
-         endingLineNumber = "62"
-         landmarkName = "-readFromFileWrapper:ofType:error:"
+         startingLineNumber = "97"
+         endingLineNumber = "97"
+         landmarkName = "-writeToURL:ofType:forSaveOperation:originalContentsURL:error:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -21,12 +21,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ImageReductionPlugin/ADDataObjectWrapper.m"
-         timestampString = "391642760.188262"
+         timestampString = "391727625.887192"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "67"
-         endingLineNumber = "67"
-         landmarkName = "-serializeToDictionary"
+         startingLineNumber = "29"
+         endingLineNumber = "29"
+         landmarkName = "-initWithDataObject:ofType:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

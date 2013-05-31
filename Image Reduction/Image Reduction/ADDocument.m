@@ -14,6 +14,8 @@
 - (void) importNotificationRecieved:(NSNotification*)not;
 - (void) updateNotificationRecieved:(NSNotification*)not;
 - (void) addToChangedSet:(ADDataObjectWrapper*)wrapper;
+- (BOOL) createDirectoriesInBundleAtPath:(NSString*)path;
+- (void) handleError:(NSError*)error;
 @end
 
 @implementation ADDocument
@@ -74,7 +76,39 @@
 - (BOOL)writeToURL:(NSURL *)absoluteURL ofType:(NSString *)typeName forSaveOperation:(NSSaveOperationType)saveOperation originalContentsURL:(NSURL *)absoluteOriginalContentsURL error:(NSError **)outError
 {
     NSLog(@"writeToURL operation");
-    return [super writeToURL:absoluteURL ofType:typeName forSaveOperation:saveOperation originalContentsURL:absoluteOriginalContentsURL error:outError];
+    NSError *error = nil;
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSDate *fmd = [[fm attributesOfFileSystemForPath:[absoluteURL path] error:&error] fileModificationDate];
+    NSLog(@"-1-  url: %@ exists %d  mod=%@",absoluteURL,[fm fileExistsAtPath:[absoluteURL path]],fmd);
+    fmd = [[fm attributesOfFileSystemForPath:[absoluteOriginalContentsURL path] error:&error] fileModificationDate];
+    NSLog(@"-1-  original url: %@ exists %d  mod=%@",absoluteOriginalContentsURL,[fm fileExistsAtPath:[absoluteOriginalContentsURL path]],fmd);
+    BOOL ret = [super writeToURL:absoluteURL ofType:typeName forSaveOperation:saveOperation originalContentsURL:absoluteOriginalContentsURL error:outError];
+    if(!ret) return NO;
+    
+    // test if the operation is a simple Save operation and not Save as
+    // only normal save operations can be done incrementaly
+    
+    BOOL ok = [self createDirectoriesInBundleAtPath:[absoluteURL path]];
+    if(!ok) return NO;
+    
+    NSUInteger i;
+    NSString* datapath = [[absoluteURL path] stringByAppendingPathComponent:@"data"];
+    for(i=0;i<[dataObjectWrappers count];i++){
+        ADDataObjectWrapper *wrapper = [dataObjectWrappers objectAtIndex:i];
+        NSString *file = [datapath stringByAppendingPathComponent:[wrapper filename]];
+        id<ADDataObject> object = [wrapper dataObject];
+        NSLog(@"object: %@",object);
+        NSData *data = [[wrapper dataObject] dataRepresentation];
+        NSLog(@"data: %@",data);
+        BOOL suc = [data writeToFile:file atomically:NO];
+        NSLog(@"Writing %@ succes: %d",file,suc);
+    }
+    
+    fmd = [[fm attributesOfFileSystemForPath:[absoluteURL path] error:&error] fileModificationDate];
+    NSLog(@"-2-  url: %@ exists %d mod=%@",absoluteURL,[fm fileExistsAtPath:[absoluteURL path]],fmd);
+    fmd = [[fm attributesOfFileSystemForPath:[absoluteOriginalContentsURL path] error:&error] fileModificationDate];
+    NSLog(@"-2-  original url: %@ exists %d mod=%@",absoluteOriginalContentsURL,[fm fileExistsAtPath:[absoluteOriginalContentsURL path]],fmd);
+    return ret;
 }
 
 - (NSFileWrapper *)fileWrapperOfType:(NSString *)typeName error:(NSError **)outError
@@ -95,6 +129,29 @@
     NSData* propertyList = [NSPropertyListSerialization dataWithPropertyList:properties format:NSPropertyListXMLFormat_v1_0 options:0 error:outError];
     [dirWrapper addRegularFileWithContents:propertyList preferredFilename:@"document-properties.plist"];
     return dirWrapper;
+}
+
+- (BOOL) createDirectoriesInBundleAtPath:(NSString*)path
+{
+    NSError *error = nil;
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSString* datapath = [path stringByAppendingPathComponent:@"data"];
+    if(![fm fileExistsAtPath:datapath]){
+        [fm createDirectoryAtPath:datapath withIntermediateDirectories:YES attributes:nil error:&error];
+        if(error) {
+            [self handleError:error];
+            return NO;
+        }
+    }
+    NSString* thumbnailpath = [path stringByAppendingPathComponent:@"thumbnails"];
+    if(![fm fileExistsAtPath:thumbnailpath]){
+        [fm createDirectoryAtPath:thumbnailpath withIntermediateDirectories:YES attributes:nil error:&error];
+        if(error) {
+            [self handleError:error];
+            return NO;
+        }
+    }
+    return YES;
 }
 
 #pragma mark Import and Export
@@ -158,6 +215,14 @@
     if(![changedDataObjectWrappers containsObject:wrapper]){
         [changedDataObjectWrappers addObject:wrapper];
     }
+}
+
+#pragma mark Error handling
+
+- (void) handleError:(NSError*)error
+{
+    [NSAlert alertWithError:error];
+    NSLog(@"Error: %@",error);
 }
 
 @end
