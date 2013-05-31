@@ -16,6 +16,7 @@
 - (void) addToChangedSet:(ADDataObjectWrapper*)wrapper;
 - (BOOL) createDirectoriesInBundleAtPath:(NSString*)path;
 - (void) handleError:(NSError*)error;
+- (void) writeDataObjectOfWrapper:(ADDataObjectWrapper*)wrapper intoBundleAtDataPath:(NSString*)path originalPath:(NSString*)opath;
 @end
 
 @implementation ADDocument
@@ -76,40 +77,60 @@
 - (BOOL)writeToURL:(NSURL *)absoluteURL ofType:(NSString *)typeName forSaveOperation:(NSSaveOperationType)saveOperation originalContentsURL:(NSURL *)absoluteOriginalContentsURL error:(NSError **)outError
 {
     NSLog(@"writeToURL operation");
-    NSError *error = nil;
     NSFileManager *fm = [NSFileManager defaultManager];
-    NSDate *fmd = [[fm attributesOfFileSystemForPath:[absoluteURL path] error:&error] fileModificationDate];
-    NSLog(@"-1-  url: %@ exists %d  mod=%@",absoluteURL,[fm fileExistsAtPath:[absoluteURL path]],fmd);
-    fmd = [[fm attributesOfFileSystemForPath:[absoluteOriginalContentsURL path] error:&error] fileModificationDate];
-    NSLog(@"-1-  original url: %@ exists %d  mod=%@",absoluteOriginalContentsURL,[fm fileExistsAtPath:[absoluteOriginalContentsURL path]],fmd);
+    
+    // Non-incremental parts of the file bundle are saved normally
     BOOL ret = [super writeToURL:absoluteURL ofType:typeName forSaveOperation:saveOperation originalContentsURL:absoluteOriginalContentsURL error:outError];
     if(!ret) return NO;
     
-    // test if the operation is a simple Save operation and not Save as
-    // only normal save operations can be done incrementaly
     
     BOOL ok = [self createDirectoriesInBundleAtPath:[absoluteURL path]];
     if(!ok) return NO;
-    
     NSUInteger i;
     NSString* datapath = [[absoluteURL path] stringByAppendingPathComponent:@"data"];
-    for(i=0;i<[dataObjectWrappers count];i++){
-        ADDataObjectWrapper *wrapper = [dataObjectWrappers objectAtIndex:i];
-        NSString *file = [datapath stringByAppendingPathComponent:[wrapper filename]];
-        if(![wrapper dataObjectIsLoaded]) [wrapper loadDataObjectFromBundleAtPath:[[self fileURL] path]];
-        id<ADDataObject> object = [wrapper dataObject];
-        NSLog(@"object: %@",object);
-        NSData *data = [object dataRepresentation];
-        NSLog(@"data: %@",data);
-        BOOL suc = [data writeToFile:file atomically:NO];
-        NSLog(@"Writing %@ succes: %d",file,suc);
-    }
+    NSString* odatapath = [[absoluteOriginalContentsURL path] stringByAppendingPathComponent:@"data"];
     
-    fmd = [[fm attributesOfFileSystemForPath:[absoluteURL path] error:&error] fileModificationDate];
-    NSLog(@"-2-  url: %@ exists %d mod=%@",absoluteURL,[fm fileExistsAtPath:[absoluteURL path]],fmd);
-    fmd = [[fm attributesOfFileSystemForPath:[absoluteOriginalContentsURL path] error:&error] fileModificationDate];
-    NSLog(@"-2-  original url: %@ exists %d mod=%@",absoluteOriginalContentsURL,[fm fileExistsAtPath:[absoluteOriginalContentsURL path]],fmd);
+    // test if the operation is a simple Save operation and not Save as only normal save operations can be done incrementaly
+    if(saveOperation==NSSaveOperation && ![self keepBackupFile] && absoluteOriginalContentsURL!=nil && [fm fileExistsAtPath:[absoluteOriginalContentsURL path]]){
+        for(i=0;i<[dataObjectWrappers count];i++){
+            ADDataObjectWrapper *wrapper = [dataObjectWrappers objectAtIndex:i];
+            if([changedDataObjectWrappers containsObject:wrapper]){
+                // the data object has changed and should be saved
+                [self writeDataObjectOfWrapper:wrapper intoBundleAtDataPath:datapath originalPath:[absoluteOriginalContentsURL path]];
+            }else{
+                NSString *dpath = [datapath stringByAppendingPathComponent:[wrapper filename]];
+                NSString *opath = [odatapath stringByAppendingPathComponent:[wrapper filename]];
+                // the data object has not changed, the data file from the original location is moved into the new location
+                NSLog(@"Moving %@ to %@",opath,dpath);
+                [fm moveItemAtPath:opath toPath:dpath error:outError];
+            }
+        }
+    }else{
+        // the whole file bundle is (non-incrementally) saved
+        for(i=0;i<[dataObjectWrappers count];i++){
+            NSString *opath = [[self fileURL] path]; // might be wrong in a save as operation
+            if(absoluteOriginalContentsURL){
+                opath = [absoluteOriginalContentsURL path];
+            }
+            ADDataObjectWrapper *wrapper = [dataObjectWrappers objectAtIndex:i];
+            [self writeDataObjectOfWrapper:wrapper intoBundleAtDataPath:datapath originalPath:opath];
+        }
+    }
+    [changedDataObjectWrappers removeAllObjects];
     return ret;
+}
+
+- (void) writeDataObjectOfWrapper:(ADDataObjectWrapper*)wrapper intoBundleAtDataPath:(NSString*)path originalPath:(NSString*)opath
+{
+    NSString *file = [path stringByAppendingPathComponent:[wrapper filename]];
+    // if the dataobject is not yet loaded, load it so that it can be written to the new file
+    if(![wrapper dataObjectIsLoaded]) [wrapper loadDataObjectFromBundleAtPath:opath];
+    id<ADDataObject> object = [wrapper dataObject];
+    NSLog(@"object: %@",object);
+    NSData *data = [object dataRepresentation];
+    NSLog(@"data: %@",data);
+    BOOL suc = [data writeToFile:file atomically:NO];
+    NSLog(@"Writing %@ succes: %d",file,suc);
 }
 
 - (NSFileWrapper *)fileWrapperOfType:(NSString *)typeName error:(NSError **)outError
@@ -153,6 +174,11 @@
         }
     }
     return YES;
+}
+
+- (BOOL) keepBackupFile
+{
+    return NO;
 }
 
 #pragma mark Import and Export
