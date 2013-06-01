@@ -16,7 +16,7 @@
 - (void) addToChangedSet:(ADDataObjectWrapper*)wrapper;
 - (BOOL) createDirectoriesInBundleAtPath:(NSString*)path;
 - (void) handleError:(NSError*)error;
-- (void) writeDataObjectOfWrapper:(ADDataObjectWrapper*)wrapper intoBundleAtDataPath:(NSString*)path originalPath:(NSString*)opath;
+- (BOOL) writeDataObjectOfWrapper:(ADDataObjectWrapper*)wrapper intoBundleAtDataPath:(NSString*)path originalPath:(NSString*)opath;
 @end
 
 @implementation ADDocument
@@ -66,17 +66,14 @@
     for(NSDictionary *wdict in objectslist){
         ADDataObjectWrapper *wrapper = [[ADDataObjectWrapper alloc] initFromDictionary:wdict];
         [dataObjectWrappers addObject:wrapper];
+        [wrapper loadDataObjectFromBundleAtPath:[[self fileURL] path]];
     }
-    NSLog(@"Read data object wrappers: %@",dataObjectWrappers);
     seed = [seednr unsignedIntegerValue]+1;
-    NSLog(@"File bundle with properties: %@",properties);
-    NSLog(@"1 - seed= %ld",seed);
     return YES;
 }
 
 - (BOOL)writeToURL:(NSURL *)absoluteURL ofType:(NSString *)typeName forSaveOperation:(NSSaveOperationType)saveOperation originalContentsURL:(NSURL *)absoluteOriginalContentsURL error:(NSError **)outError
 {
-    NSLog(@"writeToURL operation");
     NSFileManager *fm = [NSFileManager defaultManager];
     
     // Non-incremental parts of the file bundle are saved normally
@@ -101,8 +98,13 @@
                 NSString *dpath = [datapath stringByAppendingPathComponent:[wrapper filename]];
                 NSString *opath = [odatapath stringByAppendingPathComponent:[wrapper filename]];
                 // the data object has not changed, the data file from the original location is moved into the new location
-                NSLog(@"Moving %@ to %@",opath,dpath);
+                NSLog(@"Moving data object from %@ to %@",opath,dpath);
                 [fm moveItemAtPath:opath toPath:dpath error:outError];
+                if(*outError){
+                    NSLog(@"error: %@",*outError);
+                    [self handleError:*outError];
+                    return NO;
+                }
             }
         }
     }else{
@@ -113,29 +115,33 @@
                 opath = [absoluteOriginalContentsURL path];
             }
             ADDataObjectWrapper *wrapper = [dataObjectWrappers objectAtIndex:i];
-            [self writeDataObjectOfWrapper:wrapper intoBundleAtDataPath:datapath originalPath:opath];
+            BOOL suc = [self writeDataObjectOfWrapper:wrapper intoBundleAtDataPath:datapath originalPath:[opath stringByAppendingPathComponent:@"data"]];
+            if(!suc){
+                NSLog(@"Could not write data object to %@",datapath);
+                *outError = [NSError errorWithDomain:@"Image Reduction" code:0 userInfo:nil];
+                [self handleError:*outError];
+            }
         }
     }
     [changedDataObjectWrappers removeAllObjects];
     return ret;
 }
 
-- (void) writeDataObjectOfWrapper:(ADDataObjectWrapper*)wrapper intoBundleAtDataPath:(NSString*)path originalPath:(NSString*)opath
+- (BOOL) writeDataObjectOfWrapper:(ADDataObjectWrapper*)wrapper intoBundleAtDataPath:(NSString*)path originalPath:(NSString*)opath
 {
     NSString *file = [path stringByAppendingPathComponent:[wrapper filename]];
     // if the dataobject is not yet loaded, load it so that it can be written to the new file
     if(![wrapper dataObjectIsLoaded]) [wrapper loadDataObjectFromBundleAtPath:opath];
     id<ADDataObject> object = [wrapper dataObject];
-    NSLog(@"object: %@",object);
     NSData *data = [object dataRepresentation];
-    NSLog(@"data: %@",data);
+    NSLog(@"data size: %ld",[data length]);
+    NSLog(@"Writing dataobject to %@",file);
     BOOL suc = [data writeToFile:file atomically:NO];
-    NSLog(@"Writing %@ succes: %d",file,suc);
+    return suc;
 }
 
 - (NSFileWrapper *)fileWrapperOfType:(NSString *)typeName error:(NSError **)outError
 {
-    NSLog(@"fileWrapperOfType operation");
     NSFileWrapper *dirWrapper = [[NSFileWrapper alloc] initDirectoryWithFileWrappers:nil];
     NSString *version = [[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"] description];
     NSMutableDictionary *properties = [NSMutableDictionary dictionary];

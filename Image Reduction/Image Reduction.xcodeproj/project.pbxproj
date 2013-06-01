@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5F08AB0A17595026009C953E /* ADImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F08AB0917595026009C953E /* ADImage.m */; };
+		5F08AB0D175A9979009C953E /* BinaryDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDABF8817534ACF005EDD03 /* BinaryDataScanner.m */; };
 		5F4BA7AD1753EF2900726567 /* ADProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F4BA7AB1753EF2900726567 /* ADProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5F4BA7AE1753EF2900726567 /* ADProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4BA7AC1753EF2900726567 /* ADProperty.m */; };
 		5FDABEE917534404005EDD03 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABEE817534404005EDD03 /* Cocoa.framework */; };
@@ -46,7 +47,6 @@
 		5FDABF7917534A83005EDD03 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABEE817534404005EDD03 /* Cocoa.framework */; };
 		5FDABF7F17534A83005EDD03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FDABF7D17534A83005EDD03 /* InfoPlist.strings */; };
 		5FDABF8617534A92005EDD03 /* ImageReductionPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABF311753484F005EDD03 /* ImageReductionPlugin.framework */; };
-		5FDABF9717534ACF005EDD03 /* BinaryDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDABF8817534ACF005EDD03 /* BinaryDataScanner.m */; };
 		5FDABF9817534ACF005EDD03 /* FITSData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDABF8A17534ACF005EDD03 /* FITSData.m */; };
 		5FDABF9917534ACF005EDD03 /* FITSFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDABF8C17534ACF005EDD03 /* FITSFile.m */; };
 		5FDABF9A17534ACF005EDD03 /* FITSHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDABF8E17534ACF005EDD03 /* FITSHeader.m */; };
@@ -57,7 +57,7 @@
 		5FDABFA117534BB0005EDD03 /* FITSImporter.plugin in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FDABF7817534A83005EDD03 /* FITSImporter.plugin */; };
 		5FF0BB5517560E3500F3665D /* NSNotificationCenter+main_thread.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF0BB5317560E3500F3665D /* NSNotificationCenter+main_thread.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FF0BB5617560E3500F3665D /* NSNotificationCenter+main_thread.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF0BB5417560E3500F3665D /* NSNotificationCenter+main_thread.m */; };
-		5FF0BB59175614C800F3665D /* ADDataObjectWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF0BB57175614C800F3665D /* ADDataObjectWrapper.h */; };
+		5FF0BB59175614C800F3665D /* ADDataObjectWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF0BB57175614C800F3665D /* ADDataObjectWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FF0BB5A175614C800F3665D /* ADDataObjectWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF0BB58175614C800F3665D /* ADDataObjectWrapper.m */; };
 /* End PBXBuildFile section */
 
@@ -503,8 +503,8 @@
 				5FDABF6D175348AB005EDD03 /* ADScalingFunction.h in Headers */,
 				5F4BA7AD1753EF2900726567 /* ADProperty.h in Headers */,
 				5FF0BB5517560E3500F3665D /* NSNotificationCenter+main_thread.h in Headers */,
-				5FDABF6F175348AB005EDD03 /* ImageReductionPlugin.h in Headers */,
 				5FF0BB59175614C800F3665D /* ADDataObjectWrapper.h in Headers */,
+				5FDABF6F175348AB005EDD03 /* ImageReductionPlugin.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -757,7 +757,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FDABF9717534ACF005EDD03 /* BinaryDataScanner.m in Sources */,
 				5FDABF9817534ACF005EDD03 /* FITSData.m in Sources */,
 				5FDABF9917534ACF005EDD03 /* FITSFile.m in Sources */,
 				5FDABF9A17534ACF005EDD03 /* FITSHeader.m in Sources */,
@@ -765,6 +764,7 @@
 				5FDABF9C17534ACF005EDD03 /* FITSHeaderRecord.m in Sources */,
 				5FDABF9D17534ACF005EDD03 /* FITSImage.m in Sources */,
 				5FDABF9E17534ACF005EDD03 /* FITSImporter.m in Sources */,
+				5F08AB0D175A9979009C953E /* BinaryDataScanner.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -135,7 +135,13 @@
 
 - (BOOL) loadDataObjectFromBundleAtPath:(NSString*)bundlepath
 {
-    NSString *path = [[bundlepath stringByAppendingPathComponent:@"data"] stringByAppendingPathComponent:filename];
+    NSString *path = nil;
+    if([[bundlepath lastPathComponent] isEqualToString:@"data"]){
+        path = [bundlepath stringByAppendingPathComponent:filename];
+    }else{
+        path = [[bundlepath stringByAppendingPathComponent:@"data"] stringByAppendingPathComponent:filename];
+    }
+    NSLog(@"loading dataobject from: %@",path);
     NSData *data = [NSData dataWithContentsOfFile:path];
     if([type isEqualToString:ADPropertyTypeImage]){
         dataObject = [[ADImage alloc] initWithData:data];

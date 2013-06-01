@@ -28,16 +28,19 @@
 {
     CGFloat width,height;
     [data getBytes:&height length:sizeof(CGFloat)];
-    [data getBytes:&width length:sizeof(CGFloat)];
+    [data getBytes:&width range:NSMakeRange(sizeof(CGFloat), sizeof(CGFloat))];
+    NSLog(@"**** image size: %f x %f",width,height);
     NSSize size = NSMakeSize(width, height);
     self = [self initWithSize:size];
     if(self){
         NSUInteger x,y;
+        NSRange rng = NSMakeRange(2*sizeof(CGFloat), sizeof(double));
         for(y=0;y<[self size].height;y++){
             for(x=0;x<[self size].width;x++){
                 double pv;
-                [data getBytes:&pv length:sizeof(double)];
+                [data getBytes:&pv range:rng];
                 pixels[x][y] = pv;
+                rng.location+=sizeof(double);
             }
         }
     }
@@ -116,6 +119,7 @@
     }
     needsCalculateStatistics = YES;
     pixels[x][y] = value;
+   // NSLog(@"value = %f",value);
 }
 
 - (NSData*) dataRepresentation

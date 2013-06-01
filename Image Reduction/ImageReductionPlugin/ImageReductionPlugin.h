@@ -21,6 +21,7 @@
 #import "ADImage.h"
 #import "ADProperty.h"
 #import "NSNotificationCenter+main_thread.h"
+#import "BinaryDataScanner.h"
 
 
 

@@ -44,6 +44,7 @@
             }
         }
     }
+    [self calculateStatistics];
     return self;
 }
 @end
