@@ -12,6 +12,7 @@
 
 @interface ADDataObjectWrapper : NSObject {
     NSString *filename;
+    id<ADDataObject> dataObject;
     NSString *originalFilename;
     NSString *type;
     NSMutableDictionary *properties;
@@ -22,7 +23,7 @@
 
 - (id) initFromDictionary:(NSDictionary*)dict;
 
-@property (readonly) id<ADDataObject> dataObject;
+@property (readwrite) id<ADDataObject> dataObject;
 @property (readwrite) NSString *filename;
 @property (readwrite) NSString *originalFilename;
 @property (readonly) NSString *type;

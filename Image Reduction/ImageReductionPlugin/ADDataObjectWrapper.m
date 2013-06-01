@@ -74,7 +74,17 @@
     return dict;
 }
 
-@synthesize dataObject;
+- (id<ADDataObject>) dataObject
+{
+    return dataObject;
+}
+
+- (void) setDataObject:(id<ADDataObject>)ndataObject
+{
+    dataObject = ndataObject;
+    [self postUpdateDataObjectNotification];
+}
+
 @synthesize type;
 
 - (void) bundleFilenameFromOriginalFilename:(NSString*)original withSeed:(NSUInteger)seed

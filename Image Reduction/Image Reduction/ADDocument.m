@@ -199,8 +199,24 @@
     ADDocument *duplicate = (ADDocument*)[super duplicateAndReturnError:outError];
     NSArray *dupwrappers = [duplicate dataObjectWrappers];
     for(ADDataObjectWrapper *dwrap in dupwrappers){
-        // Loads the data objects in the duplicate file from the original file
-        [dwrap loadDataObjectFromBundleAtPath:[[self fileURL] path]];
+        if([self fileURL]){
+            // Loads the data objects in the duplicate file from the original file
+            [dwrap loadDataObjectFromBundleAtPath:[[self fileURL] path]];
+        }else{
+            // The original data is not yet on file!
+            for(ADDataObjectWrapper *wrap in dataObjectWrappers){
+                if([[wrap filename] isEqualToString:[dwrap filename]]){
+                    // Needs to copy the actual data to the duplicate
+                    if([wrap dataObjectIsLoaded]){
+                        NSData *odat = [[wrap dataObject] dataRepresentation];
+                        Class dc = [[wrap dataObject] class];
+                        id<ADDataObject> ndo = [[dc alloc] initWithData:odat];
+                        [dwrap setDataObject:ndo];
+                    }
+                    break;
+                }
+            }
+        }
     }
     return duplicate;
 }
