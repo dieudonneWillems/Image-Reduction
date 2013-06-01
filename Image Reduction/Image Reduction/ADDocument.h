@@ -17,6 +17,7 @@
     NSUInteger seed;
 }
 
+- (NSArray*) dataObjectWrappers;
 - (void) addDataObjectWrapper:(ADDataObjectWrapper*)wrapper;
 
 - (IBAction) import:(id)sender;

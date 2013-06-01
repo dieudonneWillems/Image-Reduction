@@ -136,6 +136,7 @@
 - (BOOL) loadDataObjectFromBundleAtPath:(NSString*)bundlepath
 {
     NSString *path = nil;
+    if(bundlepath==nil) return NO;
     if([[bundlepath lastPathComponent] isEqualToString:@"data"]){
         path = [bundlepath stringByAppendingPathComponent:filename];
     }else{

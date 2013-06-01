@@ -47,7 +47,6 @@
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc addObserver:self selector:@selector(importNotificationRecieved:) name:nil object:[ADImportController sharedImportController]];
     [nc addObserver:self selector:@selector(updateNotificationRecieved:) name:ADDataObjectUpdatedNotification object:nil];
-    NSLog(@"Start loading plugins.");
 }
 
 + (BOOL)autosavesInPlace
@@ -66,7 +65,7 @@
     for(NSDictionary *wdict in objectslist){
         ADDataObjectWrapper *wrapper = [[ADDataObjectWrapper alloc] initFromDictionary:wdict];
         [dataObjectWrappers addObject:wrapper];
-        [wrapper loadDataObjectFromBundleAtPath:[[self fileURL] path]];
+       // [wrapper loadDataObjectFromBundleAtPath:[[self fileURL] path]];
     }
     seed = [seednr unsignedIntegerValue]+1;
     return YES;
@@ -129,14 +128,20 @@
 
 - (BOOL) writeDataObjectOfWrapper:(ADDataObjectWrapper*)wrapper intoBundleAtDataPath:(NSString*)path originalPath:(NSString*)opath
 {
+    BOOL suc = NO;
     NSString *file = [path stringByAppendingPathComponent:[wrapper filename]];
     // if the dataobject is not yet loaded, load it so that it can be written to the new file
     if(![wrapper dataObjectIsLoaded]) [wrapper loadDataObjectFromBundleAtPath:opath];
     id<ADDataObject> object = [wrapper dataObject];
-    NSData *data = [object dataRepresentation];
-    NSLog(@"data size: %ld",[data length]);
-    NSLog(@"Writing dataobject to %@",file);
-    BOOL suc = [data writeToFile:file atomically:NO];
+    if(object){
+        NSData *data = [object dataRepresentation];
+        NSLog(@"data size: %ld",[data length]);
+        NSLog(@"Writing dataobject to %@",file);
+        suc = [data writeToFile:file atomically:NO];
+    }else{
+        NSLog(@"Could not load data object. path=%@",opath);
+        suc = YES;
+    }
     return suc;
 }
 
@@ -185,6 +190,26 @@
 - (BOOL) keepBackupFile
 {
     return NO;
+}
+
+- (NSDocument *)duplicateAndReturnError:(NSError **)outError
+{
+    // This is a hack, I could not get the dataobjects to be saved when a duplicate was created (could not find a reference to the original file). Apparently when duplicating the document, the data objects were not duplicated.
+    // Creates the duplicate (but without the data objects)
+    ADDocument *duplicate = (ADDocument*)[super duplicateAndReturnError:outError];
+    NSArray *dupwrappers = [duplicate dataObjectWrappers];
+    for(ADDataObjectWrapper *dwrap in dupwrappers){
+        // Loads the data objects in the duplicate file from the original file
+        [dwrap loadDataObjectFromBundleAtPath:[[self fileURL] path]];
+    }
+    return duplicate;
+}
+
+- (BOOL) isDocumentEdited
+{
+    BOOL ed = [super isDocumentEdited];
+    if(ed)return ed;
+    return ([changedDataObjectWrappers count]>0);
 }
 
 #pragma mark Import and Export
@@ -237,6 +262,12 @@
 }
 
 #pragma mark Data Objects
+
+- (NSArray*) dataObjectWrappers
+{
+    return dataObjectWrappers;
+}
+
 - (void) addDataObjectWrapper:(ADDataObjectWrapper*)wrapper
 {
     [dataObjectWrappers addObject:wrapper];
@@ -248,6 +279,7 @@
     if(![changedDataObjectWrappers containsObject:wrapper]){
         [changedDataObjectWrappers addObject:wrapper];
     }
+    if([self isDocumentEdited]) [mainDocumentWindow setDocumentEdited:YES];
 }
 
 #pragma mark Error handling
