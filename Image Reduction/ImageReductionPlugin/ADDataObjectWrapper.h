@@ -28,6 +28,7 @@
 @property (readwrite) NSString *originalFilename;
 @property (readonly) NSString *type;
 @property (readwrite) NSImage *thumbnail;
+- (void) createThumbnail;
 
 - (void) bundleFilenameFromOriginalFilename:(NSString*)original withSeed:(NSUInteger)seed;
 

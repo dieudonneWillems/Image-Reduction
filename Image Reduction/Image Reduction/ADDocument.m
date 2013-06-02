@@ -17,6 +17,7 @@
 - (BOOL) createDirectoriesInBundleAtPath:(NSString*)path;
 - (void) handleError:(NSError*)error;
 - (BOOL) writeDataObjectOfWrapper:(ADDataObjectWrapper*)wrapper intoBundleAtDataPath:(NSString*)path originalPath:(NSString*)opath;
+- (BOOL) writeThumbnailOfWrapper:(ADDataObjectWrapper*)wrapper intoBundleAtThumbnailPath:(NSString*)path originalPath:(NSString*)opath;
 @end
 
 @implementation ADDocument
@@ -85,6 +86,8 @@
     NSUInteger i;
     NSString* datapath = [[absoluteURL path] stringByAppendingPathComponent:@"data"];
     NSString* odatapath = [[absoluteOriginalContentsURL path] stringByAppendingPathComponent:@"data"];
+    NSString* thumbpath = [[absoluteURL path] stringByAppendingPathComponent:@"thumbnails"];
+    NSString* othumbpath = [[absoluteOriginalContentsURL path] stringByAppendingPathComponent:@"thumbnails"];
     
     // test if the operation is a simple Save operation and not Save as only normal save operations can be done incrementaly
     if(saveOperation==NSSaveOperation && ![self keepBackupFile] && absoluteOriginalContentsURL!=nil && [fm fileExistsAtPath:[absoluteOriginalContentsURL path]]){
@@ -93,12 +96,21 @@
             if([changedDataObjectWrappers containsObject:wrapper]){
                 // the data object has changed and should be saved
                 [self writeDataObjectOfWrapper:wrapper intoBundleAtDataPath:datapath originalPath:[absoluteOriginalContentsURL path]];
+                [self writeThumbnailOfWrapper:wrapper intoBundleAtThumbnailPath:thumbpath originalPath:[absoluteOriginalContentsURL path]];
             }else{
                 NSString *dpath = [datapath stringByAppendingPathComponent:[wrapper filename]];
                 NSString *opath = [odatapath stringByAppendingPathComponent:[wrapper filename]];
+                NSString *dtpath = [[thumbpath stringByAppendingPathComponent:[wrapper filename]] stringByAppendingPathExtension:@"tiff"];
+                NSString *otpath = [[othumbpath stringByAppendingPathComponent:[wrapper filename]] stringByAppendingPathExtension:@"tiff"];
                 // the data object has not changed, the data file from the original location is moved into the new location
                 NSLog(@"Moving data object from %@ to %@",opath,dpath);
                 [fm moveItemAtPath:opath toPath:dpath error:outError];
+                if(*outError){
+                    NSLog(@"error: %@",*outError);
+                    [self handleError:*outError];
+                    return NO;
+                }
+                [fm moveItemAtPath:otpath toPath:dtpath error:outError];
                 if(*outError){
                     NSLog(@"error: %@",*outError);
                     [self handleError:*outError];
@@ -115,6 +127,7 @@
             }
             ADDataObjectWrapper *wrapper = [dataObjectWrappers objectAtIndex:i];
             BOOL suc = [self writeDataObjectOfWrapper:wrapper intoBundleAtDataPath:datapath originalPath:[opath stringByAppendingPathComponent:@"data"]];
+            suc = [self writeThumbnailOfWrapper:wrapper intoBundleAtThumbnailPath:thumbpath originalPath:[opath stringByAppendingPathComponent:@"data"]];
             if(!suc){
                 NSLog(@"Could not write data object to %@",datapath);
                 *outError = [NSError errorWithDomain:@"Image Reduction" code:0 userInfo:nil];
@@ -140,6 +153,26 @@
         suc = [data writeToFile:file atomically:NO];
     }else{
         NSLog(@"Could not load data object. path=%@",opath);
+        suc = YES;
+    }
+    return suc;
+}
+
+- (BOOL) writeThumbnailOfWrapper:(ADDataObjectWrapper*)wrapper intoBundleAtThumbnailPath:(NSString*)path originalPath:(NSString*)opath;
+{
+    BOOL suc = NO;
+    NSString *file = [[path stringByAppendingPathComponent:[wrapper filename]] stringByAppendingPathExtension:@"tiff"];
+    NSImage *thumbnail = [wrapper thumbnail];
+    if(!thumbnail){
+        // if the dataobject is not yet loaded, load it so that it can be written to the new file
+        if(![wrapper dataObjectIsLoaded]) [wrapper loadDataObjectFromBundleAtPath:opath];
+        [wrapper createThumbnail];
+    }
+    if(thumbnail){
+        NSData *data = [thumbnail TIFFRepresentation];
+        suc = [data writeToFile:file atomically:NO];
+    }else{
+        NSLog(@"Could not load thumbnail. path=%@",opath);
         suc = YES;
     }
     return suc;

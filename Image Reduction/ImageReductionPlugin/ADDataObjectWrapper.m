@@ -29,6 +29,7 @@
         dataObject = object;
         ADProperty *otype = [ADProperty typePropertyWithValueKey:tp];
         [properties setObject:otype forKey:[otype propertyKey]];
+        [self createThumbnail];
     }
     return self;
 }
@@ -82,7 +83,26 @@
 - (void) setDataObject:(id<ADDataObject>)ndataObject
 {
     dataObject = ndataObject;
+    [self createThumbnail];
     [self postUpdateDataObjectNotification];
+}
+
+- (void) createThumbnail
+{
+    if([dataObject isKindOfClass:[ADImage class]]){
+        ADImage *image = (ADImage*)dataObject;
+        [image recreateImageWithDefaultScaling];
+        thumbnail = [[NSImage alloc] initWithSize:NSMakeSize(32, 32)];
+        [thumbnail lockFocus];
+        NSRect thn;
+        thn.origin = NSZeroPoint;
+        thn.size = [thumbnail size];
+        NSRect ori;
+        ori.origin = NSZeroPoint;
+        ori.size = [image size];
+        [image drawInRect:thn fromRect:ori operation:NSCompositeCopy fraction:1.0];
+        [thumbnail unlockFocus];
+    }
 }
 
 @synthesize type;

@@ -21,6 +21,8 @@
             pixels[i] = (double*)malloc(sizeof(double)*size.height);
         }
     }
+    maximumValue = -9999;
+    minimumValue = 9999;
     return self;
 }
 
@@ -70,6 +72,12 @@
 
 - (void) recreateImageWithDefaultScaling
 {
+    if(defaultScaling==nil){
+        if(maximumValue<minimumValue) [self calculateStatistics];
+        defaultScaling = [[ADScalingFunction alloc] init];
+        [defaultScaling setBlackPoint:averageValue-standardDeviationValue];
+        [defaultScaling setWhitePoint:averageValue+standardDeviationValue*2];
+    }
     [self recreateImageWithScalingFunction:defaultScaling];
 }
 
@@ -89,6 +97,10 @@
                                 bitsPerPixel:0];  // 0 == determine automatically
     NSUInteger maxv = (pow(2,bps)-1);
     NSUInteger i,j;
+    NSLog(@"Average pixel value: %f",averageValue);
+    NSLog(@"Maximum pixel value: %f",maximumValue);
+    NSLog(@"Minimum pixel value: %f",minimumValue);
+    NSLog(@"Standard Deviation pixel value: %f",standardDeviationValue);
     for(i=0;i<[self size].width;i++){
         for(j=0;j<[self size].height;j++){
             double value = pixels[i][j];
