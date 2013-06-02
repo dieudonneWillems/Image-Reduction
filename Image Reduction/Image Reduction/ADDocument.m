@@ -66,7 +66,10 @@
     for(NSDictionary *wdict in objectslist){
         ADDataObjectWrapper *wrapper = [[ADDataObjectWrapper alloc] initFromDictionary:wdict];
         [dataObjectWrappers addObject:wrapper];
-       // [wrapper loadDataObjectFromBundleAtPath:[[self fileURL] path]];
+        // [wrapper loadDataObjectFromBundleAtPath:[[self fileURL] path]];
+        NSString* thumbpath = [[[[[self fileURL] path]stringByAppendingPathComponent:@"thumbnails"] stringByAppendingPathComponent:[wrapper filename]] stringByAppendingPathExtension:@"tiff"];
+        NSImage *tmb = [[NSImage alloc] initWithContentsOfFile:thumbpath];
+        [wrapper setThumbnail:tmb];
     }
     seed = [seednr unsignedIntegerValue]+1;
     return YES;
