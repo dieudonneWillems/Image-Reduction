@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-
+@class ADDataObjectWrapper;
 
 typedef enum __ADViewArea {
     ADNavigationSideViewArea,
@@ -18,5 +18,4 @@ typedef enum __ADViewArea {
 @interface ADViewController : NSViewController
 
 - (ADViewArea) preferredViewArea;
-
 @end

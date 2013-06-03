@@ -7,6 +7,7 @@
 //
 
 #import "ADViewController.h"
+#import "ADDataObjectWrapper.h"
 
 @interface ADViewController (private)
 

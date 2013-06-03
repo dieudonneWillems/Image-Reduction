@@ -21,7 +21,9 @@
 #import "ADImage.h"
 #import "ADProperty.h"
 #import "NSNotificationCenter+main_thread.h"
-#import "BinaryDataScanner.h"
+#import "ADViewController.h"
+#import "ADViewPlugin.h"
+#import "ADDataViewController.h"
 
 
 
@@ -41,5 +43,15 @@
 #define ADDataObjectUpdatedNotification @"ADDataObjectUpdatedNotification"
 
 #define ADUpdatedDataObject @"ADUpdatedDataObject"
+
+
+
+#pragma mark View notifications
+#define ADViewChangedDataObjectNotification @"ADViewChangedDataObjectNotification"
+
+#define ADPreviousDataObject @"ADPreviousDataObject"
+#define ADCurrentDataObject @"ADCurrentDataObject"
+#define ADDataView @"ADDataView"
+
 
 #endif
