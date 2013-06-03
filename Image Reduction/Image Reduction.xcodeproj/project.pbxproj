@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5F08AB0A17595026009C953E /* ADImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F08AB0917595026009C953E /* ADImage.m */; };
 		5F08AB0D175A9979009C953E /* BinaryDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDABF8817534ACF005EDD03 /* BinaryDataScanner.m */; };
+		5F08AB15175D4479009C953E /* ADViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F08AB13175D4479009C953E /* ADViewController.h */; };
+		5F08AB16175D4479009C953E /* ADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F08AB14175D4479009C953E /* ADViewController.m */; };
 		5F4BA7AD1753EF2900726567 /* ADProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F4BA7AB1753EF2900726567 /* ADProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5F4BA7AE1753EF2900726567 /* ADProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4BA7AC1753EF2900726567 /* ADProperty.m */; };
 		5FDABEE917534404005EDD03 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABEE817534404005EDD03 /* Cocoa.framework */; };
@@ -114,6 +116,8 @@
 
 /* Begin PBXFileReference section */
 		5F08AB0917595026009C953E /* ADImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADImage.m; sourceTree = "<group>"; };
+		5F08AB13175D4479009C953E /* ADViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADViewController.h; sourceTree = "<group>"; };
+		5F08AB14175D4479009C953E /* ADViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADViewController.m; sourceTree = "<group>"; };
 		5F4BA7AB1753EF2900726567 /* ADProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADProperty.h; sourceTree = "<group>"; };
 		5F4BA7AC1753EF2900726567 /* ADProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADProperty.m; sourceTree = "<group>"; };
 		5FDABEE517534404005EDD03 /* Image Reduction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Image Reduction.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -238,6 +242,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F08AB0E175D3BEF009C953E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5FDABF5E175348AB005EDD03 /* ADPreferencePane.h */,
+				5FDABF5F175348AB005EDD03 /* ADPreferencePane.m */,
+				5F08AB13175D4479009C953E /* ADViewController.h */,
+				5F08AB14175D4479009C953E /* ADViewController.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		5FDABEDC17534404005EDD03 = {
 			isa = PBXGroup;
 			children = (
@@ -366,8 +381,7 @@
 				5FDABF7117534910005EDD03 /* Export */,
 				5FDABF7317534942005EDD03 /* Processors */,
 				5FDABF721753492D005EDD03 /* Model */,
-				5FDABF5E175348AB005EDD03 /* ADPreferencePane.h */,
-				5FDABF5F175348AB005EDD03 /* ADPreferencePane.m */,
+				5F08AB0E175D3BEF009C953E /* Views */,
 				5FDABF341753484F005EDD03 /* Supporting Files */,
 				5FF0BB5317560E3500F3665D /* NSNotificationCenter+main_thread.h */,
 				5FF0BB5417560E3500F3665D /* NSNotificationCenter+main_thread.m */,
@@ -505,6 +519,7 @@
 				5FF0BB5517560E3500F3665D /* NSNotificationCenter+main_thread.h in Headers */,
 				5FF0BB59175614C800F3665D /* ADDataObjectWrapper.h in Headers */,
 				5FDABF6F175348AB005EDD03 /* ImageReductionPlugin.h in Headers */,
+				5F08AB15175D4479009C953E /* ADViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,6 +757,7 @@
 				5FF0BB5617560E3500F3665D /* NSNotificationCenter+main_thread.m in Sources */,
 				5FF0BB5A175614C800F3665D /* ADDataObjectWrapper.m in Sources */,
 				5F08AB0A17595026009C953E /* ADImage.m in Sources */,
+				5F08AB16175D4479009C953E /* ADViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
