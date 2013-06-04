@@ -268,6 +268,9 @@
                 }
             }
         }
+        if(![dwrap thumbnail]){
+            [dwrap createThumbnail];
+        }
     }
     return duplicate;
 }
