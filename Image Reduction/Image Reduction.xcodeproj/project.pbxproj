@@ -14,6 +14,11 @@
 		5F08AB18175D466A009C953E /* ADViewPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F08AB17175D466A009C953E /* ADViewPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5F08AB1B175D481C009C953E /* ADDataViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F08AB19175D481B009C953E /* ADDataViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5F08AB1C175D481C009C953E /* ADDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F08AB1A175D481B009C953E /* ADDataViewController.m */; };
+		5F08AB1E175E484D009C953E /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5F08AB1D175E484C009C953E /* license.txt */; };
+		5F08AB1F175E484D009C953E /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5F08AB1D175E484C009C953E /* license.txt */; };
+		5F08AB20175E484D009C953E /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5F08AB1D175E484C009C953E /* license.txt */; };
+		5F08AB21175E484D009C953E /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5F08AB1D175E484C009C953E /* license.txt */; };
+		5F08AB22175E484D009C953E /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5F08AB1D175E484C009C953E /* license.txt */; };
 		5F4BA7AD1753EF2900726567 /* ADProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F4BA7AB1753EF2900726567 /* ADProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5F4BA7AE1753EF2900726567 /* ADProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4BA7AC1753EF2900726567 /* ADProperty.m */; };
 		5FDABEE917534404005EDD03 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABEE817534404005EDD03 /* Cocoa.framework */; };
@@ -124,6 +129,7 @@
 		5F08AB17175D466A009C953E /* ADViewPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADViewPlugin.h; sourceTree = "<group>"; };
 		5F08AB19175D481B009C953E /* ADDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADDataViewController.h; sourceTree = "<group>"; };
 		5F08AB1A175D481B009C953E /* ADDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADDataViewController.m; sourceTree = "<group>"; };
+		5F08AB1D175E484C009C953E /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 		5F4BA7AB1753EF2900726567 /* ADProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADProperty.h; sourceTree = "<group>"; };
 		5F4BA7AC1753EF2900726567 /* ADProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADProperty.m; sourceTree = "<group>"; };
 		5FDABEE517534404005EDD03 /* Image Reduction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Image Reduction.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -265,6 +271,7 @@
 		5FDABEDC17534404005EDD03 = {
 			isa = PBXGroup;
 			children = (
+				5F08AB1D175E484C009C953E /* license.txt */,
 				5FDABEEE17534404005EDD03 /* Image Reduction */,
 				5FDABF331753484F005EDD03 /* ImageReductionPlugin */,
 				5FDABF7A17534A83005EDD03 /* FITSImporter */,
@@ -671,6 +678,7 @@
 				5FDABEF917534404005EDD03 /* Credits.rtf in Resources */,
 				5FDABEFF17534405005EDD03 /* ADDocument.xib in Resources */,
 				5FDABF0217534405005EDD03 /* MainMenu.xib in Resources */,
+				5F08AB1E175E484D009C953E /* license.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -679,6 +687,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FDABF1317534405005EDD03 /* InfoPlist.strings in Resources */,
+				5F08AB1F175E484D009C953E /* license.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,6 +696,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FDABF381753484F005EDD03 /* InfoPlist.strings in Resources */,
+				5F08AB20175E484D009C953E /* license.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -695,6 +705,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FDABF4D17534850005EDD03 /* InfoPlist.strings in Resources */,
+				5F08AB21175E484D009C953E /* license.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -703,6 +714,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FDABF7F17534A83005EDD03 /* InfoPlist.strings in Resources */,
+				5F08AB22175E484D009C953E /* license.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
