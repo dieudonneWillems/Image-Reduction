@@ -22,6 +22,7 @@
 //
 
 #import "ADImage.h"
+#import "ADDataObjectWrapper.h"
 
 @implementation ADImage
 
@@ -148,6 +149,7 @@
     pixels[x][y] = value;
    // NSLog(@"value = %f",value);
 }
+
 
 - (NSData*) dataRepresentation
 {

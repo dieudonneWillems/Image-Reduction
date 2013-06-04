@@ -26,6 +26,8 @@
 #import "ADDataObjectWrapper.h"
 #import "ImageReductionPlugin.h"
 
+static NSDictionary *_thattr;
+
 @interface ADDataObjectWrapper (private)
 - (id) initWithDataObject:(id<ADDataObject>)object ofType:(NSString*)tp;
 @end
@@ -46,7 +48,7 @@
         dataObject = object;
         ADProperty *otype = [ADProperty typePropertyWithValueKey:tp];
         [properties setObject:otype forKey:[otype propertyKey]];
-        [self createThumbnail];
+      //  [self createThumbnail];
     }
     return self;
 }
@@ -118,6 +120,43 @@
         ori.origin = NSZeroPoint;
         ori.size = [image size];
         [image drawInRect:thn fromRect:ori operation:NSCompositeCopy fraction:1.0];
+        ADProperty *it = [self propertyForKey:ADPropertyImageType];
+        NSString *kval = [it propertyValueKey];
+        NSColor *strcol = nil;
+        NSString *str = nil;
+        if([kval isEqualToString:ADPropertyImageTypeBias]){
+            strcol = [NSColor colorWithCalibratedRed:0 green:0.7 blue:0.7 alpha:0.5];
+            str = @"BIAS";
+        }else if([kval isEqualToString:ADPropertyImageTypeDark]){
+            strcol = [NSColor colorWithCalibratedRed:0.7 green:0.7 blue:0.7 alpha:0.5];
+            str = @"DARK";
+        }else if([kval isEqualToString:ADPropertyImageTypeFlat]){
+            strcol = [NSColor colorWithCalibratedRed:0.7 green:0.7 blue:0.0 alpha:0.5];
+            str = @"FLAT";
+        }else if([kval isEqualToString:ADPropertyImageTypeMasterFlat]){
+            strcol = [NSColor colorWithCalibratedRed:1.0 green:1.0 blue:0.0 alpha:0.5];
+            str = @"MFLAT";
+        }else if([kval isEqualToString:ADPropertyImageTypeStacked]){
+            strcol = [NSColor colorWithCalibratedRed:0.0 green:0.0 blue:1.0 alpha:0.5];
+            str = @"STACK";
+        }else if([kval isEqualToString:ADPropertyImageTypeCalibrated]){
+            strcol = [NSColor colorWithCalibratedRed:0.0 green:1.0 blue:0.0 alpha:0.5];
+            str = @"CALIB";
+        }
+        if(strcol){
+            [strcol set];
+            NSRect strrect = NSMakeRect(0, 2, 32, 9);
+            NSBezierPath *bp = [NSBezierPath bezierPathWithRect:strrect];
+            [bp fill];
+            if(!_thattr){
+                _thattr = [NSDictionary dictionaryWithObjectsAndKeys:[NSColor colorWithCalibratedWhite:1.0 alpha:1.0],NSForegroundColorAttributeName,[NSFont boldSystemFontOfSize:8],NSFontAttributeName, nil];
+            }
+            NSSize size = [str sizeWithAttributes:_thattr];
+            NSPoint strp;
+            strp.x = strrect.origin.x+(strrect.size.width-size.width)/2;
+            strp.y = strrect.origin.y+(strrect.size.height-size.height)/2;
+            [str drawAtPoint:strp withAttributes:_thattr];
+        }
         [thumbnail unlockFocus];
     }
 }
@@ -166,6 +205,7 @@
 
 - (NSImage*) thumbnail
 {
+    if(!thumbnail && dataObject) [self createThumbnail];
     return thumbnail;
 }
 
