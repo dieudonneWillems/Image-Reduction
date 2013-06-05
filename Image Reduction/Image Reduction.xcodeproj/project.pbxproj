@@ -19,7 +19,7 @@
 		5F08AB20175E484D009C953E /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5F08AB1D175E484C009C953E /* license.txt */; };
 		5F08AB21175E484D009C953E /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5F08AB1D175E484C009C953E /* license.txt */; };
 		5F08AB22175E484D009C953E /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5F08AB1D175E484C009C953E /* license.txt */; };
-		5F08AB28175F1587009C953E /* ADNavigationItemPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F08AB27175F1587009C953E /* ADNavigationItemPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F08AB28175F1587009C953E /* ADProjectStructureItemViewPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F08AB27175F1587009C953E /* ADProjectStructureItemViewPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5F4BA7AD1753EF2900726567 /* ADProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F4BA7AB1753EF2900726567 /* ADProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5F4BA7AE1753EF2900726567 /* ADProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4BA7AC1753EF2900726567 /* ADProperty.m */; };
 		5F622E12175FC0E6002663D7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABEE817534404005EDD03 /* Cocoa.framework */; };
@@ -28,6 +28,7 @@
 		5F622E23175FC1A4002663D7 /* ADNavigationViewPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F622E21175FC1A4002663D7 /* ADNavigationViewPlugin.m */; };
 		5F622E24175FC1A4002663D7 /* ADNavigationViewPlugin.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F622E22175FC1A4002663D7 /* ADNavigationViewPlugin.xib */; };
 		5F622E25175FC2AE002663D7 /* NavigationViewPlugin.plugin in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5F622E11175FC0E6002663D7 /* NavigationViewPlugin.plugin */; };
+		5F622E29175FDFDC002663D7 /* ADProjectStructureViewPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F622E28175FDFDC002663D7 /* ADProjectStructureViewPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FDABEE917534404005EDD03 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABEE817534404005EDD03 /* Cocoa.framework */; };
 		5FDABEF317534404005EDD03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FDABEF117534404005EDD03 /* InfoPlist.strings */; };
 		5FDABEF517534404005EDD03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDABEF417534404005EDD03 /* main.m */; };
@@ -152,7 +153,7 @@
 		5F08AB19175D481B009C953E /* ADDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADDataViewController.h; sourceTree = "<group>"; };
 		5F08AB1A175D481B009C953E /* ADDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADDataViewController.m; sourceTree = "<group>"; };
 		5F08AB1D175E484C009C953E /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
-		5F08AB27175F1587009C953E /* ADNavigationItemPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADNavigationItemPlugin.h; sourceTree = "<group>"; };
+		5F08AB27175F1587009C953E /* ADProjectStructureItemViewPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADProjectStructureItemViewPlugin.h; sourceTree = "<group>"; };
 		5F4BA7AB1753EF2900726567 /* ADProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADProperty.h; sourceTree = "<group>"; };
 		5F4BA7AC1753EF2900726567 /* ADProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADProperty.m; sourceTree = "<group>"; };
 		5F622E11175FC0E6002663D7 /* NavigationViewPlugin.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavigationViewPlugin.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,6 +163,7 @@
 		5F622E20175FC1A4002663D7 /* ADNavigationViewPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADNavigationViewPlugin.h; sourceTree = "<group>"; };
 		5F622E21175FC1A4002663D7 /* ADNavigationViewPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADNavigationViewPlugin.m; sourceTree = "<group>"; };
 		5F622E22175FC1A4002663D7 /* ADNavigationViewPlugin.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ADNavigationViewPlugin.xib; sourceTree = "<group>"; };
+		5F622E28175FDFDC002663D7 /* ADProjectStructureViewPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADProjectStructureViewPlugin.h; sourceTree = "<group>"; };
 		5FDABEE517534404005EDD03 /* Image Reduction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Image Reduction.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FDABEE817534404005EDD03 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		5FDABEEB17534404005EDD03 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -297,7 +299,8 @@
 			isa = PBXGroup;
 			children = (
 				5F08AB17175D466A009C953E /* ADViewPlugin.h */,
-				5F08AB27175F1587009C953E /* ADNavigationItemPlugin.h */,
+				5F622E28175FDFDC002663D7 /* ADProjectStructureViewPlugin.h */,
+				5F08AB27175F1587009C953E /* ADProjectStructureItemViewPlugin.h */,
 				5FDABF5E175348AB005EDD03 /* ADPreferencePane.h */,
 				5FDABF5F175348AB005EDD03 /* ADPreferencePane.m */,
 				5F08AB13175D4479009C953E /* ADViewController.h */,
@@ -600,7 +603,8 @@
 				5F08AB15175D4479009C953E /* ADViewController.h in Headers */,
 				5F08AB18175D466A009C953E /* ADViewPlugin.h in Headers */,
 				5F08AB1B175D481C009C953E /* ADDataViewController.h in Headers */,
-				5F08AB28175F1587009C953E /* ADNavigationItemPlugin.h in Headers */,
+				5F08AB28175F1587009C953E /* ADProjectStructureItemViewPlugin.h in Headers */,
+				5F622E29175FDFDC002663D7 /* ADProjectStructureViewPlugin.h in Headers */,
 				5FDABF6F175348AB005EDD03 /* ImageReductionPlugin.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

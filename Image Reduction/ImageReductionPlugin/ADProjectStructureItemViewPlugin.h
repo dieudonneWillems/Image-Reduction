@@ -1,5 +1,5 @@
 //
-//  ADNavigationItemPlugin.h
+//  ADProjectStructureItemViewPlugin.h
 //
 // 	This file is part of Image Reduction.
 //
@@ -23,7 +23,7 @@
 #import "ADImageReductionPlugin.h"
 #import "ADDataObjectWrapper.h"
 
-@protocol ADNavigationItemPlugin <ADImageReductionPlugin>
+@protocol ADProjectStructureItemViewPlugin <ADImageReductionPlugin>
 
 @property (readwrite) ADDataObjectWrapper* dataObjectWrapper;
 

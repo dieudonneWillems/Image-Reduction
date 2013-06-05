@@ -34,6 +34,7 @@
 - (BOOL) writeDataObjectOfWrapper:(ADDataObjectWrapper*)wrapper intoBundleAtDataPath:(NSString*)path originalPath:(NSString*)opath;
 - (BOOL) writeThumbnailOfWrapper:(ADDataObjectWrapper*)wrapper intoBundleAtThumbnailPath:(NSString*)path originalPath:(NSString*)opath;
 - (void) addViewsFromPlugins;
+- (void) setProjectStructureItemsInViews;
 @end
 
 @implementation ADDocument
@@ -65,6 +66,7 @@
     [nc addObserver:self selector:@selector(importNotificationRecieved:) name:nil object:[ADImportController sharedImportController]];
     [nc addObserver:self selector:@selector(updateNotificationRecieved:) name:ADDataObjectUpdatedNotification object:nil];
     [self addViewsFromPlugins];
+    [self setProjectStructureItemsInViews];
 }
 
 + (BOOL)autosavesInPlace
@@ -324,6 +326,14 @@
         [tabviewitem setView:view];
         [view setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
         [tabview addTabViewItem:tabviewitem];
+    }
+}
+
+- (void) setProjectStructureItemsInViews
+{
+    NSArray *vplugs = [[ADPluginController defaultPluginController] pluginsConformingToProtocol:@protocol(ADProjectStructureViewPlugin)];
+    for(id<ADProjectStructureViewPlugin> plugin in vplugs){
+        [plugin setProjectStructureItems:dataObjectWrappers];   // TODO add only to visible views
     }
 }
 
