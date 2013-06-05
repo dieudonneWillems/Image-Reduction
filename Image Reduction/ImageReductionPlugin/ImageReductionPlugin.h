@@ -41,6 +41,7 @@
 #import "ADViewController.h"
 #import "ADViewPlugin.h"
 #import "ADDataViewController.h"
+#import "ADNavigationItemPlugin.h"
 
 
 
