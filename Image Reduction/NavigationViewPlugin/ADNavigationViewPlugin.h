@@ -1,5 +1,5 @@
 //
-//  ADNavigationItemPlugin.h
+//  ADNavigationViewPluginViewController.h
 //
 // 	This file is part of Image Reduction.
 //
@@ -17,19 +17,11 @@
 //    along with Image Reduction.  If not, see <http://www.gnu.org/licenses/>.
 //
 //  Copyright (c) 2013 Dieudonné Willems. All rights reserved.
+//  Created by Don Willems on 05-06-13.
 //
 
-#import <Foundation/Foundation.h>
-#import "ADImageReductionPlugin.h"
-#import "ADDataObjectWrapper.h"
+#import <ImageReductionPlugin/ImageReductionPlugin.h>
 
-@protocol ADNavigationItemPlugin <ADImageReductionPlugin>
-
-@property (readwrite) ADDataObjectWrapper* dataObjectWrapper;
-
-- (NSView*) itemView;
-- (void) setIsProcessingItem:(BOOL)proc;
-
-- (BOOL) canDisplayItem:(ADDataObjectWrapper*)wrapper;
+@interface ADNavigationViewPlugin : ADViewController <ADViewPlugin>
 
 @end

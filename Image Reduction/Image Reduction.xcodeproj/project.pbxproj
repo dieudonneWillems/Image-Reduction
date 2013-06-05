@@ -22,6 +22,12 @@
 		5F08AB28175F1587009C953E /* ADNavigationItemPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F08AB27175F1587009C953E /* ADNavigationItemPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5F4BA7AD1753EF2900726567 /* ADProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F4BA7AB1753EF2900726567 /* ADProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5F4BA7AE1753EF2900726567 /* ADProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4BA7AC1753EF2900726567 /* ADProperty.m */; };
+		5F622E12175FC0E6002663D7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABEE817534404005EDD03 /* Cocoa.framework */; };
+		5F622E18175FC0E6002663D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5F622E16175FC0E6002663D7 /* InfoPlist.strings */; };
+		5F622E1F175FC148002663D7 /* ImageReductionPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABF311753484F005EDD03 /* ImageReductionPlugin.framework */; };
+		5F622E23175FC1A4002663D7 /* ADNavigationViewPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F622E21175FC1A4002663D7 /* ADNavigationViewPlugin.m */; };
+		5F622E24175FC1A4002663D7 /* ADNavigationViewPlugin.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F622E22175FC1A4002663D7 /* ADNavigationViewPlugin.xib */; };
+		5F622E25175FC2AE002663D7 /* NavigationViewPlugin.plugin in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5F622E11175FC0E6002663D7 /* NavigationViewPlugin.plugin */; };
 		5FDABEE917534404005EDD03 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABEE817534404005EDD03 /* Cocoa.framework */; };
 		5FDABEF317534404005EDD03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FDABEF117534404005EDD03 /* InfoPlist.strings */; };
 		5FDABEF517534404005EDD03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDABEF417534404005EDD03 /* main.m */; };
@@ -73,6 +79,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5F622E1D175FC140002663D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FDABEDD17534404005EDD03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FDABF301753484F005EDD03;
+			remoteInfo = ImageReductionPlugin;
+		};
+		5F622E26175FC47A002663D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FDABEDD17534404005EDD03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5F622E10175FC0E6002663D7;
+			remoteInfo = NavigationViewPlugin;
+		};
 		5FDABF0C17534405005EDD03 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5FDABEDD17534404005EDD03 /* Project object */;
@@ -117,6 +137,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				5F622E25175FC2AE002663D7 /* NavigationViewPlugin.plugin in CopyFiles */,
 				5FDABFA117534BB0005EDD03 /* FITSImporter.plugin in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,6 +155,13 @@
 		5F08AB27175F1587009C953E /* ADNavigationItemPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADNavigationItemPlugin.h; sourceTree = "<group>"; };
 		5F4BA7AB1753EF2900726567 /* ADProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADProperty.h; sourceTree = "<group>"; };
 		5F4BA7AC1753EF2900726567 /* ADProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADProperty.m; sourceTree = "<group>"; };
+		5F622E11175FC0E6002663D7 /* NavigationViewPlugin.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavigationViewPlugin.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F622E15175FC0E6002663D7 /* NavigationViewPlugin-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NavigationViewPlugin-Info.plist"; sourceTree = "<group>"; };
+		5F622E17175FC0E6002663D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5F622E19175FC0E6002663D7 /* NavigationViewPlugin-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NavigationViewPlugin-Prefix.pch"; sourceTree = "<group>"; };
+		5F622E20175FC1A4002663D7 /* ADNavigationViewPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADNavigationViewPlugin.h; sourceTree = "<group>"; };
+		5F622E21175FC1A4002663D7 /* ADNavigationViewPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADNavigationViewPlugin.m; sourceTree = "<group>"; };
+		5F622E22175FC1A4002663D7 /* ADNavigationViewPlugin.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ADNavigationViewPlugin.xib; sourceTree = "<group>"; };
 		5FDABEE517534404005EDD03 /* Image Reduction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Image Reduction.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FDABEE817534404005EDD03 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		5FDABEEB17534404005EDD03 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -208,6 +236,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5F622E0E175FC0E6002663D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F622E1F175FC148002663D7 /* ImageReductionPlugin.framework in Frameworks */,
+				5F622E12175FC0E6002663D7 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5FDABEE217534404005EDD03 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -271,6 +308,27 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		5F622E13175FC0E6002663D7 /* NavigationViewPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				5F622E14175FC0E6002663D7 /* Supporting Files */,
+				5F622E20175FC1A4002663D7 /* ADNavigationViewPlugin.h */,
+				5F622E21175FC1A4002663D7 /* ADNavigationViewPlugin.m */,
+				5F622E22175FC1A4002663D7 /* ADNavigationViewPlugin.xib */,
+			);
+			path = NavigationViewPlugin;
+			sourceTree = "<group>";
+		};
+		5F622E14175FC0E6002663D7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5F622E15175FC0E6002663D7 /* NavigationViewPlugin-Info.plist */,
+				5F622E16175FC0E6002663D7 /* InfoPlist.strings */,
+				5F622E19175FC0E6002663D7 /* NavigationViewPlugin-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		5FDABEDC17534404005EDD03 = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +338,7 @@
 				5FDABF7A17534A83005EDD03 /* FITSImporter */,
 				5FDABF0E17534405005EDD03 /* Image ReductionTests */,
 				5FDABF4817534850005EDD03 /* ImageReductionPluginTests */,
+				5F622E13175FC0E6002663D7 /* NavigationViewPlugin */,
 				5FDABEE717534404005EDD03 /* Frameworks */,
 				5FDABEE617534404005EDD03 /* Products */,
 			);
@@ -293,6 +352,7 @@
 				5FDABF311753484F005EDD03 /* ImageReductionPlugin.framework */,
 				5FDABF4217534850005EDD03 /* ImageReductionPluginTests.octest */,
 				5FDABF7817534A83005EDD03 /* FITSImporter.plugin */,
+				5F622E11175FC0E6002663D7 /* NavigationViewPlugin.plugin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -548,6 +608,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		5F622E10175FC0E6002663D7 /* NavigationViewPlugin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F622E1C175FC0E6002663D7 /* Build configuration list for PBXNativeTarget "NavigationViewPlugin" */;
+			buildPhases = (
+				5F622E0D175FC0E6002663D7 /* Sources */,
+				5F622E0E175FC0E6002663D7 /* Frameworks */,
+				5F622E0F175FC0E6002663D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5F622E1E175FC140002663D7 /* PBXTargetDependency */,
+			);
+			name = NavigationViewPlugin;
+			productName = NavigationViewPlugin;
+			productReference = 5F622E11175FC0E6002663D7 /* NavigationViewPlugin.plugin */;
+			productType = "com.apple.product-type.bundle";
+		};
 		5FDABEE417534404005EDD03 /* Image Reduction */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5FDABF1917534405005EDD03 /* Build configuration list for PBXNativeTarget "Image Reduction" */;
@@ -560,6 +638,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				5F622E27175FC47A002663D7 /* PBXTargetDependency */,
 				5FDABFA317534BC1005EDD03 /* PBXTargetDependency */,
 				5FDABF5817534865005EDD03 /* PBXTargetDependency */,
 			);
@@ -669,11 +748,21 @@
 				5FDABF301753484F005EDD03 /* ImageReductionPlugin */,
 				5FDABF4117534850005EDD03 /* ImageReductionPluginTests */,
 				5FDABF7717534A83005EDD03 /* FITSImporter */,
+				5F622E10175FC0E6002663D7 /* NavigationViewPlugin */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5F622E0F175FC0E6002663D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F622E18175FC0E6002663D7 /* InfoPlist.strings in Resources */,
+				5F622E24175FC1A4002663D7 /* ADNavigationViewPlugin.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5FDABEE317534404005EDD03 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -754,6 +843,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5F622E0D175FC0E6002663D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F622E23175FC1A4002663D7 /* ADNavigationViewPlugin.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5FDABEE117534404005EDD03 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -815,6 +912,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5F622E1E175FC140002663D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5FDABF301753484F005EDD03 /* ImageReductionPlugin */;
+			targetProxy = 5F622E1D175FC140002663D7 /* PBXContainerItemProxy */;
+		};
+		5F622E27175FC47A002663D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5F622E10175FC0E6002663D7 /* NavigationViewPlugin */;
+			targetProxy = 5F622E26175FC47A002663D7 /* PBXContainerItemProxy */;
+		};
 		5FDABF0D17534405005EDD03 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5FDABEE417534404005EDD03 /* Image Reduction */;
@@ -843,6 +950,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		5F622E16175FC0E6002663D7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F622E17175FC0E6002663D7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		5FDABEF117534404005EDD03 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -910,6 +1025,32 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5F622E1A175FC0E6002663D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NavigationViewPlugin/NavigationViewPlugin-Prefix.pch";
+				INFOPLIST_FILE = "NavigationViewPlugin/NavigationViewPlugin-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = plugin;
+			};
+			name = Debug;
+		};
+		5F622E1B175FC0E6002663D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NavigationViewPlugin/NavigationViewPlugin-Prefix.pch";
+				INFOPLIST_FILE = "NavigationViewPlugin/NavigationViewPlugin-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = plugin;
+			};
+			name = Release;
+		};
 		5FDABF1717534405005EDD03 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1108,6 +1249,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5F622E1C175FC0E6002663D7 /* Build configuration list for PBXNativeTarget "NavigationViewPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F622E1A175FC0E6002663D7 /* Debug */,
+				5F622E1B175FC0E6002663D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		5FDABEE017534404005EDD03 /* Build configuration list for PBXProject "Image Reduction" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

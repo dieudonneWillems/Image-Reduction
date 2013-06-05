@@ -1,5 +1,5 @@
 //
-//  ADNavigationItemPlugin.h
+//  ADNavigationViewPluginViewController.m
 //
 // 	This file is part of Image Reduction.
 //
@@ -17,19 +17,51 @@
 //    along with Image Reduction.  If not, see <http://www.gnu.org/licenses/>.
 //
 //  Copyright (c) 2013 Dieudonné Willems. All rights reserved.
+
+//  Created by Don Willems on 05-06-13.
 //
 
-#import <Foundation/Foundation.h>
-#import "ADImageReductionPlugin.h"
-#import "ADDataObjectWrapper.h"
+#import "ADNavigationViewPlugin.h"
 
-@protocol ADNavigationItemPlugin <ADImageReductionPlugin>
+@interface ADNavigationViewPlugin (private)
 
-@property (readwrite) ADDataObjectWrapper* dataObjectWrapper;
+@end
 
-- (NSView*) itemView;
-- (void) setIsProcessingItem:(BOOL)proc;
+@implementation ADNavigationViewPlugin
 
-- (BOOL) canDisplayItem:(ADDataObjectWrapper*)wrapper;
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Initialization code here.
+    }
+    
+    return self;
+}
+
+- (NSString*) name
+{
+    return @"Navigator";
+}
+
+- (void) initialize
+{
+    
+}
+
+- (ADPreferencePane*) preferencePane
+{
+    return nil;
+}
+
+- (ADViewController*) viewController
+{
+    return self;
+}
+
+- (ADViewArea) preferredViewArea
+{
+    return ADNavigationSideViewArea;
+}
 
 @end

@@ -31,5 +31,7 @@
 + (ADPluginController*) defaultPluginController;
 
 - (NSArray*) importers;
+- (NSArray*) viewPlugins;
+- (NSArray*) viewPluginsWithPreferredViewArea:(ADViewArea)area;
 - (NSArray*) pluginsConformingToProtocol:(Protocol *)aProtocol;
 @end
