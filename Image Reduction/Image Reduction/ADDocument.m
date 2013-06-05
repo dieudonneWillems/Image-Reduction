@@ -33,6 +33,7 @@
 - (void) handleError:(NSError*)error;
 - (BOOL) writeDataObjectOfWrapper:(ADDataObjectWrapper*)wrapper intoBundleAtDataPath:(NSString*)path originalPath:(NSString*)opath;
 - (BOOL) writeThumbnailOfWrapper:(ADDataObjectWrapper*)wrapper intoBundleAtThumbnailPath:(NSString*)path originalPath:(NSString*)opath;
+- (void) addViewsFromPlugins;
 @end
 
 @implementation ADDocument
@@ -63,6 +64,7 @@
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc addObserver:self selector:@selector(importNotificationRecieved:) name:nil object:[ADImportController sharedImportController]];
     [nc addObserver:self selector:@selector(updateNotificationRecieved:) name:ADDataObjectUpdatedNotification object:nil];
+    [self addViewsFromPlugins];
 }
 
 + (BOOL)autosavesInPlace
@@ -309,6 +311,20 @@
 - (IBAction) export:(id)sender
 {
     
+}
+
+#pragma mark Views handling
+
+- (void) addViewsFromPlugins
+{
+    NSArray *vplugs = [[ADPluginController defaultPluginController] viewPluginsWithPreferredViewArea:ADNavigationSideViewArea];
+    for(id<ADViewPlugin> vplug in vplugs){
+        NSView *view = [[vplug viewController] view];
+        NSTabViewItem *tabviewitem = [[NSTabViewItem alloc] initWithIdentifier:[[vplug class] description]];
+        [tabviewitem setView:view];
+        [view setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
+        [tabview addTabViewItem:tabviewitem];
+    }
 }
 
 #pragma mark Notifications received methods

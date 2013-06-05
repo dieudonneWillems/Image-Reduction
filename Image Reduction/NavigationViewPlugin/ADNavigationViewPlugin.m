@@ -29,11 +29,19 @@
 
 @implementation ADNavigationViewPlugin
 
+- (id) init
+{
+    self = [self initWithNibName:@"ADNavigationViewPlugin" bundle:nil];
+    return self;
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    self = [super initWithNibName:nibNameOrNil bundle:bundle];
     if (self) {
         // Initialization code here.
+        NSLog(@"Loading navigation view plugin");
     }
     
     return self;
@@ -41,7 +49,7 @@
 
 - (NSString*) name
 {
-    return @"Navigator";
+    return @"Project Navigator";
 }
 
 - (void) initialize

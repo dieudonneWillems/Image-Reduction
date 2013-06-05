@@ -30,6 +30,8 @@
     NSMutableArray *dataObjectWrappers;
     NSMutableArray *changedDataObjectWrappers;
     NSUInteger seed;
+    
+    IBOutlet NSTabView *tabview;
 }
 
 - (NSArray*) dataObjectWrappers;
