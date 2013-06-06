@@ -43,6 +43,7 @@
 #import "ADDataViewController.h"
 #import "ADProjectStructureViewPlugin.h"
 #import "ADProjectStructureItemViewPlugin.h"
+#import "ADProjectStructureViewController.h"
 
 
 

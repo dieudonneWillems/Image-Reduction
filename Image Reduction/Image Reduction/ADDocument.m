@@ -46,6 +46,7 @@
         seed = 1;
         dataObjectWrappers = [NSMutableArray array];
         changedDataObjectWrappers = [NSMutableArray array];
+        viewControllers = [NSMutableArray array];
         // Add your subclass-specific initialization here.
     }
     return self;
@@ -319,21 +320,28 @@
 
 - (void) addViewsFromPlugins
 {
-    NSArray *vplugs = [[ADPluginController defaultPluginController] viewPluginsWithPreferredViewArea:ADNavigationSideViewArea];
+    NSArray *vplugs = [[ADPluginController defaultPluginController] viewPlugins];
     for(id<ADViewPlugin> vplug in vplugs){
-        NSView *view = [[vplug viewController] view];
-        NSTabViewItem *tabviewitem = [[NSTabViewItem alloc] initWithIdentifier:[[vplug class] description]];
-        [tabviewitem setView:view];
-        [view setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
-        [tabview addTabViewItem:tabviewitem];
+        ADViewController *viewContr = [vplug createViewController];
+        if([viewContr preferredViewArea] == ADNavigationSideViewArea){
+            NSView *view = [viewContr view];
+            NSTabViewItem *tabviewitem = [[NSTabViewItem alloc] initWithIdentifier:[[vplug class] description]];
+            [tabviewitem setView:view];
+            [view setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
+            [tabview addTabViewItem:tabviewitem];
+            [viewControllers addObject:viewContr];
+        }else{
+            //TODO
+        }
     }
 }
 
 - (void) setProjectStructureItemsInViews
 {
-    NSArray *vplugs = [[ADPluginController defaultPluginController] pluginsConformingToProtocol:@protocol(ADProjectStructureViewPlugin)];
-    for(id<ADProjectStructureViewPlugin> plugin in vplugs){
-        [plugin setProjectStructureItems:dataObjectWrappers];   // TODO add only to visible views
+    for(ADViewController *vc in viewControllers){
+        if([vc isKindOfClass:[ADProjectStructureViewController class]]){
+            [(ADProjectStructureViewController*)vc setProjectStructureItems:dataObjectWrappers];
+        }// TODO add only to visible views
     }
 }
 

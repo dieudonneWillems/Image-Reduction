@@ -63,18 +63,6 @@ static NSString *appSupportSubpath = @"Application Support/Image Reduction/PlugI
     return [self pluginsConformingToProtocol:@protocol(ADViewPlugin)];
 }
 
-- (NSArray*) viewPluginsWithPreferredViewArea:(ADViewArea)area
-{
-    NSArray *views = [self viewPlugins];
-    NSMutableArray *prefviews = [NSMutableArray array];
-    for(id<ADViewPlugin> vp in views){
-        if([[vp viewController] preferredViewArea]==area){
-            [prefviews addObject:vp];
-        }
-    }
-    return prefviews;
-}
-
 - (NSArray*) pluginsConformingToProtocol:(Protocol *)aProtocol
 {
     NSMutableArray *array = [NSMutableArray array];

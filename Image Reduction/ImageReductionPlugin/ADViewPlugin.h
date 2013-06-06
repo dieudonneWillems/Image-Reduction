@@ -29,6 +29,6 @@
 
 @protocol ADViewPlugin <ADImageReductionPlugin>
 
-- (ADViewController*) viewController;
+- (ADViewController*) createViewController;
 
 @end

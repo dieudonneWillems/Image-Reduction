@@ -22,9 +22,7 @@
 
 #import <ImageReductionPlugin/ImageReductionPlugin.h>
 
-@interface ADNavigationViewPlugin : ADViewController <ADProjectStructureViewPlugin> {
-    NSMutableArray *items;
-    IBOutlet NSOutlineView *navOutline;
+@interface ADNavigationViewPlugin : NSObject <ADProjectStructureViewPlugin> {
 }
 
 @end

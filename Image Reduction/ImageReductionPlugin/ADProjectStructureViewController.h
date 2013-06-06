@@ -1,5 +1,6 @@
 //
-//  ADPluginController.h
+//  ADNavigationViewController.h
+//
 // 	This file is part of Image Reduction.
 //
 //    Image Reduction is free software: you can redistribute it and/or modify
@@ -16,21 +17,13 @@
 //    along with Image Reduction.  If not, see <http://www.gnu.org/licenses/>.
 //
 //  Copyright (c) 2013 Dieudonné Willems. All rights reserved.
-//
-//  Created by Don Willems on 24-05-13.
-//
+//  Created by Don Willems on 06-06-13.
 //
 
-#import <Foundation/Foundation.h>
 #import <ImageReductionPlugin/ImageReductionPlugin.h>
 
-@interface ADPluginController : NSObject {
-    NSMutableArray *plugins;
-}
+@interface ADProjectStructureViewController : ADViewController
 
-+ (ADPluginController*) defaultPluginController;
+- (void) setProjectStructureItems:(NSArray*)items;
 
-- (NSArray*) importers;
-- (NSArray*) viewPlugins;
-- (NSArray*) pluginsConformingToProtocol:(Protocol *)aProtocol;
 @end

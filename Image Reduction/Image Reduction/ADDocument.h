@@ -32,6 +32,8 @@
     NSUInteger seed;
     
     IBOutlet NSTabView *tabview;
+    
+    NSMutableArray *viewControllers;
 }
 
 - (NSArray*) dataObjectWrappers;

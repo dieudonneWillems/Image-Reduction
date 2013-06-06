@@ -29,6 +29,9 @@
 		5F622E24175FC1A4002663D7 /* ADNavigationViewPlugin.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F622E22175FC1A4002663D7 /* ADNavigationViewPlugin.xib */; };
 		5F622E25175FC2AE002663D7 /* NavigationViewPlugin.plugin in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5F622E11175FC0E6002663D7 /* NavigationViewPlugin.plugin */; };
 		5F622E29175FDFDC002663D7 /* ADProjectStructureViewPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F622E28175FDFDC002663D7 /* ADProjectStructureViewPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F622E2F1760E241002663D7 /* ADNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F622E2E1760E241002663D7 /* ADNavigationViewController.m */; };
+		5F622E321760E468002663D7 /* ADProjectStructureViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F622E301760E468002663D7 /* ADProjectStructureViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F622E331760E468002663D7 /* ADProjectStructureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F622E311760E468002663D7 /* ADProjectStructureViewController.m */; };
 		5FDABEE917534404005EDD03 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABEE817534404005EDD03 /* Cocoa.framework */; };
 		5FDABEF317534404005EDD03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FDABEF117534404005EDD03 /* InfoPlist.strings */; };
 		5FDABEF517534404005EDD03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDABEF417534404005EDD03 /* main.m */; };
@@ -164,6 +167,10 @@
 		5F622E21175FC1A4002663D7 /* ADNavigationViewPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADNavigationViewPlugin.m; sourceTree = "<group>"; };
 		5F622E22175FC1A4002663D7 /* ADNavigationViewPlugin.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ADNavigationViewPlugin.xib; sourceTree = "<group>"; };
 		5F622E28175FDFDC002663D7 /* ADProjectStructureViewPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADProjectStructureViewPlugin.h; sourceTree = "<group>"; };
+		5F622E2D1760E241002663D7 /* ADNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADNavigationViewController.h; sourceTree = "<group>"; };
+		5F622E2E1760E241002663D7 /* ADNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADNavigationViewController.m; sourceTree = "<group>"; };
+		5F622E301760E468002663D7 /* ADProjectStructureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADProjectStructureViewController.h; sourceTree = "<group>"; };
+		5F622E311760E468002663D7 /* ADProjectStructureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADProjectStructureViewController.m; sourceTree = "<group>"; };
 		5FDABEE517534404005EDD03 /* Image Reduction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Image Reduction.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FDABEE817534404005EDD03 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		5FDABEEB17534404005EDD03 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -307,6 +314,8 @@
 				5F08AB14175D4479009C953E /* ADViewController.m */,
 				5F08AB19175D481B009C953E /* ADDataViewController.h */,
 				5F08AB1A175D481B009C953E /* ADDataViewController.m */,
+				5F622E301760E468002663D7 /* ADProjectStructureViewController.h */,
+				5F622E311760E468002663D7 /* ADProjectStructureViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -317,6 +326,8 @@
 				5F622E14175FC0E6002663D7 /* Supporting Files */,
 				5F622E20175FC1A4002663D7 /* ADNavigationViewPlugin.h */,
 				5F622E21175FC1A4002663D7 /* ADNavigationViewPlugin.m */,
+				5F622E2D1760E241002663D7 /* ADNavigationViewController.h */,
+				5F622E2E1760E241002663D7 /* ADNavigationViewController.m */,
 				5F622E22175FC1A4002663D7 /* ADNavigationViewPlugin.xib */,
 			);
 			path = NavigationViewPlugin;
@@ -606,6 +617,7 @@
 				5F08AB28175F1587009C953E /* ADProjectStructureItemViewPlugin.h in Headers */,
 				5F622E29175FDFDC002663D7 /* ADProjectStructureViewPlugin.h in Headers */,
 				5FDABF6F175348AB005EDD03 /* ImageReductionPlugin.h in Headers */,
+				5F622E321760E468002663D7 /* ADProjectStructureViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -852,6 +864,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F622E23175FC1A4002663D7 /* ADNavigationViewPlugin.m in Sources */,
+				5F622E2F1760E241002663D7 /* ADNavigationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -887,6 +900,7 @@
 				5F08AB0A17595026009C953E /* ADImage.m in Sources */,
 				5F08AB16175D4479009C953E /* ADViewController.m in Sources */,
 				5F08AB1C175D481C009C953E /* ADDataViewController.m in Sources */,
+				5F622E331760E468002663D7 /* ADProjectStructureViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -26,5 +26,4 @@
 
 @protocol ADProjectStructureViewPlugin <ADViewPlugin>
 
-- (void) setProjectStructureItems:(NSArray*)items;
 @end
