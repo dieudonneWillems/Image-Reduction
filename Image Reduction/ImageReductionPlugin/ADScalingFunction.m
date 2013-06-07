@@ -36,4 +36,11 @@
     return nval;
 }
 
+- (NSColor*) colorForValue:(double)value
+{
+    double nval = [self scaledValueForValue:value];
+    NSColor *color = [NSColor colorWithCalibratedWhite:nval alpha:1.0];
+    return color;
+}
+
 @end

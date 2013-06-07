@@ -29,6 +29,7 @@
 }
 
 - (double) scaledValueForValue:(double)value;
+- (NSColor*) colorForValue:(double)value;
 
 @property (readwrite) double blackPoint;
 @property (readwrite) double whitePoint;
