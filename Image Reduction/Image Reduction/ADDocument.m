@@ -68,6 +68,10 @@
     [nc addObserver:self selector:@selector(updateNotificationRecieved:) name:ADDataObjectUpdatedNotification object:nil];
     [self addViewsFromPlugins];
     [self setProjectStructureItemsInViews];
+    NSArray * vipl = [[ADPluginController defaultPluginController] pluginsConformingToProtocol:@protocol(ADProjectStructureItemViewPlugin)];
+    for(id<ADProjectStructureItemViewPlugin> pl in vipl){
+        ADProjectStructureItemViewController *vc = [pl createItemViewWithDisplaySize:ADProjectStructureItemSizeLarge];
+    }
 }
 
 + (BOOL)autosavesInPlace

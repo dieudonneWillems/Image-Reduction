@@ -1,5 +1,5 @@
 //
-//  ADProjectStructureItemView.h
+//  ADImageItemViewPlugin.m
 //
 // 	This file is part of Image Reduction.
 //
@@ -21,21 +21,43 @@
 //  Created by Don Willems on 08-06-13.
 //
 
-#import <Cocoa/Cocoa.h>
+#import "ADImageItemViewPlugin.h"
+#import "ADImageItemViewController.h"
 
-@class ADDataObjectWrapper;
+@implementation ADImageItemViewPlugin
 
-typedef enum{
-    ADProjectStructureItemSizeSmall,
-    ADProjectStructureItemSizeNormal,
-    ADProjectStructureItemSizeBig
-} ADProjectStructureItemSize;
-
-@interface ADProjectStructureItemView : NSView {
-    ADDataObjectWrapper* dataObjectWrapper;
+- (NSString*) name
+{
+    return @"Image";
 }
 
-@property (readonly) ADProjectStructureItemSize displaySize;
-@property (readwrite) ADDataObjectWrapper* dataObjectWrapper;
+- (void) initialize
+{
+    
+}
+
+@synthesize isProcessing;
+
+- (ADPreferencePane*) preferencePane
+{
+    return nil;
+}
+
+- (ADProjectStructureItemViewController*) createItemViewWithDisplaySize:(ADProjectStructureItemSize) displaySize
+{
+    return [[ADImageItemViewController alloc] initWithDisplaySize:displaySize];
+}
+
+- (BOOL) canDisplayItem:(id)item
+{
+    if([item isKindOfClass:[ADDataObjectWrapper class]]){
+        ADDataObjectWrapper *wrapper = (ADDataObjectWrapper*)item;
+        NSString *type = [wrapper type];
+        if([type isEqualToString:ADPropertyTypeImage]){
+            return YES;
+        }
+    }
+    return NO;
+}
 
 @end

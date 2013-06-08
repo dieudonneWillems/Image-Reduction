@@ -1,5 +1,5 @@
 //
-//  ADProjectStructureItemViewPlugin.h
+//  ADImageItemViewPlugin.h
 //
 // 	This file is part of Image Reduction.
 //
@@ -18,18 +18,12 @@
 //
 //  Copyright (c) 2013 Dieudonné Willems. All rights reserved.
 //
+//  Created by Don Willems on 08-06-13.
+//
 
 #import <Foundation/Foundation.h>
-#import "ADImageReductionPlugin.h"
-#import "ADDataObjectWrapper.h"
-#import "ADProjectStructureItemViewController.h"
+#import <ImageReductionPlugin/ImageReductionPlugin.h>
 
-@protocol ADProjectStructureItemViewPlugin <ADImageReductionPlugin>
-
-- (ADProjectStructureItemViewController*) createItemViewWithDisplaySize:(ADProjectStructureItemSize) displaySize;
-
-@property (readwrite) BOOL isProcessing;
-
-- (BOOL) canDisplayItem:(id)item;
+@interface ADImageItemViewPlugin : NSObject <ADProjectStructureItemViewPlugin>
 
 @end

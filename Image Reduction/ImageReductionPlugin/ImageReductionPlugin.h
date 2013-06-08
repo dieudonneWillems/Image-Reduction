@@ -44,7 +44,7 @@
 #import "ADProjectStructureViewPlugin.h"
 #import "ADProjectStructureItemViewPlugin.h"
 #import "ADProjectStructureViewController.h"
-#import "ADProjectStructureItemView.h"
+#import "ADProjectStructureItemViewController.h"
 
 
 

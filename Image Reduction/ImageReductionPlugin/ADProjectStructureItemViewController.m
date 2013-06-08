@@ -21,25 +21,14 @@
 //  Created by Don Willems on 08-06-13.
 //
 
-#import "ADProjectStructureItemView.h"
+#import "ADProjectStructureItemViewController.h"
 #import "ADDataObjectWrapper.h"
 
-@implementation ADProjectStructureItemView
+@implementation ADProjectStructureItemViewController
 
-- (id)initWithFrame:(NSRect)frame displaySize:(ADProjectStructureItemSize) size;
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithFrame:frame];
-    if (self) {
-        displaySize = size;
-        // Initialization code here.
-    }
-    
-    return self;
-}
-
-- (id)initWithFrame:(NSRect)frame
-{
-    self = [super initWithFrame:frame];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Initialization code here.
     }
@@ -47,21 +36,12 @@
     return self;
 }
 
-- (void)drawRect:(NSRect)dirtyRect
+- (ADProjectStructureItemSize) displaySize
 {
-    // Drawing code here.
+    return ADProjectStructureItemSizeNormal;
 }
 
-@synthesize displaySize;
 
-- (ADDataObjectWrapper*) dataObjectWrapper
-{
-    return dataObjectWrapper;
-}
-
-- (void) setDataObjectWrapper:(ADDataObjectWrapper *)ndataObjectWrapper
-{
-    dataObjectWrapper = ndataObjectWrapper;
-}
+@synthesize item;
 
 @end
