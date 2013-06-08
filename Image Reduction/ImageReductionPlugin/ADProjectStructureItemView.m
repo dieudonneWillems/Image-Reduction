@@ -1,5 +1,5 @@
 //
-//  ADProjectStructureItemViewPlugin.h
+//  ADProjectStructureItemView.m
 //
 // 	This file is part of Image Reduction.
 //
@@ -18,19 +18,50 @@
 //
 //  Copyright (c) 2013 Dieudonné Willems. All rights reserved.
 //
+//  Created by Don Willems on 08-06-13.
+//
 
-#import <Foundation/Foundation.h>
-#import "ADImageReductionPlugin.h"
-#import "ADDataObjectWrapper.h"
 #import "ADProjectStructureItemView.h"
+#import "ADDataObjectWrapper.h"
 
-@protocol ADProjectStructureItemViewPlugin <ADImageReductionPlugin>
+@implementation ADProjectStructureItemView
 
-- (NSView*) createItemViewWithDisplaySize:(ADProjectStructureItemSize) displaySize;
+- (id)initWithFrame:(NSRect)frame displaySize:(ADProjectStructureItemSize) size;
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        displaySize = size;
+        // Initialization code here.
+    }
+    
+    return self;
+}
 
-- (BOOL) isProcessingItem;
-- (void) setIsProcessingItem:(BOOL)proc;
+- (id)initWithFrame:(NSRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        // Initialization code here.
+    }
+    
+    return self;
+}
 
-- (BOOL) canDisplayItem:(ADDataObjectWrapper*)wrapper;
+- (void)drawRect:(NSRect)dirtyRect
+{
+    // Drawing code here.
+}
+
+@synthesize displaySize;
+
+- (ADDataObjectWrapper*) dataObjectWrapper
+{
+    return dataObjectWrapper;
+}
+
+- (void) setDataObjectWrapper:(ADDataObjectWrapper *)ndataObjectWrapper
+{
+    dataObjectWrapper = ndataObjectWrapper;
+}
 
 @end

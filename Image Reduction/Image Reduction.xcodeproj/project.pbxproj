@@ -32,6 +32,8 @@
 		5F622E2F1760E241002663D7 /* ADNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F622E2E1760E241002663D7 /* ADNavigationViewController.m */; };
 		5F622E321760E468002663D7 /* ADProjectStructureViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F622E301760E468002663D7 /* ADProjectStructureViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5F622E331760E468002663D7 /* ADProjectStructureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F622E311760E468002663D7 /* ADProjectStructureViewController.m */; };
+		5F622E36176374B1002663D7 /* ADProjectStructureItemView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F622E34176374B0002663D7 /* ADProjectStructureItemView.h */; };
+		5F622E37176374B1002663D7 /* ADProjectStructureItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F622E35176374B1002663D7 /* ADProjectStructureItemView.m */; };
 		5FDABEE917534404005EDD03 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABEE817534404005EDD03 /* Cocoa.framework */; };
 		5FDABEF317534404005EDD03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FDABEF117534404005EDD03 /* InfoPlist.strings */; };
 		5FDABEF517534404005EDD03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDABEF417534404005EDD03 /* main.m */; };
@@ -171,6 +173,8 @@
 		5F622E2E1760E241002663D7 /* ADNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADNavigationViewController.m; sourceTree = "<group>"; };
 		5F622E301760E468002663D7 /* ADProjectStructureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADProjectStructureViewController.h; sourceTree = "<group>"; };
 		5F622E311760E468002663D7 /* ADProjectStructureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADProjectStructureViewController.m; sourceTree = "<group>"; };
+		5F622E34176374B0002663D7 /* ADProjectStructureItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADProjectStructureItemView.h; sourceTree = "<group>"; };
+		5F622E35176374B1002663D7 /* ADProjectStructureItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADProjectStructureItemView.m; sourceTree = "<group>"; };
 		5FDABEE517534404005EDD03 /* Image Reduction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Image Reduction.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FDABEE817534404005EDD03 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		5FDABEEB17534404005EDD03 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -316,6 +320,8 @@
 				5F08AB1A175D481B009C953E /* ADDataViewController.m */,
 				5F622E301760E468002663D7 /* ADProjectStructureViewController.h */,
 				5F622E311760E468002663D7 /* ADProjectStructureViewController.m */,
+				5F622E34176374B0002663D7 /* ADProjectStructureItemView.h */,
+				5F622E35176374B1002663D7 /* ADProjectStructureItemView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -618,6 +624,7 @@
 				5F622E29175FDFDC002663D7 /* ADProjectStructureViewPlugin.h in Headers */,
 				5FDABF6F175348AB005EDD03 /* ImageReductionPlugin.h in Headers */,
 				5F622E321760E468002663D7 /* ADProjectStructureViewController.h in Headers */,
+				5F622E36176374B1002663D7 /* ADProjectStructureItemView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -901,6 +908,7 @@
 				5F08AB16175D4479009C953E /* ADViewController.m in Sources */,
 				5F08AB1C175D481C009C953E /* ADDataViewController.m in Sources */,
 				5F622E331760E468002663D7 /* ADProjectStructureViewController.m in Sources */,
+				5F622E37176374B1002663D7 /* ADProjectStructureItemView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
