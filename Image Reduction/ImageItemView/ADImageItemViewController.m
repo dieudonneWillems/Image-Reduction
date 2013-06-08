@@ -40,6 +40,7 @@
     if (self) {
         NSLog(@"Nib: %@   View: %@",[self nibBundle],[self view] );
         namelabel = [[self view] viewWithTag:1];
+        thumbnailview = [[self view] viewWithTag:0];
         NSLog(@"name label: %@",namelabel);
     }
     return self;
@@ -50,5 +51,14 @@
     return displaySize;
 }
 
+- (void) setItem:(id)nitem
+{
+    [super setItem:nitem];
+    if([item isKindOfClass:[ADDataObjectWrapper class]]){
+        ADDataObjectWrapper *wrapper = (ADDataObjectWrapper*) item;
+        [namelabel setStringValue:[[wrapper filename] stringByDeletingPathExtension]];
+        [thumbnailview setImage:[wrapper thumbnail]];
+    }
+}
 
 @end

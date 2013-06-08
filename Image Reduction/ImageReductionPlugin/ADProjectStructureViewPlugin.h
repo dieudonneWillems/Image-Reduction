@@ -23,7 +23,10 @@
 
 #import <Foundation/Foundation.h>
 #import "ADViewPlugin.h"
+#import "ADProjectStructureItemViewPlugin.h"
 
 @protocol ADProjectStructureViewPlugin <ADViewPlugin>
 
+- (id<ADProjectStructureItemViewPlugin>) itemViewPluginForItem:(id)item;
+- (void) setItemViewPlugins:(NSArray*)itemviewpis;
 @end

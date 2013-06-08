@@ -12,6 +12,7 @@
 @interface ADImageItemViewController : ADProjectStructureItemViewController {
     ADProjectStructureItemSize displaySize;
     NSTextField *namelabel;
+    NSImageView *thumbnailview;
 }
 
 - (id) initWithDisplaySize:(ADProjectStructureItemSize)size;

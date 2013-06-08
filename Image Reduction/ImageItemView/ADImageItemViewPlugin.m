@@ -45,7 +45,8 @@
 
 - (ADProjectStructureItemViewController*) createItemViewWithDisplaySize:(ADProjectStructureItemSize) displaySize
 {
-    return [[ADImageItemViewController alloc] initWithDisplaySize:displaySize];
+    ADProjectStructureItemViewController* vc = [[ADImageItemViewController alloc] initWithDisplaySize:displaySize];
+    return vc;
 }
 
 - (BOOL) canDisplayItem:(id)item
@@ -58,6 +59,11 @@
         }
     }
     return NO;
+}
+
+- (void) setItemViewPlugins:(NSArray*)itemviewpis
+{
+    itemviewplugins = itemviewpis;
 }
 
 @end

@@ -24,6 +24,8 @@
 #import <Foundation/Foundation.h>
 #import <ImageReductionPlugin/ImageReductionPlugin.h>
 
-@interface ADImageItemViewPlugin : NSObject <ADProjectStructureItemViewPlugin>
+@interface ADImageItemViewPlugin : NSObject <ADProjectStructureItemViewPlugin> {
+    NSArray * itemviewplugins;
+}
 
 @end

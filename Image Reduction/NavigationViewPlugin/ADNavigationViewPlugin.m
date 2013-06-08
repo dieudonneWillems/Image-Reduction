@@ -53,11 +53,27 @@
 - (ADViewController*) createViewController
 {
     ADNavigationViewController *vc = [[ADNavigationViewController alloc] init];
+    [vc setPlugin:self];
     return vc;
 }
 
 - (ADPreferencePane*) preferencePane
 {
     return nil;
+}
+
+- (id<ADProjectStructureItemViewPlugin>) itemViewPluginForItem:(id)item
+{
+    for(id<ADProjectStructureItemViewPlugin> itempi in itemViewPlugins){
+        if([itempi canDisplayItem:item]){
+            return itempi;
+        }
+    }
+    return nil;
+}
+
+- (void) setItemViewPlugins:(NSArray*)itemviewpis
+{
+    itemViewPlugins = itemviewpis;
 }
 @end

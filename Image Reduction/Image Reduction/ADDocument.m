@@ -68,10 +68,6 @@
     [nc addObserver:self selector:@selector(updateNotificationRecieved:) name:ADDataObjectUpdatedNotification object:nil];
     [self addViewsFromPlugins];
     [self setProjectStructureItemsInViews];
-    NSArray * vipl = [[ADPluginController defaultPluginController] pluginsConformingToProtocol:@protocol(ADProjectStructureItemViewPlugin)];
-    for(id<ADProjectStructureItemViewPlugin> pl in vipl){
-        ADProjectStructureItemViewController *vc = [pl createItemViewWithDisplaySize:ADProjectStructureItemSizeLarge];
-    }
 }
 
 + (BOOL)autosavesInPlace
@@ -336,6 +332,10 @@
             [viewControllers addObject:viewContr];
         }else{
             //TODO
+        }
+        if([vplug conformsToProtocol:@protocol(ADProjectStructureViewPlugin)]){
+            NSArray * vipl = [[ADPluginController defaultPluginController] pluginsConformingToProtocol:@protocol(ADProjectStructureItemViewPlugin)];
+            [(id<ADProjectStructureViewPlugin>)vplug setItemViewPlugins:vipl];
         }
     }
 }

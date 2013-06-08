@@ -23,6 +23,7 @@
 #import <ImageReductionPlugin/ImageReductionPlugin.h>
 
 @interface ADNavigationViewPlugin : NSObject <ADProjectStructureViewPlugin> {
+    NSArray *itemViewPlugins;
 }
 
 @end

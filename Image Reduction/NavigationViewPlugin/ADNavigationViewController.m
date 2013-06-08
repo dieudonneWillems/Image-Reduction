@@ -121,6 +121,7 @@
     [dict setObject:name forKey:@"ADName"];
     [dict setObject:[grouppath stringByAppendingPathComponent:name] forKey:@"ADPath"];
     [dict setObject:[wrapper thumbnail] forKey:@"ADThumbnail"];
+    [dict setObject:wrapper forKey:@"ADDataObjectWrapper"];
     [self createItem:dict addToGroup:grouppath];
 }
 
@@ -233,4 +234,31 @@
     return NO;
 }
 
+- (NSView *)outlineView:(NSOutlineView *)outlineView viewForTableColumn:(NSTableColumn *)tableColumn item:(id)item
+{
+    if([item isKindOfClass:[NSDictionary class]]){
+        ADDataObjectWrapper *wrapper = [(NSDictionary*)item objectForKey:@"ADDataObjectWrapper"];
+        if(wrapper){
+            id<ADProjectStructureItemViewPlugin> ipl = [[self plugin] itemViewPluginForItem:wrapper];
+            ADProjectStructureItemViewController *vc = [ipl createItemViewWithDisplaySize:ADProjectStructureItemSizeLarge];
+            [vc setItem:wrapper];
+            return [vc view];
+        }
+    }
+    return nil;
+}
+
+- (CGFloat)outlineView:(NSOutlineView *)outlineView heightOfRowByItem:(id)item
+{
+    if([item isKindOfClass:[NSDictionary class]]){
+        ADDataObjectWrapper *wrapper = [(NSDictionary*)item objectForKey:@"ADDataObjectWrapper"];
+        if(wrapper){
+            id<ADProjectStructureItemViewPlugin> ipl = [[self plugin] itemViewPluginForItem:wrapper];
+            ADProjectStructureItemViewController *vc = [ipl createItemViewWithDisplaySize:ADProjectStructureItemSizeLarge];
+            [vc setItem:wrapper];
+            return [[vc view] frame].size.height;
+        }
+    }
+    return 12.;
+}
 @end

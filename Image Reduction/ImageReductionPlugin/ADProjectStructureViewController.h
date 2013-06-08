@@ -22,8 +22,12 @@
 
 #import <ImageReductionPlugin/ImageReductionPlugin.h>
 
-@interface ADProjectStructureViewController : ADViewController
+@interface ADProjectStructureViewController : ADViewController {
+    id plugin;
+}
 
 - (void) setProjectStructureItems:(NSArray*)items;
+
+@property (readwrite) id plugin;
 
 @end

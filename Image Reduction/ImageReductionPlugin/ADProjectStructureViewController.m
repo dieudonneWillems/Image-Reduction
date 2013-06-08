@@ -39,6 +39,8 @@
     return self;
 }
 
+@synthesize plugin;
+
 - (void) setProjectStructureItems:(NSArray*)items
 {
     
