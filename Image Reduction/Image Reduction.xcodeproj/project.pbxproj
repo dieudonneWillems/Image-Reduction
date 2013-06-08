@@ -32,7 +32,7 @@
 		5F622E2F1760E241002663D7 /* ADNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F622E2E1760E241002663D7 /* ADNavigationViewController.m */; };
 		5F622E321760E468002663D7 /* ADProjectStructureViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F622E301760E468002663D7 /* ADProjectStructureViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5F622E331760E468002663D7 /* ADProjectStructureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F622E311760E468002663D7 /* ADProjectStructureViewController.m */; };
-		5F622E36176374B1002663D7 /* ADProjectStructureItemView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F622E34176374B0002663D7 /* ADProjectStructureItemView.h */; };
+		5F622E36176374B1002663D7 /* ADProjectStructureItemView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F622E34176374B0002663D7 /* ADProjectStructureItemView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5F622E37176374B1002663D7 /* ADProjectStructureItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F622E35176374B1002663D7 /* ADProjectStructureItemView.m */; };
 		5FDABEE917534404005EDD03 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABEE817534404005EDD03 /* Cocoa.framework */; };
 		5FDABEF317534404005EDD03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FDABEF117534404005EDD03 /* InfoPlist.strings */; };
