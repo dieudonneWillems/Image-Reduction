@@ -110,8 +110,9 @@ static NSDictionary *_thattr;
 {
     if([dataObject isKindOfClass:[ADImage class]]){
         ADImage *image = (ADImage*)dataObject;
+        CGFloat width = 32.0 * [image size].width/[image size].height;
         [image recreateImageWithDefaultScaling];
-        thumbnail = [[NSImage alloc] initWithSize:NSMakeSize(32, 32)];
+        thumbnail = [[NSImage alloc] initWithSize:NSMakeSize(width, 32)];
         [thumbnail lockFocus];
         NSRect thn;
         thn.origin = NSZeroPoint;
@@ -145,7 +146,7 @@ static NSDictionary *_thattr;
         }
         if(strcol){
             [strcol set];
-            NSRect strrect = NSMakeRect(0, 2, 32, 9);
+            NSRect strrect = NSMakeRect(0, 2, width, 9);
             NSBezierPath *bp = [NSBezierPath bezierPathWithRect:strrect];
             [bp fill];
             if(!_thattr){
