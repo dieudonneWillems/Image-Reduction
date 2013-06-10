@@ -17,7 +17,7 @@
 //    along with Image Reduction.  If not, see <http://www.gnu.org/licenses/>.
 //
 //  Copyright (c) 2013 Dieudonné Willems. All rights reserved.
-
+//
 //  Created by Don Willems on 05-06-13.
 //
 
@@ -75,5 +75,15 @@
 - (void) setItemViewPlugins:(NSArray*)itemviewpis
 {
     itemViewPlugins = itemviewpis;
+}
+
+- (ADProjectStructureGroupViewController*) createGroupViewController
+{
+    return [groupViewFactory createGroupItemViewController];
+}
+
+- (void) setGroupItemViewFactory:(id<ADProjectStructureGroupItemViewFactory>)factory
+{
+    groupViewFactory = factory;
 }
 @end

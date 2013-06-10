@@ -24,6 +24,7 @@
 
 @interface ADNavigationViewPlugin : NSObject <ADProjectStructureViewPlugin> {
     NSArray *itemViewPlugins;
+    id<ADProjectStructureGroupItemViewFactory> groupViewFactory;
 }
 
 @end

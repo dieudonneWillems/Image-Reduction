@@ -43,6 +43,12 @@
 		5F622E571763A9C8002663D7 /* ADNormalImageItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F622E551763A9C8002663D7 /* ADNormalImageItemView.xib */; };
 		5F622E5C1763AAF0002663D7 /* ADSmallImageItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F622E5A1763AAF0002663D7 /* ADSmallImageItemView.xib */; };
 		5F622E611763AB28002663D7 /* ADLargeImageItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F622E5F1763AB28002663D7 /* ADLargeImageItemView.xib */; };
+		5F622E6617667465002663D7 /* ADGroupItemViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F622E6417667465002663D7 /* ADGroupItemViewFactory.m */; };
+		5F622E6717667465002663D7 /* ADGroupItemViewFactory.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F622E6517667465002663D7 /* ADGroupItemViewFactory.xib */; };
+		5F622E6A17667A34002663D7 /* ADProjectStructureGroupViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F622E6817667A32002663D7 /* ADProjectStructureGroupViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F622E6B17667A34002663D7 /* ADProjectStructureGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F622E6917667A33002663D7 /* ADProjectStructureGroupViewController.m */; };
+		5F622E6D176685F5002663D7 /* ADProjectStructureGroupItemViewFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F622E6C176685F5002663D7 /* ADProjectStructureGroupItemViewFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F622E7017668A84002663D7 /* ADGroupItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F622E6F17668A84002663D7 /* ADGroupItemViewController.m */; };
 		5FDABEE917534404005EDD03 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABEE817534404005EDD03 /* Cocoa.framework */; };
 		5FDABEF317534404005EDD03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FDABEF117534404005EDD03 /* InfoPlist.strings */; };
 		5FDABEF517534404005EDD03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDABEF417534404005EDD03 /* main.m */; };
@@ -210,6 +216,14 @@
 		5F622E551763A9C8002663D7 /* ADNormalImageItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ADNormalImageItemView.xib; sourceTree = "<group>"; };
 		5F622E5A1763AAF0002663D7 /* ADSmallImageItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ADSmallImageItemView.xib; sourceTree = "<group>"; };
 		5F622E5F1763AB28002663D7 /* ADLargeImageItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ADLargeImageItemView.xib; sourceTree = "<group>"; };
+		5F622E6317667465002663D7 /* ADGroupItemViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADGroupItemViewFactory.h; sourceTree = "<group>"; };
+		5F622E6417667465002663D7 /* ADGroupItemViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADGroupItemViewFactory.m; sourceTree = "<group>"; };
+		5F622E6517667465002663D7 /* ADGroupItemViewFactory.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ADGroupItemViewFactory.xib; sourceTree = "<group>"; };
+		5F622E6817667A32002663D7 /* ADProjectStructureGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADProjectStructureGroupViewController.h; sourceTree = "<group>"; };
+		5F622E6917667A33002663D7 /* ADProjectStructureGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADProjectStructureGroupViewController.m; sourceTree = "<group>"; };
+		5F622E6C176685F5002663D7 /* ADProjectStructureGroupItemViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADProjectStructureGroupItemViewFactory.h; sourceTree = "<group>"; };
+		5F622E6E17668A84002663D7 /* ADGroupItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADGroupItemViewController.h; sourceTree = "<group>"; };
+		5F622E6F17668A84002663D7 /* ADGroupItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADGroupItemViewController.m; sourceTree = "<group>"; };
 		5FDABEE517534404005EDD03 /* Image Reduction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Image Reduction.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FDABEE817534404005EDD03 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		5FDABEEB17534404005EDD03 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -356,6 +370,7 @@
 				5F08AB17175D466A009C953E /* ADViewPlugin.h */,
 				5F622E28175FDFDC002663D7 /* ADProjectStructureViewPlugin.h */,
 				5F08AB27175F1587009C953E /* ADProjectStructureItemViewPlugin.h */,
+				5F622E6C176685F5002663D7 /* ADProjectStructureGroupItemViewFactory.h */,
 				5FDABF5E175348AB005EDD03 /* ADPreferencePane.h */,
 				5FDABF5F175348AB005EDD03 /* ADPreferencePane.m */,
 				5F08AB13175D4479009C953E /* ADViewController.h */,
@@ -366,6 +381,8 @@
 				5F622E311760E468002663D7 /* ADProjectStructureViewController.m */,
 				5F622E34176374B0002663D7 /* ADProjectStructureItemViewController.h */,
 				5F622E35176374B1002663D7 /* ADProjectStructureItemViewController.m */,
+				5F622E6817667A32002663D7 /* ADProjectStructureGroupViewController.h */,
+				5F622E6917667A33002663D7 /* ADProjectStructureGroupViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -417,6 +434,18 @@
 				5F622E4417638CCF002663D7 /* ImageItemView-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5F622E621766741C002663D7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5F622E6317667465002663D7 /* ADGroupItemViewFactory.h */,
+				5F622E6417667465002663D7 /* ADGroupItemViewFactory.m */,
+				5F622E6E17668A84002663D7 /* ADGroupItemViewController.h */,
+				5F622E6F17668A84002663D7 /* ADGroupItemViewController.m */,
+				5F622E6517667465002663D7 /* ADGroupItemViewFactory.xib */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		5FDABEDC17534404005EDD03 = {
@@ -476,6 +505,7 @@
 				5FDABF29175347F0005EDD03 /* Plugin Management */,
 				5FDABF2A17534804005EDD03 /* Import */,
 				5FDABF2B17534814005EDD03 /* Controllers */,
+				5F622E621766741C002663D7 /* View */,
 				5FDABEFA17534404005EDD03 /* ADDocument.h */,
 				5FDABEFB17534404005EDD03 /* ADDocument.m */,
 				5FDABEFD17534405005EDD03 /* ADDocument.xib */,
@@ -696,6 +726,8 @@
 				5F622E29175FDFDC002663D7 /* ADProjectStructureViewPlugin.h in Headers */,
 				5FDABF6F175348AB005EDD03 /* ImageReductionPlugin.h in Headers */,
 				5F622E321760E468002663D7 /* ADProjectStructureViewController.h in Headers */,
+				5F622E6A17667A34002663D7 /* ADProjectStructureGroupViewController.h in Headers */,
+				5F622E6D176685F5002663D7 /* ADProjectStructureGroupItemViewFactory.h in Headers */,
 				5F622E36176374B1002663D7 /* ADProjectStructureItemViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -898,6 +930,7 @@
 				5FDABEFF17534405005EDD03 /* ADDocument.xib in Resources */,
 				5FDABF0217534405005EDD03 /* MainMenu.xib in Resources */,
 				5F08AB1E175E484D009C953E /* license.txt in Resources */,
+				5F622E6717667465002663D7 /* ADGroupItemViewFactory.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -996,6 +1029,8 @@
 				5FDABF26175347E4005EDD03 /* ADApplicationController.m in Sources */,
 				5FDABF27175347E4005EDD03 /* ADImportController.m in Sources */,
 				5FDABF28175347E4005EDD03 /* ADPluginController.m in Sources */,
+				5F622E6617667465002663D7 /* ADGroupItemViewFactory.m in Sources */,
+				5F622E7017668A84002663D7 /* ADGroupItemViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1021,6 +1056,7 @@
 				5F08AB1C175D481C009C953E /* ADDataViewController.m in Sources */,
 				5F622E331760E468002663D7 /* ADProjectStructureViewController.m in Sources */,
 				5F622E37176374B1002663D7 /* ADProjectStructureItemViewController.m in Sources */,
+				5F622E6B17667A34002663D7 /* ADProjectStructureGroupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

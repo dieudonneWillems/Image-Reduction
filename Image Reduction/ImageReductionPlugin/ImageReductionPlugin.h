@@ -45,6 +45,8 @@
 #import "ADProjectStructureItemViewPlugin.h"
 #import "ADProjectStructureViewController.h"
 #import "ADProjectStructureItemViewController.h"
+#import "ADProjectStructureGroupViewController.h"
+#import "ADProjectStructureGroupItemViewFactory.h"
 
 
 

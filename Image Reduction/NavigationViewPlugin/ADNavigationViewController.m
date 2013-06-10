@@ -67,22 +67,22 @@
         if([item isKindOfClass:[ADDataObjectWrapper class]]){
             ADDataObjectWrapper *wrapper = (ADDataObjectWrapper*)item;
             if([[wrapper type] isEqualToString:ADPropertyTypeImage]){
-                NSString *group = @"Images";
+                NSString *group = nil;
                 ADProperty *prop = [wrapper propertyForKey:ADPropertyImageType];
                 if([[prop propertyValueKey] isEqualToString:ADPropertyImageTypeBias]){
-                    group = @"Images/Bias images";
+                    group = @"Bias images";
                 }else if([[prop propertyValueKey] isEqualToString:ADPropertyImageTypeCalibrated]){
-                    group = @"Images/Calibrated images";
+                    group = @"Calibrated images";
                 }else if([[prop propertyValueKey] isEqualToString:ADPropertyImageTypeDark]){
-                    group = @"Images/Dark fields";
+                    group = @"Dark fields";
                 }else if([[prop propertyValueKey] isEqualToString:ADPropertyImageTypeFlat]){
-                    group = @"Images/Flat fields";
+                    group = @"Flat fields";
                 }else if([[prop propertyValueKey] isEqualToString:ADPropertyImageTypeMasterFlat]){
-                    group = @"Images/Flat fields";
+                    group = @"Flat fields";
                 }else if([[prop propertyValueKey] isEqualToString:ADPropertyImageTypeStacked]){
-                    group = @"Images/Stacked images";
+                    group = @"Stacked images";
                 }else if([[prop propertyValueKey] isEqualToString:ADPropertyImageTypeRaw]){
-                    group = @"Images/Science images";
+                    group = @"Science images";
                 }
                 [self createItemWithDataWrapper:wrapper addToGroup:group];
             }
@@ -127,16 +127,21 @@
 
 - (void) createItem:(NSDictionary*)item addToGroup:(NSString*)grouppath
 {
-    NSDictionary *groupd = [self groupWithPath:grouppath];
-    if(!groupd){
-        groupd = [self createGroupWithPath:grouppath];
+    if(grouppath){
+        NSDictionary *groupd = [self groupWithPath:grouppath];
+        if(!groupd){
+            groupd = [self createGroupWithPath:grouppath];
+        }
+        NSMutableArray *children = [groupd objectForKey:@"ADChildren"];
+        [children addObject:item];
+    }else{
+        [items addObject:item];
     }
-    NSMutableArray *children = [groupd objectForKey:@"ADChildren"];
-    [children addObject:item];
 }
 
 - (NSDictionary*) groupWithPath:(NSString*)grouppath
 {
+    if(!grouppath || [grouppath length]<=0) return nil;
     NSArray *pc = [grouppath pathComponents];
     for(NSDictionary* item in items){
         NSString *path = [item objectForKey:@"ADPath"];
@@ -225,12 +230,13 @@
 
 - (BOOL)outlineView:(NSOutlineView *)outlineView isGroupItem:(id)item
 {
+    /*
     if([item isKindOfClass:[NSDictionary class]]){
         NSArray *children = [(NSDictionary*)item objectForKey:@"ADChildren"];
         NSString *path = [item objectForKey:@"ADPath"];
         NSArray *pcs = [path pathComponents];
         if(children && [children count]>0 && [pcs count]==1) return YES;
-    }
+    }*/
     return NO;
 }
 
@@ -243,6 +249,15 @@
             ADProjectStructureItemViewController *vc = [ipl createItemViewWithDisplaySize:ADProjectStructureItemSizeLarge];
             [vc setItem:wrapper];
             return [vc view];
+        }else{
+            NSArray *children = [(NSDictionary*)item objectForKey:@"ADChildren"];
+            if([children count]>0){
+                ADProjectStructureGroupViewController* gvc = [[self plugin] createGroupViewController];
+                NSString *name = [(NSDictionary*)item objectForKey:@"ADName"];
+                [gvc setTitle:name];
+                [gvc setObjectCount:[children count]];
+                return [gvc view];
+            }
         }
     }
     return nil;
@@ -250,15 +265,8 @@
 
 - (CGFloat)outlineView:(NSOutlineView *)outlineView heightOfRowByItem:(id)item
 {
-    if([item isKindOfClass:[NSDictionary class]]){
-        ADDataObjectWrapper *wrapper = [(NSDictionary*)item objectForKey:@"ADDataObjectWrapper"];
-        if(wrapper){
-            id<ADProjectStructureItemViewPlugin> ipl = [[self plugin] itemViewPluginForItem:wrapper];
-            ADProjectStructureItemViewController *vc = [ipl createItemViewWithDisplaySize:ADProjectStructureItemSizeLarge];
-            [vc setItem:wrapper];
-            return [[vc view] frame].size.height;
-        }
-    }
+    NSView *view = [self outlineView:outlineView viewForTableColumn:nil item:item];
+    if(view) return [view frame].size.height;
     return 12.;
 }
 @end

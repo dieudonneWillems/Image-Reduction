@@ -24,6 +24,7 @@
 #import "ADDocument.h"
 #import "ADPluginController.h"
 #import "ADImportController.h"
+#import "ADGroupItemViewFactory.h"
 
 @interface ADDocument (private)
 - (void) importNotificationRecieved:(NSNotification*)not;
@@ -336,6 +337,7 @@
         if([vplug conformsToProtocol:@protocol(ADProjectStructureViewPlugin)]){
             NSArray * vipl = [[ADPluginController defaultPluginController] pluginsConformingToProtocol:@protocol(ADProjectStructureItemViewPlugin)];
             [(id<ADProjectStructureViewPlugin>)vplug setItemViewPlugins:vipl];
+            [(id<ADProjectStructureViewPlugin>)vplug setGroupItemViewFactory:[[ADGroupItemViewFactory alloc] init]];
         }
     }
 }

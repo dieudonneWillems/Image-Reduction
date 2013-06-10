@@ -1,6 +1,6 @@
 //
-//  ADProjectStructureViewPlugin.h
-
+//  ADProjectStructureGroupViewController.h
+//
 // 	This file is part of Image Reduction.
 //
 //    Image Reduction is free software: you can redistribute it and/or modify
@@ -18,19 +18,16 @@
 //
 //  Copyright (c) 2013 Dieudonné Willems. All rights reserved.
 //
-//  Created by Don Willems on 05-06-13.
+//  Created by Don Willems on 10-06-13.
 //
 
-#import <Foundation/Foundation.h>
-#import "ADViewPlugin.h"
-#import "ADProjectStructureItemViewPlugin.h"
-#import "ADProjectStructureGroupViewController.h"
-#import "ADProjectStructureGroupItemViewFactory.h"
+#import <Cocoa/Cocoa.h>
 
-@protocol ADProjectStructureViewPlugin <ADViewPlugin>
+@interface ADProjectStructureGroupViewController : NSViewController {
+}
 
-- (id<ADProjectStructureItemViewPlugin>) itemViewPluginForItem:(id)item;
-- (void) setItemViewPlugins:(NSArray*)itemviewpis;
-- (ADProjectStructureGroupViewController*) createGroupViewController;
-- (void) setGroupItemViewFactory:(id<ADProjectStructureGroupItemViewFactory>)factory;
+- (void) setTitle:(NSString*) title;
+- (void) setIcon:(NSImage*) icon;
+- (void) setObjectCount:(NSUInteger)count;
+
 @end

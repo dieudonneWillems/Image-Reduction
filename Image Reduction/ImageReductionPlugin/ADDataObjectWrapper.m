@@ -121,6 +121,7 @@ static NSDictionary *_thattr;
         ori.origin = NSZeroPoint;
         ori.size = [image size];
         [image drawInRect:thn fromRect:ori operation:NSCompositeCopy fraction:1.0];
+        /*
         ADProperty *it = [self propertyForKey:ADPropertyImageType];
         NSString *kval = [it propertyValueKey];
         NSColor *strcol = nil;
@@ -157,7 +158,7 @@ static NSDictionary *_thattr;
             strp.x = strrect.origin.x+(strrect.size.width-size.width)/2;
             strp.y = strrect.origin.y+(strrect.size.height-size.height)/2;
             [str drawAtPoint:strp withAttributes:_thattr];
-        }
+        }*/
         [thumbnail unlockFocus];
     }
 }
