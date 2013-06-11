@@ -41,6 +41,8 @@
         NSLog(@"Nib: %@   View: %@",[self nibBundle],[self view] );
         namelabel = [[self view] viewWithTag:1];
         thumbnailview = [[self view] viewWithTag:0];
+        typelabel = [[self view] viewWithTag:2];
+        filterlabel = [[self view] viewWithTag:3];
         NSLog(@"name label: %@",namelabel);
     }
     return self;
@@ -58,6 +60,7 @@
         ADDataObjectWrapper *wrapper = (ADDataObjectWrapper*) item;
         [namelabel setStringValue:[[wrapper filename] stringByDeletingPathExtension]];
         [thumbnailview setImage:[wrapper thumbnail]];
+        // TODO set values for filter and type
     }
 }
 

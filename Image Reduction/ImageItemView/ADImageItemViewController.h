@@ -13,6 +13,8 @@
     ADProjectStructureItemSize displaySize;
     NSTextField *namelabel;
     NSImageView *thumbnailview;
+    NSTextField *typelabel;
+    NSTextField *filterlabel;
 }
 
 - (id) initWithDisplaySize:(ADProjectStructureItemSize)size;
