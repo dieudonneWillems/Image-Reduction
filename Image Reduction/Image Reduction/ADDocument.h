@@ -31,7 +31,8 @@
     NSMutableArray *changedDataObjectWrappers;
     NSUInteger seed;
     
-    IBOutlet NSTabView *tabview;
+    IBOutlet NSTabView *navigationTabView;
+    IBOutlet NSTabView *mainTabView;
     
     NSMutableArray *viewControllers;
 }

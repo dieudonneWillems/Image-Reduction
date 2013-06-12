@@ -85,6 +85,7 @@
 @synthesize minimumValue;
 @synthesize maximumValue;
 @synthesize standardDeviationValue;
+@synthesize defaultScaling;
 
 - (void) recreateImageWithDefaultScaling
 {
@@ -199,5 +200,17 @@
     NSLog(@"Minimum pixel value: %f",minimumValue);
     NSLog(@"Standard Deviation pixel value: %f",standardDeviationValue);
     needsCalculateStatistics = NO;
+}
+
+- (void) drawAtPoint:(NSPoint)point fromRect:(NSRect)fromRect operation:(NSCompositingOperation)op fraction:(CGFloat)delta
+{
+    if([[self representations] count]<=0) [self recreateImageWithDefaultScaling];
+    [super drawAtPoint:point fromRect:fromRect operation:op fraction:delta];
+}
+
+- (void) drawInRect:(NSRect)dstSpacePortionRect fromRect:(NSRect)srcSpacePortionRect operation:(NSCompositingOperation)op fraction:(CGFloat)requestedAlpha respectFlipped:(BOOL)respectContextIsFlipped hints:(NSDictionary *)hints
+{
+    if([[self representations] count]<=0) [self recreateImageWithDefaultScaling];
+    [super drawInRect:dstSpacePortionRect fromRect:srcSpacePortionRect operation:op fraction:requestedAlpha respectFlipped:respectContextIsFlipped hints:hints];
 }
 @end

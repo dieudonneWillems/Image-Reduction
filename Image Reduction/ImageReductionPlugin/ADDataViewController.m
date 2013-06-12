@@ -27,8 +27,6 @@
 
 @interface ADDataViewController (private)
 - (void) postViewChangedDataObjectNotificationWithCurrentDataObject:(ADDataObjectWrapper*)current andPreviousDataObject:(ADDataObjectWrapper*)previous;
-- (void) selectionNotificationReceived:(NSNotification*)not;
-- (void) updateNotificationRecieved:(NSNotification*)not;
 @end
 
 @implementation ADDataViewController
@@ -38,10 +36,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         //Connect to any selection of a data object.
-        NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-        [nc addObserver:self selector:@selector(updateNotificationRecieved:) name:ADDataObjectUpdatedNotification object:nil];
-        [nc addObserver:self selector:@selector(selectionNotificationReceived:) name:ADDataObjectSelectionChangedNotification object:nil];
-        [nc addObserver:self selector:@selector(selectionNotificationReceived:) name:ADDataObjectSelectionWillChangeNotification object:nil];
     }
     
     return self;
@@ -67,22 +61,6 @@
 - (BOOL) canBeUsedAsEditorForDataObjectWrapper:(ADDataObjectWrapper*)wrapper
 {
     return NO;
-}
-
-- (void) selectionNotificationReceived:(NSNotification*)not
-{
-    ADDataObjectWrapper *dow = (ADDataObjectWrapper*)[[not userInfo] objectForKey:ADCurrentDataObject];
-    if(dow){
-        [self setDataObjectWrapper:dow];
-    }
-}
-
-- (void) updateNotificationRecieved:(NSNotification*)not
-{
-    ADDataObjectWrapper *dow = (ADDataObjectWrapper*)[[not userInfo] objectForKey:ADUpdatedDataObject];
-    if([dow isEqual:dataObjectWrapper]){
-        [self setDataObjectWrapper:dow];
-    }
 }
 
 - (void) postViewChangedDataObjectNotificationWithCurrentDataObject:(ADDataObjectWrapper*)current andPreviousDataObject:(ADDataObjectWrapper*)previous

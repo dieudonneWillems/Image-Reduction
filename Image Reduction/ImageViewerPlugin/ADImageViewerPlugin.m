@@ -22,7 +22,16 @@
 //  Created by Don Willems on 12-06-13.
 //
 
+
 #import "ADImageViewerPlugin.h"
+#import "ADImageViewController.h"
+
+static ADDataViewController *__dataviewcontroller;
+
+@interface ADImageViewerPlugin (private)
+- (void) selectionNotificationReceived:(NSNotification*)not;
+- (void) updateNotificationRecieved:(NSNotification*)not;
+@end
 
 @implementation ADImageViewerPlugin
 
@@ -34,7 +43,10 @@
 
 - (void) initialize
 {
-    
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc addObserver:self selector:@selector(updateNotificationRecieved:) name:ADDataObjectUpdatedNotification object:nil];
+    [nc addObserver:self selector:@selector(selectionNotificationReceived:) name:ADDataObjectSelectionChangedNotification object:nil];
+    //[nc addObserver:self selector:@selector(selectionNotificationReceived:) name:ADDataObjectSelectionWillChangeNotification object:nil];
 }
 
 - (ADPreferencePane*) preferencePane
@@ -44,8 +56,27 @@
 
 - (ADViewController*) createViewController
 {
-    ADDataViewController *dvc = nil;
-    return dvc;
+    if(__dataviewcontroller) return __dataviewcontroller;
+    NSString* nibname = @"ADImageView";
+    NSBundle* bundle = [NSBundle bundleForClass:[ADImageViewerPlugin class]];
+    __dataviewcontroller = [[ADImageViewController alloc] initWithNibName:nibname bundle:bundle];
+    return __dataviewcontroller;
 }
 
+
+- (void) selectionNotificationReceived:(NSNotification*)not
+{
+    ADDataObjectWrapper *dow = (ADDataObjectWrapper*)[[not userInfo] objectForKey:ADCurrentDataObject];
+    if(dow){
+        [__dataviewcontroller setDataObjectWrapper:dow];
+    }
+}
+
+- (void) updateNotificationRecieved:(NSNotification*)not
+{
+    ADDataObjectWrapper *dow = (ADDataObjectWrapper*)[[not userInfo] objectForKey:ADUpdatedDataObject];
+    if([dow isEqual:[__dataviewcontroller dataObjectWrapper]]){
+        [__dataviewcontroller setDataObjectWrapper:dow];
+    }
+}
 @end

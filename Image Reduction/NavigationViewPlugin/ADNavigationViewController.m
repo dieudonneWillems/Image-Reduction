@@ -284,7 +284,7 @@
     sdataObject = [(NSDictionary*)item objectForKey:@"ADDataObjectWrapper"];
     if(sdataObject){
         if([[not name] isEqualToString:NSOutlineViewSelectionIsChangingNotification]){
-            [ui setObject:sdataObject forKey:ADPreviousDataObject];
+            [ui setObject:sdataObject forKey:ADCurrentDataObject];
             [[NSNotificationCenter defaultCenter] postOnMainThreadNotification:[NSNotification notificationWithName:ADDataObjectSelectionWillChangeNotification object:self userInfo:ui]];
         }else if([[not name] isEqualToString:NSOutlineViewSelectionDidChangeNotification]){
             [ui setObject:sdataObject forKey:ADCurrentDataObject];

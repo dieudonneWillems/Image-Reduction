@@ -55,6 +55,8 @@
 		5FBF6EE81768973C00F98CB4 /* ImageReductionPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABF311753484F005EDD03 /* ImageReductionPlugin.framework */; };
 		5FBF6EEB1768986300F98CB4 /* ADImageViewerPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBF6EEA1768986300F98CB4 /* ADImageViewerPlugin.m */; };
 		5FBF6EEF17689A8700F98CB4 /* ADImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBF6EEE17689A8700F98CB4 /* ADImageView.m */; };
+		5FBF6EF11768F68100F98CB4 /* ADImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FBF6EF01768F68100F98CB4 /* ADImageView.xib */; };
+		5FBF6EF41768FBCF00F98CB4 /* ADImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBF6EF31768FBCF00F98CB4 /* ADImageViewController.m */; };
 		5FDABEE917534404005EDD03 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABEE817534404005EDD03 /* Cocoa.framework */; };
 		5FDABEF317534404005EDD03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FDABEF117534404005EDD03 /* InfoPlist.strings */; };
 		5FDABEF517534404005EDD03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDABEF417534404005EDD03 /* main.m */; };
@@ -254,6 +256,9 @@
 		5FBF6EEC17689A8700F98CB4 /* ADImageLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADImageLayer.h; sourceTree = "<group>"; };
 		5FBF6EED17689A8700F98CB4 /* ADImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADImageView.h; sourceTree = "<group>"; };
 		5FBF6EEE17689A8700F98CB4 /* ADImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADImageView.m; sourceTree = "<group>"; };
+		5FBF6EF01768F68100F98CB4 /* ADImageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ADImageView.xib; sourceTree = "<group>"; };
+		5FBF6EF21768FBCF00F98CB4 /* ADImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADImageViewController.h; sourceTree = "<group>"; };
+		5FBF6EF31768FBCF00F98CB4 /* ADImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADImageViewController.m; sourceTree = "<group>"; };
 		5FDABEE517534404005EDD03 /* Image Reduction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Image Reduction.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FDABEE817534404005EDD03 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		5FDABEEB17534404005EDD03 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -495,6 +500,9 @@
 				5FBF6EEC17689A8700F98CB4 /* ADImageLayer.h */,
 				5FBF6EED17689A8700F98CB4 /* ADImageView.h */,
 				5FBF6EEE17689A8700F98CB4 /* ADImageView.m */,
+				5FBF6EF21768FBCF00F98CB4 /* ADImageViewController.h */,
+				5FBF6EF31768FBCF00F98CB4 /* ADImageViewController.m */,
+				5FBF6EF01768F68100F98CB4 /* ADImageView.xib */,
 				5FBF6EDA1768970A00F98CB4 /* Supporting Files */,
 			);
 			path = ImageViewerPlugin;
@@ -1010,6 +1018,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FBF6EDE1768970A00F98CB4 /* InfoPlist.strings in Resources */,
+				5FBF6EF11768F68100F98CB4 /* ADImageView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1118,6 +1127,7 @@
 			files = (
 				5FBF6EEB1768986300F98CB4 /* ADImageViewerPlugin.m in Sources */,
 				5FBF6EEF17689A8700F98CB4 /* ADImageView.m in Sources */,
+				5FBF6EF41768FBCF00F98CB4 /* ADImageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

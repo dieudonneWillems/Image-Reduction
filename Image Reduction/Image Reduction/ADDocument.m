@@ -295,6 +295,12 @@
 - (void) selectionNotificationReceived:(NSNotification*)not
 {
     NSLog(@"Received object selection event: %@",not);
+    if([[not name] isEqualToString:ADDataObjectSelectionWillChangeNotification]){
+        ADDataObjectWrapper *wrapper = [[not userInfo] objectForKey:ADCurrentDataObject];
+        if(![wrapper dataObjectIsLoaded]) {
+            [wrapper loadDataObjectFromBundleAtPath:[[self fileURL] path]];
+        }
+    }
 }
 
 
@@ -339,7 +345,14 @@
             NSTabViewItem *tabviewitem = [[NSTabViewItem alloc] initWithIdentifier:[[vplug class] description]];
             [tabviewitem setView:view];
             [view setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
-            [tabview addTabViewItem:tabviewitem];
+            [navigationTabView addTabViewItem:tabviewitem];
+            [viewControllers addObject:viewContr];
+        }else if([viewContr preferredViewArea] == ADMainViewArea){
+            NSView *view = [viewContr view];
+            NSTabViewItem *tabviewitem = [[NSTabViewItem alloc] initWithIdentifier:[[vplug class] description]];
+            [tabviewitem setView:view];
+            [view setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
+            [mainTabView addTabViewItem:tabviewitem];
             [viewControllers addObject:viewContr];
         }else{
             //TODO

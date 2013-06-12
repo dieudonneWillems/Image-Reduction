@@ -44,6 +44,7 @@
 @property (readonly) double minimumValue;
 @property (readonly) double maximumValue;
 @property (readonly) double standardDeviationValue;
+@property (readwrite) ADScalingFunction *defaultScaling;
 
 - (void) recreateImageWithDefaultScaling;
 - (void) recreateImageWithScalingFunction:(ADScalingFunction*)function;
