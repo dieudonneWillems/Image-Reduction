@@ -26,7 +26,7 @@
 #import "ADDataObjectWrapper.h"
 #import "ImageReductionPlugin.h"
 
-static NSDictionary *_thattr;
+//static NSDictionary *_thattr;
 
 @interface ADDataObjectWrapper (private)
 - (id) initWithDataObject:(id<ADDataObject>)object ofType:(NSString*)tp;

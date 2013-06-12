@@ -29,6 +29,7 @@
 - (void) createItem:(NSDictionary*)item addToGroup:(NSString*)grouppath;
 - (NSDictionary*) groupWithPath:(NSString*)grouppath;
 - (NSDictionary*) groupWithPath:(NSString *)grouppath inParentGroup:(NSDictionary*)parent atPath:(NSString*)parentpath;
+- (void) selectionNotificationReceived:(NSNotification*)not;
 @end
 
 @implementation ADNavigationViewController
@@ -40,6 +41,8 @@
     if (self) {
         // Initialization code here.
         NSLog(@"1 Loading navigation view plugin");
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectionNotificationReceived:) name:NSOutlineViewSelectionIsChangingNotification object:navOutline];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectionNotificationReceived:) name:NSOutlineViewSelectionDidChangeNotification object:navOutline];
     }
     return self;
 }
@@ -268,5 +271,27 @@
     NSView *view = [self outlineView:outlineView viewForTableColumn:nil item:item];
     if(view) return [view frame].size.height;
     return 12.;
+}
+
+#pragma mark Notifications
+
+- (void) selectionNotificationReceived:(NSNotification*)not
+{
+    NSMutableDictionary *ui = [NSMutableDictionary dictionary];
+    ADDataObjectWrapper *sdataObject = nil;
+    NSInteger row = [navOutline selectedRow];
+    id item = [navOutline itemAtRow:row];
+    sdataObject = [(NSDictionary*)item objectForKey:@"ADDataObjectWrapper"];
+    if(sdataObject){
+        if([[not name] isEqualToString:NSOutlineViewSelectionIsChangingNotification]){
+            [ui setObject:sdataObject forKey:ADPreviousDataObject];
+            [[NSNotificationCenter defaultCenter] postOnMainThreadNotification:[NSNotification notificationWithName:ADDataObjectSelectionWillChangeNotification object:self userInfo:ui]];
+        }else if([[not name] isEqualToString:NSOutlineViewSelectionDidChangeNotification]){
+            [ui setObject:sdataObject forKey:ADCurrentDataObject];
+            [[NSNotificationCenter defaultCenter] postOnMainThreadNotification:[NSNotification notificationWithName:ADDataObjectSelectionChangedNotification object:self userInfo:ui]];
+        }
+    }else{
+        NSLog(@"Received notification of a selection in the navigation panel, without an object attached to the selection.");
+    }
 }
 @end

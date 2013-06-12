@@ -70,6 +70,8 @@
 
 
 #pragma mark View notifications
+#define ADDataObjectSelectionWillChangeNotification @"ADDataObjectSelectionWillChangeNotification"
+#define ADDataObjectSelectionChangedNotification @"ADDataObjectSelectionChangedNotification"
 #define ADViewChangedDataObjectNotification @"ADViewChangedDataObjectNotification"
 
 #define ADPreviousDataObject @"ADPreviousDataObject"

@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'ImageViewerPlugin' target in the 'ImageViewerPlugin' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif

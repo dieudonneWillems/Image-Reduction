@@ -29,6 +29,7 @@
 @interface ADDocument (private)
 - (void) importNotificationRecieved:(NSNotification*)not;
 - (void) updateNotificationRecieved:(NSNotification*)not;
+- (void) selectionNotificationReceived:(NSNotification*)not;
 - (void) addToChangedSet:(ADDataObjectWrapper*)wrapper;
 - (BOOL) createDirectoriesInBundleAtPath:(NSString*)path;
 - (void) handleError:(NSError*)error;
@@ -67,6 +68,8 @@
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc addObserver:self selector:@selector(importNotificationRecieved:) name:nil object:[ADImportController sharedImportController]];
     [nc addObserver:self selector:@selector(updateNotificationRecieved:) name:ADDataObjectUpdatedNotification object:nil];
+    [nc addObserver:self selector:@selector(selectionNotificationReceived:) name:ADDataObjectSelectionChangedNotification object:nil];
+    [nc addObserver:self selector:@selector(selectionNotificationReceived:) name:ADDataObjectSelectionWillChangeNotification object:nil];
     [self addViewsFromPlugins];
     [self setProjectStructureItemsInViews];
 }
@@ -287,6 +290,13 @@
     if(ed)return ed;
     return ([changedDataObjectWrappers count]>0);
 }
+
+#pragma mark Selection of objects
+- (void) selectionNotificationReceived:(NSNotification*)not
+{
+    NSLog(@"Received object selection event: %@",not);
+}
+
 
 #pragma mark Import and Export
 - (IBAction) import:(id)sender
