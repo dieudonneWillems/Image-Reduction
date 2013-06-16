@@ -23,9 +23,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <ImageReductionPlugin/ImageReductionPlugin.h>
 @class ADImageView;
 
-@protocol ADImageLayer <NSObject>
+@protocol ADImageLayer <ADImageReductionPlugin>
 
 - (BOOL) isVisible;
 - (void) setVisible:(BOOL)vis;

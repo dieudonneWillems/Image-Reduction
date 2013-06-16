@@ -49,12 +49,25 @@
 		5F622E6B17667A34002663D7 /* ADProjectStructureGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F622E6917667A33002663D7 /* ADProjectStructureGroupViewController.m */; };
 		5F622E6D176685F5002663D7 /* ADProjectStructureGroupItemViewFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F622E6C176685F5002663D7 /* ADProjectStructureGroupItemViewFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5F622E7017668A84002663D7 /* ADGroupItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F622E6F17668A84002663D7 /* ADGroupItemViewController.m */; };
+		5FB21FA3176DA86100C4E81C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABEE817534404005EDD03 /* Cocoa.framework */; };
+		5FB21FA9176DA86100C4E81C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FB21FA7176DA86100C4E81C /* InfoPlist.strings */; };
+		5FB21FB4176DA86100C4E81C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABF0917534405005EDD03 /* SenTestingKit.framework */; };
+		5FB21FB5176DA86100C4E81C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABEE817534404005EDD03 /* Cocoa.framework */; };
+		5FB21FB8176DA86100C4E81C /* ImageViewLayerPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB21FA2176DA86100C4E81C /* ImageViewLayerPlugin.framework */; };
+		5FB21FBE176DA86100C4E81C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FB21FBC176DA86100C4E81C /* InfoPlist.strings */; };
+		5FB21FC1176DA86100C4E81C /* ImageViewLayerPluginTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB21FC0176DA86100C4E81C /* ImageViewLayerPluginTests.m */; };
+		5FB21FC9176DA93B00C4E81C /* ImageViewLayerPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FB21FC8176DA93B00C4E81C /* ImageViewLayerPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FB21FCA176DAAC900C4E81C /* ADImageLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FBF6EEC17689A8700F98CB4 /* ADImageLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FB21FCB176DAAE800C4E81C /* ADImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBF6EEE17689A8700F98CB4 /* ADImageView.m */; };
+		5FB21FCC176DAAED00C4E81C /* ADImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FBF6EED17689A8700F98CB4 /* ADImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FB21FD1176DAB4700C4E81C /* ImageViewLayerPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB21FA2176DA86100C4E81C /* ImageViewLayerPlugin.framework */; };
+		5FB21FD2176DAB5100C4E81C /* ImageReductionPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABF311753484F005EDD03 /* ImageReductionPlugin.framework */; };
+		5FB21FD5176DAB7900C4E81C /* ImageViewLayerPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB21FA2176DA86100C4E81C /* ImageViewLayerPlugin.framework */; };
 		5FBF6ED81768970A00F98CB4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABEE817534404005EDD03 /* Cocoa.framework */; };
 		5FBF6EDE1768970A00F98CB4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FBF6EDC1768970A00F98CB4 /* InfoPlist.strings */; };
 		5FBF6EE71768972D00F98CB4 /* ImageViewerPlugin.plugin in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FBF6ED71768970900F98CB4 /* ImageViewerPlugin.plugin */; };
 		5FBF6EE81768973C00F98CB4 /* ImageReductionPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABF311753484F005EDD03 /* ImageReductionPlugin.framework */; };
 		5FBF6EEB1768986300F98CB4 /* ADImageViewerPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBF6EEA1768986300F98CB4 /* ADImageViewerPlugin.m */; };
-		5FBF6EEF17689A8700F98CB4 /* ADImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBF6EEE17689A8700F98CB4 /* ADImageView.m */; };
 		5FBF6EF11768F68100F98CB4 /* ADImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FBF6EF01768F68100F98CB4 /* ADImageView.xib */; };
 		5FBF6EF41768FBCF00F98CB4 /* ADImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBF6EF31768FBCF00F98CB4 /* ADImageViewController.m */; };
 		5FDABEE917534404005EDD03 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABEE817534404005EDD03 /* Cocoa.framework */; };
@@ -135,6 +148,34 @@
 			proxyType = 1;
 			remoteGlobalIDString = 5F622E3B17638CCF002663D7;
 			remoteInfo = ImageItemView;
+		};
+		5FB21FB6176DA86100C4E81C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FDABEDD17534404005EDD03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FB21FA1176DA86100C4E81C;
+			remoteInfo = ImageViewLayerPlugin;
+		};
+		5FB21FCD176DAB2100C4E81C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FDABEDD17534404005EDD03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FDABF301753484F005EDD03;
+			remoteInfo = ImageReductionPlugin;
+		};
+		5FB21FCF176DAB4000C4E81C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FDABEDD17534404005EDD03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FB21FA1176DA86100C4E81C;
+			remoteInfo = ImageViewLayerPlugin;
+		};
+		5FB21FD3176DAB6E00C4E81C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FDABEDD17534404005EDD03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FB21FA1176DA86100C4E81C;
+			remoteInfo = ImageViewLayerPlugin;
 		};
 		5FBF6EE31768971700F98CB4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -247,15 +288,25 @@
 		5F622E6C176685F5002663D7 /* ADProjectStructureGroupItemViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADProjectStructureGroupItemViewFactory.h; sourceTree = "<group>"; };
 		5F622E6E17668A84002663D7 /* ADGroupItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADGroupItemViewController.h; sourceTree = "<group>"; };
 		5F622E6F17668A84002663D7 /* ADGroupItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADGroupItemViewController.m; sourceTree = "<group>"; };
+		5FB21FA2176DA86100C4E81C /* ImageViewLayerPlugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImageViewLayerPlugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FB21FA6176DA86100C4E81C /* ImageViewLayerPlugin-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImageViewLayerPlugin-Info.plist"; sourceTree = "<group>"; };
+		5FB21FA8176DA86100C4E81C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5FB21FAA176DA86100C4E81C /* ImageViewLayerPlugin-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImageViewLayerPlugin-Prefix.pch"; sourceTree = "<group>"; };
+		5FB21FB3176DA86100C4E81C /* ImageViewLayerPluginTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageViewLayerPluginTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FB21FBB176DA86100C4E81C /* ImageViewLayerPluginTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImageViewLayerPluginTests-Info.plist"; sourceTree = "<group>"; };
+		5FB21FBD176DA86100C4E81C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5FB21FBF176DA86100C4E81C /* ImageViewLayerPluginTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageViewLayerPluginTests.h; sourceTree = "<group>"; };
+		5FB21FC0176DA86100C4E81C /* ImageViewLayerPluginTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageViewLayerPluginTests.m; sourceTree = "<group>"; };
+		5FB21FC8176DA93B00C4E81C /* ImageViewLayerPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewLayerPlugin.h; sourceTree = "<group>"; };
 		5FBF6ED71768970900F98CB4 /* ImageViewerPlugin.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageViewerPlugin.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FBF6EDB1768970A00F98CB4 /* ImageViewerPlugin-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImageViewerPlugin-Info.plist"; sourceTree = "<group>"; };
 		5FBF6EDD1768970A00F98CB4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5FBF6EDF1768970A00F98CB4 /* ImageViewerPlugin-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImageViewerPlugin-Prefix.pch"; sourceTree = "<group>"; };
 		5FBF6EE91768986300F98CB4 /* ADImageViewerPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADImageViewerPlugin.h; sourceTree = "<group>"; };
 		5FBF6EEA1768986300F98CB4 /* ADImageViewerPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADImageViewerPlugin.m; sourceTree = "<group>"; };
-		5FBF6EEC17689A8700F98CB4 /* ADImageLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADImageLayer.h; sourceTree = "<group>"; };
-		5FBF6EED17689A8700F98CB4 /* ADImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADImageView.h; sourceTree = "<group>"; };
-		5FBF6EEE17689A8700F98CB4 /* ADImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADImageView.m; sourceTree = "<group>"; };
+		5FBF6EEC17689A8700F98CB4 /* ADImageLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADImageLayer.h; path = ../ImageViewerPlugin/ADImageLayer.h; sourceTree = "<group>"; };
+		5FBF6EED17689A8700F98CB4 /* ADImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADImageView.h; path = ../ImageViewerPlugin/ADImageView.h; sourceTree = "<group>"; };
+		5FBF6EEE17689A8700F98CB4 /* ADImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ADImageView.m; path = ../ImageViewerPlugin/ADImageView.m; sourceTree = "<group>"; };
 		5FBF6EF01768F68100F98CB4 /* ADImageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ADImageView.xib; sourceTree = "<group>"; };
 		5FBF6EF21768FBCF00F98CB4 /* ADImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADImageViewController.h; sourceTree = "<group>"; };
 		5FBF6EF31768FBCF00F98CB4 /* ADImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADImageViewController.m; sourceTree = "<group>"; };
@@ -351,10 +402,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5FB21F9E176DA86100C4E81C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FB21FD2176DAB5100C4E81C /* ImageReductionPlugin.framework in Frameworks */,
+				5FB21FA3176DA86100C4E81C /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FB21FAF176DA86100C4E81C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FB21FB4176DA86100C4E81C /* SenTestingKit.framework in Frameworks */,
+				5FB21FB5176DA86100C4E81C /* Cocoa.framework in Frameworks */,
+				5FB21FB8176DA86100C4E81C /* ImageViewLayerPlugin.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5FBF6ED41768970900F98CB4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FB21FD1176DAB4700C4E81C /* ImageViewLayerPlugin.framework in Frameworks */,
 				5FBF6EE81768973C00F98CB4 /* ImageReductionPlugin.framework in Frameworks */,
 				5FBF6ED81768970A00F98CB4 /* Cocoa.framework in Frameworks */,
 			);
@@ -364,6 +435,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FB21FD5176DAB7900C4E81C /* ImageViewLayerPlugin.framework in Frameworks */,
 				5FDABF591753486D005EDD03 /* ImageReductionPlugin.framework in Frameworks */,
 				5FDABEE917534404005EDD03 /* Cocoa.framework in Frameworks */,
 			);
@@ -492,14 +564,52 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		5FB21FA4176DA86100C4E81C /* ImageViewLayerPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				5FB21FA5176DA86100C4E81C /* Supporting Files */,
+				5FB21FC8176DA93B00C4E81C /* ImageViewLayerPlugin.h */,
+				5FBF6EEC17689A8700F98CB4 /* ADImageLayer.h */,
+				5FBF6EED17689A8700F98CB4 /* ADImageView.h */,
+				5FBF6EEE17689A8700F98CB4 /* ADImageView.m */,
+			);
+			path = ImageViewLayerPlugin;
+			sourceTree = "<group>";
+		};
+		5FB21FA5176DA86100C4E81C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5FB21FA6176DA86100C4E81C /* ImageViewLayerPlugin-Info.plist */,
+				5FB21FA7176DA86100C4E81C /* InfoPlist.strings */,
+				5FB21FAA176DA86100C4E81C /* ImageViewLayerPlugin-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5FB21FB9176DA86100C4E81C /* ImageViewLayerPluginTests */ = {
+			isa = PBXGroup;
+			children = (
+				5FB21FBF176DA86100C4E81C /* ImageViewLayerPluginTests.h */,
+				5FB21FC0176DA86100C4E81C /* ImageViewLayerPluginTests.m */,
+				5FB21FBA176DA86100C4E81C /* Supporting Files */,
+			);
+			path = ImageViewLayerPluginTests;
+			sourceTree = "<group>";
+		};
+		5FB21FBA176DA86100C4E81C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5FB21FBB176DA86100C4E81C /* ImageViewLayerPluginTests-Info.plist */,
+				5FB21FBC176DA86100C4E81C /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		5FBF6ED91768970A00F98CB4 /* ImageViewerPlugin */ = {
 			isa = PBXGroup;
 			children = (
 				5FBF6EE91768986300F98CB4 /* ADImageViewerPlugin.h */,
 				5FBF6EEA1768986300F98CB4 /* ADImageViewerPlugin.m */,
-				5FBF6EEC17689A8700F98CB4 /* ADImageLayer.h */,
-				5FBF6EED17689A8700F98CB4 /* ADImageView.h */,
-				5FBF6EEE17689A8700F98CB4 /* ADImageView.m */,
 				5FBF6EF21768FBCF00F98CB4 /* ADImageViewController.h */,
 				5FBF6EF31768FBCF00F98CB4 /* ADImageViewController.m */,
 				5FBF6EF01768F68100F98CB4 /* ADImageView.xib */,
@@ -530,6 +640,8 @@
 				5F622E13175FC0E6002663D7 /* NavigationViewPlugin */,
 				5F622E3E17638CCF002663D7 /* ImageItemViewPlugin */,
 				5FBF6ED91768970A00F98CB4 /* ImageViewerPlugin */,
+				5FB21FA4176DA86100C4E81C /* ImageViewLayerPlugin */,
+				5FB21FB9176DA86100C4E81C /* ImageViewLayerPluginTests */,
 				5FDABEE717534404005EDD03 /* Frameworks */,
 				5FDABEE617534404005EDD03 /* Products */,
 			);
@@ -546,6 +658,8 @@
 				5F622E11175FC0E6002663D7 /* NavigationViewPlugin.plugin */,
 				5F622E3C17638CCF002663D7 /* ImageItemViewPlugin.plugin */,
 				5FBF6ED71768970900F98CB4 /* ImageViewerPlugin.plugin */,
+				5FB21FA2176DA86100C4E81C /* ImageViewLayerPlugin.framework */,
+				5FB21FB3176DA86100C4E81C /* ImageViewLayerPluginTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -776,6 +890,16 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		5FB21F9F176DA86100C4E81C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FB21FC9176DA93B00C4E81C /* ImageViewLayerPlugin.h in Headers */,
+				5FB21FCA176DAAC900C4E81C /* ADImageLayer.h in Headers */,
+				5FB21FCC176DAAED00C4E81C /* ADImageView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5FDABF2E1753484F005EDD03 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -843,6 +967,44 @@
 			productReference = 5F622E3C17638CCF002663D7 /* ImageItemViewPlugin.plugin */;
 			productType = "com.apple.product-type.bundle";
 		};
+		5FB21FA1176DA86100C4E81C /* ImageViewLayerPlugin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FB21FC6176DA86100C4E81C /* Build configuration list for PBXNativeTarget "ImageViewLayerPlugin" */;
+			buildPhases = (
+				5FB21F9D176DA86100C4E81C /* Sources */,
+				5FB21F9E176DA86100C4E81C /* Frameworks */,
+				5FB21F9F176DA86100C4E81C /* Headers */,
+				5FB21FA0176DA86100C4E81C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5FB21FCE176DAB2100C4E81C /* PBXTargetDependency */,
+			);
+			name = ImageViewLayerPlugin;
+			productName = ImageViewLayerPlugin;
+			productReference = 5FB21FA2176DA86100C4E81C /* ImageViewLayerPlugin.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5FB21FB2176DA86100C4E81C /* ImageViewLayerPluginTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FB21FC7176DA86100C4E81C /* Build configuration list for PBXNativeTarget "ImageViewLayerPluginTests" */;
+			buildPhases = (
+				5FB21FAE176DA86100C4E81C /* Sources */,
+				5FB21FAF176DA86100C4E81C /* Frameworks */,
+				5FB21FB0176DA86100C4E81C /* Resources */,
+				5FB21FB1176DA86100C4E81C /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5FB21FB7176DA86100C4E81C /* PBXTargetDependency */,
+			);
+			name = ImageViewLayerPluginTests;
+			productName = ImageViewLayerPluginTests;
+			productReference = 5FB21FB3176DA86100C4E81C /* ImageViewLayerPluginTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 		5FBF6ED61768970900F98CB4 /* ImageViewerPlugin */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5FBF6EE21768970A00F98CB4 /* Build configuration list for PBXNativeTarget "ImageViewerPlugin" */;
@@ -854,6 +1016,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				5FB21FD0176DAB4000C4E81C /* PBXTargetDependency */,
 				5FBF6EE41768971700F98CB4 /* PBXTargetDependency */,
 			);
 			name = ImageViewerPlugin;
@@ -873,6 +1036,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				5FB21FD4176DAB6E00C4E81C /* PBXTargetDependency */,
 				5FBF6EE61768971E00F98CB4 /* PBXTargetDependency */,
 				5F622E4C17638CFB002663D7 /* PBXTargetDependency */,
 				5F622E27175FC47A002663D7 /* PBXTargetDependency */,
@@ -988,6 +1152,8 @@
 				5F622E10175FC0E6002663D7 /* NavigationViewPlugin */,
 				5F622E3B17638CCF002663D7 /* ImageItemViewPlugin */,
 				5FBF6ED61768970900F98CB4 /* ImageViewerPlugin */,
+				5FB21FA1176DA86100C4E81C /* ImageViewLayerPlugin */,
+				5FB21FB2176DA86100C4E81C /* ImageViewLayerPluginTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1010,6 +1176,22 @@
 				5F622E571763A9C8002663D7 /* ADNormalImageItemView.xib in Resources */,
 				5F622E5C1763AAF0002663D7 /* ADSmallImageItemView.xib in Resources */,
 				5F622E611763AB28002663D7 /* ADLargeImageItemView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FB21FA0176DA86100C4E81C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FB21FA9176DA86100C4E81C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FB21FB0176DA86100C4E81C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FB21FBE176DA86100C4E81C /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1074,6 +1256,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5FB21FB1176DA86100C4E81C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
 		5FDABF0617534405005EDD03 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1121,12 +1316,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5FB21F9D176DA86100C4E81C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FB21FCB176DAAE800C4E81C /* ADImageView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FB21FAE176DA86100C4E81C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FB21FC1176DA86100C4E81C /* ImageViewLayerPluginTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5FBF6ED31768970900F98CB4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				5FBF6EEB1768986300F98CB4 /* ADImageViewerPlugin.m in Sources */,
-				5FBF6EEF17689A8700F98CB4 /* ADImageView.m in Sources */,
 				5FBF6EF41768FBCF00F98CB4 /* ADImageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1217,6 +1427,26 @@
 			target = 5F622E3B17638CCF002663D7 /* ImageItemViewPlugin */;
 			targetProxy = 5F622E4B17638CFB002663D7 /* PBXContainerItemProxy */;
 		};
+		5FB21FB7176DA86100C4E81C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5FB21FA1176DA86100C4E81C /* ImageViewLayerPlugin */;
+			targetProxy = 5FB21FB6176DA86100C4E81C /* PBXContainerItemProxy */;
+		};
+		5FB21FCE176DAB2100C4E81C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5FDABF301753484F005EDD03 /* ImageReductionPlugin */;
+			targetProxy = 5FB21FCD176DAB2100C4E81C /* PBXContainerItemProxy */;
+		};
+		5FB21FD0176DAB4000C4E81C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5FB21FA1176DA86100C4E81C /* ImageViewLayerPlugin */;
+			targetProxy = 5FB21FCF176DAB4000C4E81C /* PBXContainerItemProxy */;
+		};
+		5FB21FD4176DAB6E00C4E81C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5FB21FA1176DA86100C4E81C /* ImageViewLayerPlugin */;
+			targetProxy = 5FB21FD3176DAB6E00C4E81C /* PBXContainerItemProxy */;
+		};
 		5FBF6EE41768971700F98CB4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5FDABF301753484F005EDD03 /* ImageReductionPlugin */;
@@ -1267,6 +1497,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				5F622E4217638CCF002663D7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5FB21FA7176DA86100C4E81C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FB21FA8176DA86100C4E81C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5FB21FBC176DA86100C4E81C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FB21FBD176DA86100C4E81C /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1395,6 +1641,62 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = plugin;
+			};
+			name = Release;
+		};
+		5FB21FC2176DA86100C4E81C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ImageViewLayerPlugin/ImageViewLayerPlugin-Prefix.pch";
+				INFOPLIST_FILE = "ImageViewLayerPlugin/ImageViewLayerPlugin-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		5FB21FC3176DA86100C4E81C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ImageViewLayerPlugin/ImageViewLayerPlugin-Prefix.pch";
+				INFOPLIST_FILE = "ImageViewLayerPlugin/ImageViewLayerPlugin-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		5FB21FC4176DA86100C4E81C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ImageViewLayerPlugin/ImageViewLayerPlugin-Prefix.pch";
+				INFOPLIST_FILE = "ImageViewLayerPluginTests/ImageViewLayerPluginTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		5FB21FC5176DA86100C4E81C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ImageViewLayerPlugin/ImageViewLayerPlugin-Prefix.pch";
+				INFOPLIST_FILE = "ImageViewLayerPluginTests/ImageViewLayerPluginTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
@@ -1640,6 +1942,22 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		5FB21FC6176DA86100C4E81C /* Build configuration list for PBXNativeTarget "ImageViewLayerPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FB21FC2176DA86100C4E81C /* Debug */,
+				5FB21FC3176DA86100C4E81C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5FB21FC7176DA86100C4E81C /* Build configuration list for PBXNativeTarget "ImageViewLayerPluginTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FB21FC4176DA86100C4E81C /* Debug */,
+				5FB21FC5176DA86100C4E81C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		5FBF6EE21768970A00F98CB4 /* Build configuration list for PBXNativeTarget "ImageViewerPlugin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1647,6 +1965,7 @@
 				5FBF6EE11768970A00F98CB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5FDABEE017534404005EDD03 /* Build configuration list for PBXProject "Image Reduction" */ = {
 			isa = XCConfigurationList;

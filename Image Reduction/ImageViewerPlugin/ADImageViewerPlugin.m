@@ -25,6 +25,7 @@
 
 #import "ADImageViewerPlugin.h"
 #import "ADImageViewController.h"
+#import <ImageViewLayerPlugin/ImageViewLayerPlugin.h>
 
 static ADDataViewController *__dataviewcontroller;
 
