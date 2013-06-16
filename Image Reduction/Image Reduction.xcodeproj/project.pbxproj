@@ -67,6 +67,7 @@
 		5FB21FDB176DAD6100C4E81C /* ADCursorLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB21FD7176DAD6100C4E81C /* ADCursorLayer.m */; };
 		5FB21FDC176DAD6100C4E81C /* ADPixelGridLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FB21FD8176DAD6100C4E81C /* ADPixelGridLayer.h */; };
 		5FB21FDD176DAD6100C4E81C /* ADPixelGridLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB21FD9176DAD6100C4E81C /* ADPixelGridLayer.m */; };
+		5FB21FE0176E3DB500C4E81C /* ADGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB21FDF176E3DB500C4E81C /* ADGradientView.m */; };
 		5FBF6ED81768970A00F98CB4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABEE817534404005EDD03 /* Cocoa.framework */; };
 		5FBF6EDE1768970A00F98CB4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FBF6EDC1768970A00F98CB4 /* InfoPlist.strings */; };
 		5FBF6EE71768972D00F98CB4 /* ImageViewerPlugin.plugin in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FBF6ED71768970900F98CB4 /* ImageViewerPlugin.plugin */; };
@@ -306,6 +307,8 @@
 		5FB21FD7176DAD6100C4E81C /* ADCursorLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADCursorLayer.m; sourceTree = "<group>"; };
 		5FB21FD8176DAD6100C4E81C /* ADPixelGridLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADPixelGridLayer.h; sourceTree = "<group>"; };
 		5FB21FD9176DAD6100C4E81C /* ADPixelGridLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADPixelGridLayer.m; sourceTree = "<group>"; };
+		5FB21FDE176E3DB400C4E81C /* ADGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADGradientView.h; sourceTree = "<group>"; };
+		5FB21FDF176E3DB500C4E81C /* ADGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADGradientView.m; sourceTree = "<group>"; };
 		5FBF6ED71768970900F98CB4 /* ImageViewerPlugin.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageViewerPlugin.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FBF6EDB1768970A00F98CB4 /* ImageViewerPlugin-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImageViewerPlugin-Info.plist"; sourceTree = "<group>"; };
 		5FBF6EDD1768970A00F98CB4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -568,6 +571,8 @@
 				5F622E6E17668A84002663D7 /* ADGroupItemViewController.h */,
 				5F622E6F17668A84002663D7 /* ADGroupItemViewController.m */,
 				5F622E6517667465002663D7 /* ADGroupItemViewFactory.xib */,
+				5FB21FDE176E3DB400C4E81C /* ADGradientView.h */,
+				5FB21FDF176E3DB500C4E81C /* ADGradientView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1368,6 +1373,7 @@
 				5FDABF28175347E4005EDD03 /* ADPluginController.m in Sources */,
 				5F622E6617667465002663D7 /* ADGroupItemViewFactory.m in Sources */,
 				5F622E7017668A84002663D7 /* ADGroupItemViewController.m in Sources */,
+				5FB21FE0176E3DB500C4E81C /* ADGradientView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
