@@ -300,6 +300,21 @@
         if(![wrapper dataObjectIsLoaded]) {
             [wrapper loadDataObjectFromBundleAtPath:[[self fileURL] path]];
         }
+        BOOL foundDataView = NO;
+        for(ADViewController *controller in viewControllers){
+            if([controller preferredViewArea] == ADMainViewArea){
+                if([controller isKindOfClass:[ADDataViewController class]]){
+                    if([(ADDataViewController*) controller canBeUsedAsViewerForDataObjectWrapper:wrapper]){
+                        foundDataView = YES;
+                        [mainTabView selectTabViewItemWithIdentifier:[controller identifier]];
+                    }
+                }
+            }
+            if(foundDataView) break;
+        }
+        if(!foundDataView){
+            [mainTabView selectTabViewItemWithIdentifier:@"999"];
+        }
     }
 }
 
@@ -340,6 +355,7 @@
     NSArray *vplugs = [[ADPluginController defaultPluginController] viewPlugins];
     for(id<ADViewPlugin> vplug in vplugs){
         ADViewController *viewContr = [vplug createViewController];
+        [viewContr setIdentifier:[[vplug class] description]];
         if([viewContr preferredViewArea] == ADNavigationSideViewArea){
             NSView *view = [viewContr view];
             NSTabViewItem *tabviewitem = [[NSTabViewItem alloc] initWithIdentifier:[[vplug class] description]];

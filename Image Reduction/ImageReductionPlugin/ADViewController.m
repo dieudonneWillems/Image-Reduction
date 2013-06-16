@@ -42,6 +42,16 @@
     return self;
 }
 
+- (NSString*) identifier
+{
+    return [[self view] identifier];
+}
+
+- (void) setIdentifier:(NSString *)identifier
+{
+    [[self view] setIdentifier:identifier];
+}
+
 - (ADViewArea) preferredViewArea
 {
     return ADMainViewArea;

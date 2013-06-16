@@ -29,6 +29,7 @@
     IBOutlet NSWindow* mainDocumentWindow;
     NSMutableArray *dataObjectWrappers;
     NSMutableArray *changedDataObjectWrappers;
+    NSMutableArray *dataViewControllers;
     NSUInteger seed;
     
     IBOutlet NSTabView *navigationTabView;

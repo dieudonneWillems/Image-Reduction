@@ -32,7 +32,10 @@ typedef enum __ADViewArea {
     ADInformationSideViewArea
 } ADViewArea;
 
-@interface ADViewController : NSViewController
+@interface ADViewController : NSViewController {
+}
+
+@property (readwrite) NSString *identifier;
 
 - (ADViewArea) preferredViewArea;
 @end

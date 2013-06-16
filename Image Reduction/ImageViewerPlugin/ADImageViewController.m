@@ -38,4 +38,18 @@
 {
     return ADMainViewArea;
 }
+
+
+- (BOOL) canBeUsedAsViewerForDataObjectWrapper:(ADDataObjectWrapper*)wrapper
+{
+    if([[wrapper type] isEqualToString:ADPropertyTypeImage]){
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL) canBeUsedAsEditorForDataObjectWrapper:(ADDataObjectWrapper*)wrapper
+{
+    return NO;
+}
 @end
