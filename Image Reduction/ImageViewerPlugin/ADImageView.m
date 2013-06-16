@@ -23,6 +23,8 @@
 //
 
 #import "ADImageView.h"
+#import "ADPixelGridLayer.h"
+#import "ADCursorLayer.h"
 
 @interface ADImageView (private)
 @end
@@ -36,6 +38,7 @@
         scale = 1.0;
         origin = NSMakePoint(800,800);
         backgroundColor = [NSColor colorWithCalibratedWhite:0.3 alpha:1];
+        
     }
     return self;
 }
@@ -47,6 +50,8 @@
     scale = 1.0;
     origin = NSMakePoint(134.2,656.32);
     backgroundColor = [NSColor colorWithCalibratedWhite:0.8 alpha:1];
+    [self addLayer:[[ADPixelGridLayer alloc] init]];
+    [self addLayer:[[ADCursorLayer alloc] init]];
 }
 
 

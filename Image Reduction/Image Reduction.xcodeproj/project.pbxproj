@@ -63,6 +63,10 @@
 		5FB21FD1176DAB4700C4E81C /* ImageViewLayerPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB21FA2176DA86100C4E81C /* ImageViewLayerPlugin.framework */; };
 		5FB21FD2176DAB5100C4E81C /* ImageReductionPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABF311753484F005EDD03 /* ImageReductionPlugin.framework */; };
 		5FB21FD5176DAB7900C4E81C /* ImageViewLayerPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB21FA2176DA86100C4E81C /* ImageViewLayerPlugin.framework */; };
+		5FB21FDA176DAD6100C4E81C /* ADCursorLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FB21FD6176DAD6100C4E81C /* ADCursorLayer.h */; };
+		5FB21FDB176DAD6100C4E81C /* ADCursorLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB21FD7176DAD6100C4E81C /* ADCursorLayer.m */; };
+		5FB21FDC176DAD6100C4E81C /* ADPixelGridLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FB21FD8176DAD6100C4E81C /* ADPixelGridLayer.h */; };
+		5FB21FDD176DAD6100C4E81C /* ADPixelGridLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB21FD9176DAD6100C4E81C /* ADPixelGridLayer.m */; };
 		5FBF6ED81768970A00F98CB4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABEE817534404005EDD03 /* Cocoa.framework */; };
 		5FBF6EDE1768970A00F98CB4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FBF6EDC1768970A00F98CB4 /* InfoPlist.strings */; };
 		5FBF6EE71768972D00F98CB4 /* ImageViewerPlugin.plugin in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FBF6ED71768970900F98CB4 /* ImageViewerPlugin.plugin */; };
@@ -298,6 +302,10 @@
 		5FB21FBF176DA86100C4E81C /* ImageViewLayerPluginTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageViewLayerPluginTests.h; sourceTree = "<group>"; };
 		5FB21FC0176DA86100C4E81C /* ImageViewLayerPluginTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageViewLayerPluginTests.m; sourceTree = "<group>"; };
 		5FB21FC8176DA93B00C4E81C /* ImageViewLayerPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewLayerPlugin.h; sourceTree = "<group>"; };
+		5FB21FD6176DAD6100C4E81C /* ADCursorLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADCursorLayer.h; sourceTree = "<group>"; };
+		5FB21FD7176DAD6100C4E81C /* ADCursorLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADCursorLayer.m; sourceTree = "<group>"; };
+		5FB21FD8176DAD6100C4E81C /* ADPixelGridLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADPixelGridLayer.h; sourceTree = "<group>"; };
+		5FB21FD9176DAD6100C4E81C /* ADPixelGridLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADPixelGridLayer.m; sourceTree = "<group>"; };
 		5FBF6ED71768970900F98CB4 /* ImageViewerPlugin.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageViewerPlugin.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FBF6EDB1768970A00F98CB4 /* ImageViewerPlugin-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImageViewerPlugin-Info.plist"; sourceTree = "<group>"; };
 		5FBF6EDD1768970A00F98CB4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -572,6 +580,10 @@
 				5FBF6EEC17689A8700F98CB4 /* ADImageLayer.h */,
 				5FBF6EED17689A8700F98CB4 /* ADImageView.h */,
 				5FBF6EEE17689A8700F98CB4 /* ADImageView.m */,
+				5FB21FD6176DAD6100C4E81C /* ADCursorLayer.h */,
+				5FB21FD7176DAD6100C4E81C /* ADCursorLayer.m */,
+				5FB21FD8176DAD6100C4E81C /* ADPixelGridLayer.h */,
+				5FB21FD9176DAD6100C4E81C /* ADPixelGridLayer.m */,
 			);
 			path = ImageViewLayerPlugin;
 			sourceTree = "<group>";
@@ -897,6 +909,8 @@
 				5FB21FC9176DA93B00C4E81C /* ImageViewLayerPlugin.h in Headers */,
 				5FB21FCA176DAAC900C4E81C /* ADImageLayer.h in Headers */,
 				5FB21FCC176DAAED00C4E81C /* ADImageView.h in Headers */,
+				5FB21FDA176DAD6100C4E81C /* ADCursorLayer.h in Headers */,
+				5FB21FDC176DAD6100C4E81C /* ADPixelGridLayer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1321,6 +1335,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FB21FCB176DAAE800C4E81C /* ADImageView.m in Sources */,
+				5FB21FDB176DAD6100C4E81C /* ADCursorLayer.m in Sources */,
+				5FB21FDD176DAD6100C4E81C /* ADPixelGridLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

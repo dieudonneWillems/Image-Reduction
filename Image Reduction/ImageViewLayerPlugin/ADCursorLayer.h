@@ -1,5 +1,5 @@
 //
-//  ImageViewLayerPlugin.h
+//  ADCursorLayer.h
 //
 // 	This file is part of Image Reduction.
 //
@@ -16,15 +16,14 @@
 //    You should have received a copy of the GNU General Public License
 //    along with Image Reduction.  If not, see <http://www.gnu.org/licenses/>.
 //
-//  Copyright (c) 2013 Dieudonné Willems. All rights reserved.Plugin
+//  Copyright (c) 2013 Dieudonné Willems. All rights reserved.
 //
-//  Created by Don Willems on 16-06-13.
+//  Created by Don Willems on 14-05-13.
 //
 
-#ifndef Image_Reduction_ImageViewLayerPlugin_h
-#define Image_Reduction_ImageViewLayerPlugin_h
-
+#import <Cocoa/Cocoa.h>
 #import "ADImageLayer.h"
-#import "ADImageView.h"
 
-#endif
+@interface ADCursorLayer : NSObject <ADImageLayer>
+
+@end
