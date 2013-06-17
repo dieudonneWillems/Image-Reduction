@@ -45,6 +45,14 @@
     return @"Project Navigator";
 }
 
+- (NSImage*) icon
+{
+   // return [NSImage imageNamed:@"navigation"];
+    NSImage *icon = [[NSImage alloc] initWithContentsOfFile:[[NSBundle bundleForClass:[ADNavigationViewPlugin class]] pathForResource:@"navigation" ofType:@"png"]];
+    NSLog(@"Icon: %@",icon);
+    return icon;
+}
+
 - (void) initialize
 {
     

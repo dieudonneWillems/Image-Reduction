@@ -20,6 +20,9 @@
 		5F08AB21175E484D009C953E /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5F08AB1D175E484C009C953E /* license.txt */; };
 		5F08AB22175E484D009C953E /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5F08AB1D175E484C009C953E /* license.txt */; };
 		5F08AB28175F1587009C953E /* ADProjectStructureItemViewPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F08AB27175F1587009C953E /* ADProjectStructureItemViewPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F333D4B176F7F780098E233 /* navigation.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F333D4A176F7F780098E233 /* navigation.png */; };
+		5F333D4E176F80990098E233 /* ADSmallToolbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F333D4D176F80990098E233 /* ADSmallToolbarView.m */; };
+		5F333D52176FAE2C0098E233 /* selectedbgr.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F333D51176FAE2C0098E233 /* selectedbgr.png */; };
 		5F4BA7AD1753EF2900726567 /* ADProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F4BA7AB1753EF2900726567 /* ADProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5F4BA7AE1753EF2900726567 /* ADProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4BA7AC1753EF2900726567 /* ADProperty.m */; };
 		5F622E12175FC0E6002663D7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDABEE817534404005EDD03 /* Cocoa.framework */; };
@@ -258,6 +261,10 @@
 		5F08AB1A175D481B009C953E /* ADDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADDataViewController.m; sourceTree = "<group>"; };
 		5F08AB1D175E484C009C953E /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 		5F08AB27175F1587009C953E /* ADProjectStructureItemViewPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADProjectStructureItemViewPlugin.h; sourceTree = "<group>"; };
+		5F333D4A176F7F780098E233 /* navigation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigation.png; sourceTree = "<group>"; };
+		5F333D4C176F80990098E233 /* ADSmallToolbarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADSmallToolbarView.h; sourceTree = "<group>"; };
+		5F333D4D176F80990098E233 /* ADSmallToolbarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADSmallToolbarView.m; sourceTree = "<group>"; };
+		5F333D51176FAE2C0098E233 /* selectedbgr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selectedbgr.png; sourceTree = "<group>"; };
 		5F4BA7AB1753EF2900726567 /* ADProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADProperty.h; sourceTree = "<group>"; };
 		5F4BA7AC1753EF2900726567 /* ADProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADProperty.m; sourceTree = "<group>"; };
 		5F622E11175FC0E6002663D7 /* NavigationViewPlugin.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavigationViewPlugin.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -530,6 +537,7 @@
 		5F622E14175FC0E6002663D7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5F333D4A176F7F780098E233 /* navigation.png */,
 				5F622E15175FC0E6002663D7 /* NavigationViewPlugin-Info.plist */,
 				5F622E16175FC0E6002663D7 /* InfoPlist.strings */,
 				5F622E19175FC0E6002663D7 /* NavigationViewPlugin-Prefix.pch */,
@@ -573,6 +581,8 @@
 				5F622E6517667465002663D7 /* ADGroupItemViewFactory.xib */,
 				5FB21FDE176E3DB400C4E81C /* ADGradientView.h */,
 				5FB21FDF176E3DB500C4E81C /* ADGradientView.m */,
+				5F333D4C176F80990098E233 /* ADSmallToolbarView.h */,
+				5F333D4D176F80990098E233 /* ADSmallToolbarView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -721,6 +731,7 @@
 		5FDABEEF17534404005EDD03 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5F333D51176FAE2C0098E233 /* selectedbgr.png */,
 				5FDABEF017534404005EDD03 /* Image Reduction-Info.plist */,
 				5FDABEF117534404005EDD03 /* InfoPlist.strings */,
 				5FDABEF417534404005EDD03 /* main.m */,
@@ -1184,6 +1195,7 @@
 			files = (
 				5F622E18175FC0E6002663D7 /* InfoPlist.strings in Resources */,
 				5F622E24175FC1A4002663D7 /* ADNavigationViewPlugin.xib in Resources */,
+				5F333D4B176F7F780098E233 /* navigation.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1233,6 +1245,7 @@
 				5FDABF0217534405005EDD03 /* MainMenu.xib in Resources */,
 				5F08AB1E175E484D009C953E /* license.txt in Resources */,
 				5F622E6717667465002663D7 /* ADGroupItemViewFactory.xib in Resources */,
+				5F333D52176FAE2C0098E233 /* selectedbgr.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1374,6 +1387,7 @@
 				5F622E6617667465002663D7 /* ADGroupItemViewFactory.m in Sources */,
 				5F622E7017668A84002663D7 /* ADGroupItemViewController.m in Sources */,
 				5FB21FE0176E3DB500C4E81C /* ADGradientView.m in Sources */,
+				5F333D4E176F80990098E233 /* ADSmallToolbarView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1971,6 +1985,7 @@
 				5FB21FC3176DA86100C4E81C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5FB21FC7176DA86100C4E81C /* Build configuration list for PBXNativeTarget "ImageViewLayerPluginTests" */ = {
 			isa = XCConfigurationList;
@@ -1979,6 +1994,7 @@
 				5FB21FC5176DA86100C4E81C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5FBF6EE21768970A00F98CB4 /* Build configuration list for PBXNativeTarget "ImageViewerPlugin" */ = {
 			isa = XCConfigurationList;

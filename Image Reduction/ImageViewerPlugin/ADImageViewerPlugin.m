@@ -42,6 +42,11 @@ static ADDataViewController *__dataviewcontroller;
     return @"Image";
 }
 
+- (NSImage*) icon
+{
+    return nil;
+}
+
 - (void) initialize
 {
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];

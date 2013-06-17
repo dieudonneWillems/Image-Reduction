@@ -25,6 +25,8 @@
 #import <ImageReductionPlugin/ImageReductionPlugin.h>
 #import "ADKeys.h"
 
+@class ADSmallToolbarView;
+
 @interface ADDocument : NSDocument {
     IBOutlet NSWindow* mainDocumentWindow;
     NSMutableArray *dataObjectWrappers;
@@ -32,7 +34,7 @@
     NSMutableArray *dataViewControllers;
     NSUInteger seed;
     
-    IBOutlet NSTabView *navigationTabView;
+    IBOutlet ADSmallToolbarView *navigationSideView;
     IBOutlet NSTabView *mainTabView;
     
     NSMutableArray *viewControllers;

@@ -25,6 +25,7 @@
 #import "ADPluginController.h"
 #import "ADImportController.h"
 #import "ADGroupItemViewFactory.h"
+#import "ADSmallToolbarView.h"
 
 @interface ADDocument (private)
 - (void) importNotificationRecieved:(NSNotification*)not;
@@ -70,6 +71,7 @@
     [nc addObserver:self selector:@selector(updateNotificationRecieved:) name:ADDataObjectUpdatedNotification object:nil];
     [nc addObserver:self selector:@selector(selectionNotificationReceived:) name:ADDataObjectSelectionChangedNotification object:nil];
     [nc addObserver:self selector:@selector(selectionNotificationReceived:) name:ADDataObjectSelectionWillChangeNotification object:nil];
+    [navigationSideView setDrawTopLine:NO];
     [self addViewsFromPlugins];
     [self setProjectStructureItemsInViews];
 }
@@ -358,10 +360,11 @@
         [viewContr setIdentifier:[[vplug class] description]];
         if([viewContr preferredViewArea] == ADNavigationSideViewArea){
             NSView *view = [viewContr view];
-            NSTabViewItem *tabviewitem = [[NSTabViewItem alloc] initWithIdentifier:[[vplug class] description]];
-            [tabviewitem setView:view];
-            [view setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
-            [navigationTabView addTabViewItem:tabviewitem];
+           // NSTabViewItem *tabviewitem = [[NSTabViewItem alloc] initWithIdentifier:[[vplug class] description]];
+           // [tabviewitem setView:view];
+           // [view setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
+           // [navigationTabView addTabViewItem:tabviewitem];
+            [navigationSideView addTabViewItemWithIdentifier:[[vplug class] description] icon:[vplug icon] andView:view];
             [viewControllers addObject:viewContr];
         }else if([viewContr preferredViewArea] == ADMainViewArea){
             NSView *view = [viewContr view];

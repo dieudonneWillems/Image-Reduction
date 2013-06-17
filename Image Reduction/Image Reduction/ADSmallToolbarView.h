@@ -1,5 +1,5 @@
 //
-//  ADViewPlugin.h
+//  ADSmallToolbarView.h
 //
 // 	This file is part of Image Reduction.
 //
@@ -18,18 +18,19 @@
 //
 //  Copyright (c) 2013 Dieudonné Willems. All rights reserved.
 //
-//
-//  Created by Don Willems on 03-06-13.
-//
+//  Created by Don Willems on 17-06-13.
 //
 
-#import <Foundation/Foundation.h>
-#import "ADImageReductionPlugin.h"
-#import "ADViewController.h"
+#import "ADGradientView.h"
 
-@protocol ADViewPlugin <ADImageReductionPlugin>
+@interface ADSmallToolbarView : ADGradientView {
+    IBOutlet NSTabView *tabView;
+    NSMutableDictionary* icons;
+    NSUInteger indexOfSelectedItem;
+    NSImage *selectionBackground;
+}
 
-- (NSImage*) icon;
-- (ADViewController*) createViewController;
+@property (readonly) NSUInteger indexOfSelectedItem;
 
+- (void) addTabViewItemWithIdentifier:(id)identifier icon:(NSImage*)icon andView:(NSView*)view;
 @end
